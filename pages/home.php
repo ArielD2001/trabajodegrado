@@ -1,11 +1,4 @@
-<?php 
-session_start();
-if(!$_SESSION){
-    header('Location:../index');
-    die();
-} 
-$email = $_SESSION['email'];
-?>
+<?php include('config/validatesesion.php') ?>
 
 <!DOCTYPE html>
 <html lang="es">

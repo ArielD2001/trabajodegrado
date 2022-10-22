@@ -48,25 +48,13 @@ if ($_SESSION) {
                     <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="************" name="password">
 
                 </div>
-                <?php if (isset($_POST['boton'])) {
-                    if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
-                        echo"<style>.loader{display: none !important; animation:none !important;</style>";
-                        echo '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete todos los campos.</p>';
-                    }else{
-                        session_start();
-                        $_SESSION['email'] = strtolower($_POST['email']);
-                        header('Location: pages/home');
-                    }                        
-                        
-                    
-                }
-                ?>
+                    <?php include('pages/config/validate.php') ?>
                 <div class="">
                     <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">
-                        <i class="fa-brands fa-google mr-2"></i>Iniciar session con Google
+                        <i class="fa-brands fa-google mr-2"></i>Iniciar sesion con Google
                     </button>
                 </div>
 
