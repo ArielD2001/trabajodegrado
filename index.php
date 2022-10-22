@@ -19,10 +19,15 @@ if ($_SESSION) {
 
     <title>Login</title>
 </head>
-
+<style>
+    form{
+        width: 380px !important;
+        min-width: 350px;
+    }
+</style>
 <body>
     <div class=" flex items-center justify-center h-screen bg-gray-200">
-        <div class="w-1/4" style="z-index: 100;">
+        <div class="" style="z-index: 100;">
             <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4 relative truncate">
     <?php include('assets/loader.html') ?>
 
