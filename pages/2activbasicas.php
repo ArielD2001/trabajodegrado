@@ -1,3 +1,5 @@
+<?php include('config/validatesesion.php') ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
