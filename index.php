@@ -21,10 +21,11 @@ if ($_SESSION) {
 </head>
 
 <body>
-    <?php include('assets/loader.html') ?>
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="w-1/4" style="z-index: 100;">
-            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4">
+            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4 relative truncate">
+    <?php include('assets/loader.html') ?>
+
                 <div class="logo flex justify-center mb-5">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="130px">
 
@@ -33,27 +34,30 @@ if ($_SESSION) {
                     <label class="block  text-gray-700 text-sm font-bold mb-2" for="username">
                         Correo
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" autocomplete="off" name="email">
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username" autocomplete="off" name="email">
                 </div>
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                         Contraseña
                     </label>
-                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="**************" name="password">
+                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="************" name="password">
 
                 </div>
                 <?php if (isset($_POST['boton'])) {
                     if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
-                        echo '<p class="text-red-500 text-xs italic mt-2 mb-6"  >Por favor complete todos los campos.</p>';
-                    } else {
+                        echo"<style>.loader{display: none !important; animation:none !important;</style>";
+                        echo '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete todos los campos.</p>';
+                    }else{
                         session_start();
-                        $_SESSION['id'] = 1;
+                        $_SESSION['email'] = strtolower($_POST['email']);
                         header('Location: pages/home');
-                    }
+                    }                        
+                        
+                    
                 }
                 ?>
                 <div class="">
-                    <button class=" transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
+                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">

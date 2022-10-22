@@ -1,8 +1,11 @@
 <?php 
 session_start();
-if(!$_SESSION['id']){
+if(!$_SESSION){
     header('Location:../index');
-} ?>
+    die();
+} 
+$email = $_SESSION['email'];
+?>
 
 <!DOCTYPE html>
 <html lang="es">
