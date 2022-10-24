@@ -1,4 +1,7 @@
-<?php include('config/validatesesion.php') ?>
+<?php 
+include('../assets/loader.html');
+include_once('databases/connectToBD.php');
+include('config/validatesesion.php') ; ?>
 
 <!DOCTYPE html>
 <html lang="es">

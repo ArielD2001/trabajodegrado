@@ -41,13 +41,13 @@ if ($_SESSION) {
                     <label class="block  text-gray-700 text-sm font-bold mb-2" for="username">
                         Correo
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username" autocomplete="off" name="email">
+                    <input class="border-gray-300 campo shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" minlength="8" type="email" placeholder="Username" autocomplete="off" name="email">
                 </div>
                 <div class="relative">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                         Contraseña
                     </label>
-                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  placeholder="************" name="password">
+                    <input class=" campo border-gray-300 shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  placeholder="************" name="password">
                     <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:10px;top:calc(50% - 3px); cursor:pointer"></i>
                         <script>
                             document.getElementById('boton-eye').addEventListener('click', () => {
@@ -56,22 +56,37 @@ if ($_SESSION) {
                                     document.getElementById('boton-eye').classList.remove('fa-eye');
                                     document.getElementById('boton-eye').classList.add('fa-solid');
                                     document.getElementById('boton-eye').classList.add('fa-eye-slash');
+
                                     
 
                                     document.getElementById('password').type = 'text';
+                                    document.getElementById('password').focus();
                                 } else {
                                     document.getElementById('boton-eye').classList.add('fas');
                                     document.getElementById('boton-eye').classList.add('fa-eye');
                                     document.getElementById('boton-eye').classList.remove('fa-solid');
                                     document.getElementById('boton-eye').classList.remove('fa-eye-slash');
                                     document.getElementById('password').type = 'password';
+                                    document.getElementById('password').focus();
                                 }
                             })
+                            document.querySelectorAll('.campo').forEach(element=>{
+                                cambio(element);
+                            })
+                            function cambio(key){
+                            key.addEventListener('keyup',()=>{
+                                if(key.value == ''){
+                                    key.classList.replace('border-gray-300', 'border-red-500');
+                                }else{
+                                    key.classList.replace('border-red-500', 'border-gray-300');
+                                }
+                            })
+                            }  
                         </script>
                 </div>
                     <?php include('pages/config/validate.php') ?>
                 <div class="">
-                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="loguear">
+                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">

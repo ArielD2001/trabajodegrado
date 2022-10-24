@@ -18,7 +18,7 @@ if ($_SESSION) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-    <title>Login</title>
+    <title>Registro</title>
 </head>
 <style>
     form {
@@ -44,13 +44,13 @@ if ($_SESSION) {
                         <label class="block  mb-2 tracking-wide text-gray-700 text-xs font-bold" for="grid-first-name">
                             Nombre
                         </label>
-                        <input class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Nombre" name="nombre">
+                        <input class="campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" id="nombre" type="text" placeholder="Nombre" name="nombre" minlength="3">
                     </div>
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block  mb-2 tracking-wide text-gray-700 text-xs font-bold" for="grid-last-name">
                             Apellido
                         </label>
-                        <input class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Apellido" name="apellido">
+                        <input class=" campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="apellido" type="text" placeholder="Apellido" name="apellido" minlength="5">
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-2">
@@ -58,13 +58,13 @@ if ($_SESSION) {
                         <label class="block  mb-2 tracking-wide text-gray-700 text-xs font-bold" for="grid-first-name">
                             No. documento
                         </label>
-                        <input class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="CC" name="documento">
+                        <input class=" campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" id="documento" type="number" placeholder="CC" name="documento"minlength="8">
                     </div>
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block  tracking-wide mb-2 text-gray-700 text-xs font-bold" for="grid-last-name">
                             Correo
                         </label>
-                        <input class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Correo" name="correo">
+                        <input class=" campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white " id="correo" type="email" placeholder="Correo" name="correo" >
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-2">
@@ -72,7 +72,8 @@ if ($_SESSION) {
                         <label class="block  tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                             Contraseña
                         </label>
-                        <input class="appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="**************" name="contaseña">
+                        <input class=" campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white " id="grid-password" type="password" placeholder="**************" name="contraseña" minlength="6" maxlength="32">
+
                         <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:25px;top:calc(50% - 5px); cursor:pointer"></i>
                         <script>
                             document.getElementById('boton-eye').addEventListener('click', () => {
@@ -91,17 +92,30 @@ if ($_SESSION) {
                                     document.getElementById('boton-eye').classList.remove('fa-eye-slash');
                                     document.getElementById('grid-password').type = 'password';
                                 }
+
                             })
-                        </script>
+                            document.querySelectorAll('.campo').forEach(element=>{
+                                cambio(element);
+                            })
+                            function cambio(key){
+                            key.addEventListener('keyup',()=>{
+                                if(key.value == ''){
+                                    key.classList.replace('border-gray-300', 'border-red-500');
+                                }else{
+                                    key.classList.replace('border-red-500', 'border-gray-300');
+                                }
+                            })
+                            }  
+                            </script>
                     </div>
                 </div>
+                <?php include('pages/config/validate.php') ?>
                 <hr class="mt-10 mb-3">
                 <div class="flex flex-wrap justify-between items-center  mb-2">
                     <button class="bg-yellow-600 focus:outline-none hover:bg-orange-500 transition duration-100 p-2 outline-none rounded  block w-1/2 text-white" type="submit" name="registrar">Registrar</button>
                     <a href="index " class="text-xs border-b py-1 border-blue-600  text-blue-600  hover:border-blue-700  hover:text-blue-700">ya tengo una cuenta !</a>
                 </div>
             </form>
-            <?php include('pages/config/validate.php') ?>
 
             <p class="text-center text-gray-700 text-xs">
                 Ariel Caraballo Diaz - Jesus Valencia Torres
