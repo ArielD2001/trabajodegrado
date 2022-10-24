@@ -43,12 +43,31 @@ if ($_SESSION) {
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="email" placeholder="Username" autocomplete="off" name="email">
                 </div>
-                <div>
+                <div class="relative">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                         Contraseña
                     </label>
-                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="************" name="password">
+                    <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  placeholder="************" name="password">
+                    <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:10px;top:calc(50% - 3px); cursor:pointer"></i>
+                        <script>
+                            document.getElementById('boton-eye').addEventListener('click', () => {
+                                if (document.getElementById('password').type == 'password') {
+                                    document.getElementById('boton-eye').classList.remove('fas');
+                                    document.getElementById('boton-eye').classList.remove('fa-eye');
+                                    document.getElementById('boton-eye').classList.add('fa-solid');
+                                    document.getElementById('boton-eye').classList.add('fa-eye-slash');
+                                    
 
+                                    document.getElementById('password').type = 'text';
+                                } else {
+                                    document.getElementById('boton-eye').classList.add('fas');
+                                    document.getElementById('boton-eye').classList.add('fa-eye');
+                                    document.getElementById('boton-eye').classList.remove('fa-solid');
+                                    document.getElementById('boton-eye').classList.remove('fa-eye-slash');
+                                    document.getElementById('password').type = 'password';
+                                }
+                            })
+                        </script>
                 </div>
                     <?php include('pages/config/validate.php') ?>
                 <div class="">

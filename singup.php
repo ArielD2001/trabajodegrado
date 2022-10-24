@@ -77,8 +77,18 @@ if ($_SESSION) {
                         <script>
                             document.getElementById('boton-eye').addEventListener('click', () => {
                                 if (document.getElementById('grid-password').type == 'password') {
+                                    document.getElementById('boton-eye').classList.remove('fas');
+                                    document.getElementById('boton-eye').classList.remove('fa-eye');
+                                    document.getElementById('boton-eye').classList.add('fa-solid');
+                                    document.getElementById('boton-eye').classList.add('fa-eye-slash');
+                                    
+
                                     document.getElementById('grid-password').type = 'text';
                                 } else {
+                                    document.getElementById('boton-eye').classList.add('fas');
+                                    document.getElementById('boton-eye').classList.add('fa-eye');
+                                    document.getElementById('boton-eye').classList.remove('fa-solid');
+                                    document.getElementById('boton-eye').classList.remove('fa-eye-slash');
                                     document.getElementById('grid-password').type = 'password';
                                 }
                             })
