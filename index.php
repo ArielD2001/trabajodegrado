@@ -1,4 +1,5 @@
 <?php
+include('pages/databases/connectToBD.php');
 session_start();
 
 if ($_SESSION) {
@@ -21,15 +22,16 @@ if ($_SESSION) {
 </head>
 <style>
     form{
-        width: 380px !important;
+        width: 400px !important;
         min-width: 350px;
     }
 </style>
 <body>
+<?php include('assets/loader.html') ?>
+
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="" style="z-index: 100;">
-            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4 relative truncate">
-    <?php include('assets/loader.html') ?>
+            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate">
 
                 <div class="logo flex justify-center mb-5">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="130px">
@@ -50,12 +52,14 @@ if ($_SESSION) {
                 </div>
                     <?php include('pages/config/validate.php') ?>
                 <div class="">
-                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
+                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="loguear">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">
                         <i class="fa-brands fa-google mr-2"></i>Iniciar sesion con Google
                     </button>
+                    <div class="block text-center my-2 text-xs">Or</div>
+                    <a href="singup" class="bg-blue-600 block rounded p-2 text-white text-center hover:bg-blue-700 transition duration-100">Crear cuenta</a>
                 </div>
 
 

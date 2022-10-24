@@ -1,4 +1,19 @@
-<?php include('config/validatesesion.php') ?>
+<?php 
+include('config/validatesesion.php') ;
+include_once('databases/connectToBD.php');
+$consulta = "SELECT * from usuarios WHERE id = ?";
+$sentencia= $mbd->prepare($consulta);
+$sentencia->bindParam(1, $id);
+$sentencia->execute();
+$filas=$sentencia->rowCount();
+echo $filas;
+
+if($filas > 0){
+$resultado = $sentencia->fetch();
+$nombre  = $resultado['nombre'];
+$apellido  = $resultado['apellido'];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">

@@ -4,5 +4,5 @@ if(!$_SESSION){
     header('Location:../index');
     die();
 } 
-$email = $_SESSION['email'];
+$id = $_SESSION['id'];
 ?>
