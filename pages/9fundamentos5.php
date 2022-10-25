@@ -2,6 +2,7 @@
 include('../assets/loader.html');
 include_once('databases/connectToBD.php');
 include('config/validatesesion.php') ; 
+$vactive =true;
 ?>
 <!DOCTYPE html>
 <html lang="es">

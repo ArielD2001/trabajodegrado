@@ -58,9 +58,35 @@
         </li>
 
     </ul>
-    <button class="button-menu-mobile open-left">
-        <i class="mdi mdi-menu"></i>
+    <button class="boton-open mt-2  btn">
+        <i class="mdi mdi-menu h2"></i>
     </button>
+    <script>
+        
+        document.querySelector('.boton-open').addEventListener('click', ()=>{
+            if(localStorage.getItem('menu') != 'sidebar-enable'){
+                localStorage.setItem('menu','sidebar-enable');
+            }else{
+                localStorage.setItem('menu','');
+            }
+            verificar()
+        })
+        function verificar(){
+            if(localStorage.getItem('menu') == 'sidebar-enable'){
+                document.querySelector('body').classList.add('sidebar-enable');
+                document.querySelector('body').setAttribute('data-leftbar-compact-mode','condensed');
+            }else{
+                document.querySelector('body').classList.remove('sidebar-enable');
+                document.querySelector('body').setAttribute('data-leftbar-compact-mode','');
+            }
+        }
+        window.onload=function() {
+			verificar()
+		}
+        
+        
+        
+    </script>
 
     <!-- end Topbar -->
 </div>

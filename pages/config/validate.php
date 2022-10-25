@@ -37,9 +37,9 @@ elseif (isset($_POST['registrar'])) {
     if (
         strlen($_POST['nombre'])     < 3 ||
         strlen($_POST['apellido'])  < 5  ||
-        strlen($_POST['correo'])    < 10 ||
-        strlen($_POST['contraseña']) < 6 ||
-        strlen($_POST['documento'])  < 8
+        strlen($_POST['correo'])    < 5 ||
+        strlen($_POST['contraseña']) < 5 ||
+        strlen($_POST['documento'])  < 5
     ) {
         echo '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete los campos correctamente.</p>';
     } else {

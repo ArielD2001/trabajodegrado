@@ -1,7 +1,7 @@
 <div class="end-bar">
 
     <div class="rightbar-title">
-        <a href="javascript:void(0);" class="end-bar-toggle float-end">
+        <a href="javascript:void(0);" class="end-bar-toggle float-end d-flex align-items-center justify-content-center">
             <i class="dripicons-cross noti-icon"></i>
         </a>
         <h5 class="m-0">Configuracion</h5>

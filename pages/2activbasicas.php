@@ -1,6 +1,8 @@
 <?php include('../assets/loader.html');
 include_once('databases/connectToBD.php');
-include('config/validatesesion.php') ; ?>
+include('config/validatesesion.php') ; 
+$actactive =true;
+?>
 
 <!DOCTYPE html>
 <html lang="es">

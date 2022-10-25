@@ -2,7 +2,9 @@
 include_once('databases/connectToBD.php');
 include('config/validatesesion.php') ;
 
- include('../assets/loader.html'); ?>
+ include('../assets/loader.html'); 
+ $home = true;
+ ?>
 
 
 <!DOCTYPE html>
