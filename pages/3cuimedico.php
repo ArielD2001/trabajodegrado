@@ -32,7 +32,7 @@ $cuiactive =true;
 
             
             <!-- ========= contenido ========= -->
-            <div class="content">
+            <div class="content container">
                 <div class="contenedor">
                     <h3>Cuidado medico quirurgico</h3>
                 </div>
