@@ -99,7 +99,7 @@ if ($_SESSION) {
                             })
                             function cambio(key){
                             key.addEventListener('keyup',()=>{
-                                if(key.value == ''){
+                                if(key.value.length <4){
                                     key.classList.replace('border-gray-300', 'border-red-500');
                                 }else{
                                     key.classList.replace('border-red-500', 'border-gray-300');

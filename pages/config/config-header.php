@@ -1,5 +1,4 @@
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="CURN" name="description">
     <link rel="icon" type="image/x-icon" href="../assets/images/logo_sm.png" />
     <link href="../assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">

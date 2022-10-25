@@ -1,15 +1,17 @@
-<?php include('../assets/loader.html'); ?>
 <?php 
 include_once('databases/connectToBD.php');
 include('config/validatesesion.php') ;
 
-?>
+ include('../assets/loader.html'); ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-<?php include('config/config-header.php') ?>
+    
+    <?php include('config/config-header.php') ?>
+    <link rel="shortcut icon" href="../assets/images/logo_sm.png">
     <title>Home</title>
 
 </head>

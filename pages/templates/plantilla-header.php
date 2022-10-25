@@ -2,6 +2,7 @@
     .letraname{
         background-color: orange;
         color: white;
+        border-radius: 50%;
     }
 </style>
 <div class="navbar-custom">
@@ -17,10 +18,10 @@
         <li class="dropdown notification-list">
             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                 <span >
-                    <span class="account-user-name flex pt-2" style="max-width: 150px; text-overflow:ellipsis; overflow:hidden"><?php echo $nombre. ' '. $apellido ?></span>
+                    <span class="account-user-name flex pt-2" style="max-width: 150px; text-overflow:ellipsis; overflow:hidden" ><?php echo  ucwords(strtolower($nombre)). ' '. ucwords(strtolower($apellido)) ?></span>
                 </span>
                 <span class="account-user-avatar m-1 mt-2 " >
-                    <div class="letraname  text-center " style="width: 45px; height:45px; font-size:40px !important; line-height:45px"><?php echo strtoupper(substr($nombre,0,1 )); ?></div>
+                    <div class="letraname  text-center " style="width: 45px; height:45px; font-size:30px !important; line-height:47px"><?php echo strtoupper(substr($nombre,0,1 )); ?></div>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">

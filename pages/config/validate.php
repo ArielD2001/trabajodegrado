@@ -43,9 +43,9 @@ elseif (isset($_POST['registrar'])) {
     ) {
         echo '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete los campos correctamente.</p>';
     } else {
-        $_nombre = $_POST['nombre'];
-        $_apellido = $_POST['apellido'];
-        $_correo = $_POST['correo'];
+        $_nombre = strtolower(trim($_POST['nombre']));
+        $_apellido = strtolower(trim($_POST['apellido']));
+        $_correo = strtolower(trim($_POST['correo']));
         $_contraseña = $_POST['contraseña'];
         $_documento = $_POST['documento'];
         $fecha = date("d/m/Y");
@@ -67,9 +67,9 @@ elseif (isset($_POST['registrar'])) {
             $sentenciainsert = $mbd->prepare($consultainsert);
             $sentenciainsert->execute(array($_nombre, $_apellido, $_correo, $_contraseña, $sesion, $_documento, $fecha));
             $id = $mbd->lastInsertID();
-            session_start();
             $_SESSION['id'] = $id;
-            print "<script>window.setTimeout(function() { window.location = 'pages/home' }, 10);</script>";
+            
+           print "<script>window.setTimeout(function() { window.location = 'pages/home' }, 10);</script>";
             // echo $id;
         }
     }

@@ -1,6 +1,7 @@
+<?php include('assets/loader.html') ?>
 <?php
-include('pages/databases/connectToBD.php');
 session_start();
+include('pages/databases/connectToBD.php');
 
 if ($_SESSION) {
     header('Location: pages/home');
@@ -27,7 +28,6 @@ if ($_SESSION) {
     }
 </style>
 <body>
-<?php include('assets/loader.html') ?>
 
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="" style="z-index: 100;">
