@@ -92,9 +92,12 @@ CREATE TABLE `permisos` (
 CREATE TABLE `usuarios` (
   `id` int(10) NOT NULL,
   `nombre` varchar(255) NOT NULL,
+  `apellido` varchar(255) NOT NULL,
   `correo` varchar(255) NOT NULL,
   `clave` varchar(255) NOT NULL,
-  `ultima_sesion` varchar(69) NOT NULL
+  `ultima_sesion` varchar(69) NOT NULL,
+  `documento` int(15) NOT NULL,
+  `fecha` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -126,7 +129,8 @@ ALTER TABLE `modulos`
 --
 ALTER TABLE `modulo_nota`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_estudiante` (`id_estudiante`);
+  ADD KEY `fk_estudiante` (`id_estudiante`),
+  ADD KEY `fk_modulo1` (`id_modulo`);
 
 --
 -- Indices de la tabla `permisos`
@@ -197,7 +201,8 @@ ALTER TABLE `estudiantes`
 -- Filtros para la tabla `modulo_nota`
 --
 ALTER TABLE `modulo_nota`
-  ADD CONSTRAINT `fk_estudiante` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_estudiante` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_modulo1` FOREIGN KEY (`id_modulo`) REFERENCES `modulos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permisos`
