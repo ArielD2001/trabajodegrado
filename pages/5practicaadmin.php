@@ -36,7 +36,7 @@ $pracactive =true;
                 <div class="contenedor">
                 <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Práctica Adminiistración</h3>
+                            <h3>Práctica Administración</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
@@ -55,6 +55,9 @@ $pracactive =true;
                         }, 1000);
                     </script>
                 </div>
+                <!-- ========= footer =========-->
+                  <?php include "templates/plantilla-footer.php" ;?>
+                <!-- ========= end footer ========= -->
             </div>
             <!-- ========= end contenido ========= -->
 
@@ -65,9 +68,6 @@ $pracactive =true;
           <?php include "templates/plantilla-aside.php" ;?>
         <!-- ========= end aside ========= -->
 
-        <!-- ========= footer =========-->
-          <?php include "templates/plantilla-footer.php" ;?>
-        <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
 </body>

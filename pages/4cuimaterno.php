@@ -59,15 +59,15 @@ $cuimactive =true;
             <!-- ========= end contenido ========= -->
 
 
+            
+                    <!-- ========= footer =========-->
+                      <?php include "templates/plantilla-footer.php" ;?>
+                    <!-- ========= end footer ========= -->
         </div>
 
         <!-- ========= aside ========= -->
           <?php include "templates/plantilla-aside.php" ;?>
         <!-- ========= end aside ========= -->
-
-        <!-- ========= footer =========-->
-          <?php include "templates/plantilla-footer.php" ;?>
-        <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
 </body>

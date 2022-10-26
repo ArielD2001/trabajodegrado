@@ -54,6 +54,9 @@ $actactive =true;
                         }, 1000);
                     </script>
                 </div>
+                <!-- ========= footer =========-->
+                  <?php include "templates/plantilla-footer.php" ;?>
+                <!-- ========= end footer ========= -->
             </div>
             <!-- ========= end contenido ========= -->
 
@@ -64,9 +67,6 @@ $actactive =true;
           <?php include "templates/plantilla-aside.php" ;?>
         <!-- ========= end aside ========= -->
 
-        <!-- ========= footer =========-->
-          <?php include "templates/plantilla-footer.php" ;?>
-        <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
 </body>

@@ -85,12 +85,12 @@ $modulos = $sentencia2->fetchAll();
                                     if ($filas2 < 1) {
                                     ?>
                                         <div class="row">
-                                            <div class="col-12">
+                                            <div class="col-12 text-end">
                                                 <a href="listas/new" class="btn btn/success" style="background-color: #6b5eae; color:white">Agregar nueva lista</a>
                                             </div>
                                             <div class="col-12 d-flex flex-column align-items-center">
-                                                <img src="../assets/images/layouts/not-found.jpg" width="300px" alt="No hay ningun registro!">
-                                                <span class="h4">No se encontraron Listas</span>
+                                                <img src="../assets/images/layouts/not-found.png" width="300px" alt="No hay ningun registro!">
+                                                <span class="h4">No se encontraron Resultados</span>
                                             </div>
                                         </div>
                                     <?php
@@ -115,7 +115,23 @@ $modulos = $sentencia2->fetchAll();
                                                         <td><?php echo $modulo['nombre'] ?></td>
                                                         <td class=" text-center"> 0</td>
                                                         <td class=" text-end"> 00/00/00</td>
-                                                        <td class="  text-center h3"><span style="cursor:pointer">...</span></td>
+                                                        <td class="  text-center h3">
+                                                            <div class="dropdown ">
+                                                                <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <i class="mdi mdi-dots-vertical font-20 text-dark"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                    <!-- item-->
+                                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-pencil me-1"></i>Edit</a>
+                                                                    <!-- item-->
+                                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-delete me-1"></i>Delete</a>
+                                                                    <!-- item-->
+                                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-plus-circle-outline me-1"></i>Add People</a>
+                                                                    <!-- item-->
+                                                                    <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-exit-to-app me-1"></i>Leave</a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 <?php
                                                 }

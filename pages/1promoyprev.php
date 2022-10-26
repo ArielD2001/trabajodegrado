@@ -79,6 +79,9 @@ if ($filas > 0) {
                     </div>
 
                 </div>
+                <!-- ========= footer =========-->
+                <?php include "templates/plantilla-footer.php"; ?>
+                <!-- ========= end footer ========= -->
             </div>
             <!-- ========= end contenido ========= -->
 
@@ -89,9 +92,6 @@ if ($filas > 0) {
         <?php include "templates/plantilla-aside.php"; ?>
         <!-- ========= end aside ========= -->
 
-        <!-- ========= footer =========-->
-        <?php include "templates/plantilla-footer.php"; ?>
-        <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
 </body>

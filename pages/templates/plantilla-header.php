@@ -21,7 +21,7 @@
                     <span class="account-user-name flex pt-2" style="max-width: 150px; text-overflow:ellipsis; overflow:hidden" ><?php echo  ucwords(strtolower($nombre)). ' '. ucwords(strtolower($apellido)) ?></span>
                 </span>
                 <span class="account-user-avatar m-1 mt-2 " >
-                    <div class="letraname  text-center " style="width: 45px; height:45px; font-size:30px !important; line-height:47px"><?php echo strtoupper(substr($nombre,0,1 )); ?></div>
+                    <div class="letraname  text-center " style="width: 45px; height:45px; font-size:20px !important; line-height:47px"><?php echo strtoupper(substr($nombre,0,1 )).strtoupper(substr($apellido,0,1 )); ?></div>
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
