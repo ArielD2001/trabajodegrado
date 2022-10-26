@@ -33,7 +33,6 @@ if ($_SESSION) {
 
                 <div class="logo flex justify-center mb-5">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="130px">
-
                 </div>
                 <div class="mb-4">
                     <label class="block  text-gray-700 text-sm font-bold mb-2" for="username">
