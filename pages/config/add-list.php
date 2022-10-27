@@ -22,9 +22,11 @@ if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre-list']) == 0)
         $sentenciainsert->execute(array($_nombre, $_semestre, $_fecha));
         $filas = $sentenciainsert->rowCount();
         if ($filas > 0) {
-            echo '<span class="text-success fs-30">¡Se creo la lista <strong>' . $_nombre . '!</strong> -  <a href="listas" class="text-info">Ver</a> </span>';
+            echo '<h4 class="text-success">se creo la lista <strong>' . $_nombre . '</strong></h4>';
             print '<script>
-                    document.querySelectorAll("input").forEach(elemento=>{elemento.value =""});
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000)
                 </script>';
         } else {
             echo '<small class="text-danger">Erron en la consulta</small>';
