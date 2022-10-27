@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['agregar-list'])) {
+include_once('../databases/connectToBD.php');
     if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre-list']) == 0) {
         echo '<style> .loader{display:none !important}</style> ';
         echo '<div class="text-danger h6 mb-2">Por favor complete todos los campos </div>';
@@ -24,12 +24,11 @@ if (isset($_POST['agregar-list'])) {
             $sentenciainsert->execute(array($_nombre, $_semestre, $_fecha));
             $filas = $sentenciainsert->rowCount();
             if ($filas > 0) {
-                print "<script>window.setTimeout(function() { window.location = 'listas.php' }, 10);</script>";
+               echo '<small class="text-success">se creo la lista <strong>'.$_nombre .'</strong></small>';
             } else {
-                echo '<div class="text-danger h6 mb-2">Error en la consulta</div>';
+                echo '<small class="text-danger">Erron en la consulta</small>';
             }
         } else {
-            echo '<div class="text-danger h6 mb-2">Ya esta lista existe</div>';
+            echo '<small class="text-danger">Ya esta lista existe</small>';
         }
     }
-}

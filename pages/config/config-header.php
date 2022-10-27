@@ -6,14 +6,16 @@
     <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
     <link href="../assets/css/style.css" rel="stylesheet" type="text/css" id="dark-style">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
     <style>
 
         .leftside-menu{
             transition: .1s;
         }
       body{
-        overflow: hidden    ;
+        overflow: hidden !important   ;
       }
     .content-page{
         overflow-y:auto; max-height:80vh;

@@ -15,7 +15,7 @@ include('config/validatesesion.php') ;
     <?php include('config/config-header.php') ?>
     <link rel="shortcut icon" href="../assets/images/logo_sm.png">
     <title>Home</title>
-
+   
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -34,7 +34,7 @@ include('config/validatesesion.php') ;
             <!-- ========= end header ========= -->
 
             <!-- ========= contenido ========= -->
-            <div class="content container">
+            <div class="content container" id="app">
                 <div class="contenedor">
                     <div class="row   px-3 my-3">
                         <div class="col-6  ">
@@ -74,5 +74,8 @@ include('config/validatesesion.php') ;
 
 
 <?php include('config/config-footer.php'); ?>
+
+
+
 </body>
 </html>

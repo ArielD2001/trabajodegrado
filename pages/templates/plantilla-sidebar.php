@@ -32,7 +32,7 @@
 
             </li>
             <li class="side-nav-item">
-                <a href="listas " aria-expanded="false" class="side-nav-link" <?php if(isset($listactive)){echo 'style="background:#fd7e14 !important; color:white"' ;} ?> >
+                <a href="#" onclick="mostar('listas.php')" aria-expanded="false" class="side-nav-link" <?php if(isset($listactive)){echo 'style="background:#fd7e14 !important; color:white"' ;} ?> >
                     <i class="uil-key-skeleton"></i>
                     <span> Listas </span>
                 </a>
