@@ -181,7 +181,7 @@ if ($filas > 0) {
             type: 'post',
             data: $('#formulario-list').serialize(),
             success: function(resultado) {
-                $('#resultado-list').html('<small >Cargando...</small   >');
+                $('#resultado-list').html('<samll >Cargando...</small>');
                 setTimeout(() => {
                     $('#resultado-list').html(resultado);
                 }, 1000);
