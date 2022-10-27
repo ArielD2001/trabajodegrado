@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer p-4" style=" bottom:-150px; left:0;  width:100%;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
