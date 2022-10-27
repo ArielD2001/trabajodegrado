@@ -19,7 +19,7 @@ if ($filas > 0) {
 }
 
 
-$consulta2 = "SELECT * from listas";
+$consulta2 = "SELECT * from listas ORDER BY id DESC ";
 $sentencia2 = $mbd->prepare($consulta2);
 $sentencia2->execute();
 $filas2 = $sentencia2->rowCount();
@@ -83,13 +83,13 @@ $filas2 = $sentencia2->rowCount();
 
                                     <div class="row container">
                                         <div class="col-12 text-end">
-                                            <a href="new-list" class="btn btn/success" style="background-color: #6b5eae; color:white">Subir nueva lista</a>
+                                            <a href="new-list" class="btn btn-success">Subir nueva lista</a>
                                         </div>
                                         <?php
                                         if ($filas2 < 1) {
                                         ?>
 
-                                            <div class="col-12 d-flex flex-column align-items-center">
+                                            <div class="col-12 d-flex justify-content-between">
                                                 <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
                                                 <span class="h4">No se encontraron Listas</span>
                                             </div>

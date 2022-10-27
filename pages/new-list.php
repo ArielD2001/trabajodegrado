@@ -29,6 +29,8 @@ if ($filas > 0) {
 <head>
     <?php include "config/config-header.php" ?>
     <title>Listas</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -86,18 +88,17 @@ if ($filas > 0) {
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="container px-5">
-                                            <form action="#" method="post" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
+                                                <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
                                                     <div class="row mb-2">
                                                         <div class="col-6">
                                                             <label class="form-label" for="nombre">Nombre:</label>
-                                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list">
+                                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list"/>
                                                         </div>
                                                         <div class="col-6">
                                                             <label class="form-label" for="semestre">Semestre</label>
-                                                            <input type="text" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list">
+                                                            <input type="text" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list"/  >
                                                         </div>
                                                     </div>
-                                                    <?php include('config/add-list.php') ?>
                                                     <div class="dropzone">
                                                         <div class="fallback">
                                                             <input name="file" type="file" multiple />
@@ -110,8 +111,11 @@ if ($filas > 0) {
                                                                 <strong>no otro tipo de archivos</strong>)</span>
                                                         </div>
                                                     </div>
+                                                    <div class="col-12 mt-2" id="resultado-list">
+
+                                                    </div>
                                                     <div class="d-flex justify-content-center">
-                                                        <button type="submit" name="agregar-list" class="w-100 btn-large mt-2 btn btn-success ">Agregar Lista</button>
+                                                        <button type="button" name="agregar-list" class="w-100 btn-large mt-2 btn btn-success " id="agregar-list">Agregar Lista</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -170,5 +174,20 @@ if ($filas > 0) {
 <script src="../assets/js/vendor/dropzone.min.js"></script>
 <!-- init js -->
 <script src="../assets/js/ui/component.fileupload.js"></script>
+<script>
+    $('#agregar-list').click(function() {
+        $.ajax({
+            url: 'config/add-list.php',
+            type: 'post',
+            data: $('#formulario-list').serialize(),
+            success: function(resultado) {
+                $('#resultado-list').html('<small >Cargando...</small   >');
+                setTimeout(() => {
+                    $('#resultado-list').html(resultado);
+                }, 1000);
+            }
+        })
+    })
+</script>
 
 </html>
