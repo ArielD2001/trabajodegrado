@@ -92,25 +92,14 @@ if ($filas > 0) {
                                                     <div class="row mb-2">
                                                         <div class="col-6">
                                                             <label class="form-label" for="nombre">Nombre:</label>
-                                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list"/>
+                                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list" />
                                                         </div>
                                                         <div class="col-6">
                                                             <label class="form-label" for="semestre">Semestre</label>
-                                                            <input type="text" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list"/  >
+                                                            <input type="text" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list" />
                                                         </div>
                                                     </div>
-                                                    <div class="dropzone">
-                                                        <div class="fallback">
-                                                            <input name="file" type="file" multiple />
-                                                        </div>
-
-                                                        <div class="dz-message needsclick">
-                                                            <i class="h1 text-muted dripicons-cloud-upload"></i>
-                                                            <h3>Click para subir archivos</h3>
-                                                            <span class="text-muted font-13">(Solo se permiten archivos .cvv o .xlsx,
-                                                                <strong>no otro tipo de archivos</strong>)</span>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="col-12 mt-2" id="resultado-list">
 
                                                     </div>
@@ -181,7 +170,7 @@ if ($filas > 0) {
             type: 'post',
             data: $('#formulario-list').serialize(),
             success: function(resultado) {
-                $('#resultado-list').html('<samll >Cargando...</small>');
+                $('#resultado-list').html('<small >Cargando...</small>');
                 setTimeout(() => {
                     $('#resultado-list').html(resultado);
                 }, 1000);
