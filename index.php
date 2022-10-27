@@ -61,7 +61,7 @@ if ($_SESSION) {
             </form>
 
             <p class="text-center text-gray-700 text-xs">
-                Ariel Caraballo Diaz - Jesus Valencia Torres
+                Ariel Caraballo Diaz - Jesus Valencia Torres.
             </p>
             <p class="text-center text-gray-700 text-xs">
                 &copy;2022 CURN - Proyecto de grado VI semestre.
