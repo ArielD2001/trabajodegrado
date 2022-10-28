@@ -10,7 +10,6 @@ $sentencia= $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id);
 $sentencia->execute();
 $filas=$sentencia->rowCount();
-echo $filas;
 
 if($filas > 0){
 $resultado = $sentencia->fetch();
