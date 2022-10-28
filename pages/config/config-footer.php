@@ -11,3 +11,5 @@
     <!-- demo app -->
     <script src="../assets/js/pages/demo.dashboard.js"></script>
     <!-- end demo js-->
+    <script src="../assets/js/main.js">
+    </script>

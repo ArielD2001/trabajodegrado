@@ -4,10 +4,18 @@ $('#agregar-list').click(function() {
         type: 'post',
         data: $('#formulario-list').serialize(),
         success: function(resultado) {
-            $('#resultado-list').html('<small >Cargando...</small>');
+            $('#resultado-list').html('<div class="load-item"></div>');
             setTimeout(() => {
                 $('#resultado-list').html(resultado);
-            }, 1000);
+                if(resultado == '<h4 class="text-success">&#x2714; Lista agregada</h4>'){
+                    setTimeout(() => {
+                        $("#tabla-list").load("listas.php #tabla-list");
+                        document.getElementById('nombre').value ='';
+                        document.getElementById('semestre').value ='';
+                        
+                     },400)
+                }
+            }, 400);
         }
     })
 })
@@ -19,4 +27,5 @@ setInterval(function() {
     var hora_s = hoy.getSeconds() < 10 ? '0' + hoy.getSeconds() : hoy.getSeconds();
     var hora = hora_h + ":" + hora_m + ":" + hora_s;
     document.querySelector(".hora_hoy").innerHTML = hora;
-}, 1000);
+}, 1400);
+

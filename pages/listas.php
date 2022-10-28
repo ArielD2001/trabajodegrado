@@ -25,7 +25,7 @@ $filas2 = $sentencia2->rowCount();
 if (isset($_GET['lista'])) {
     $consultal = "SELECT * from listas WHERE id = ? ";
     $sentencial = $mbd->prepare($consultal);
-    $sentencial->bindParam(1,$_GET['lista']);
+    $sentencial->bindParam(1, $_GET['lista']);
     $sentencial->execute();
     $datal = $sentencial->fetch();
 }
@@ -38,7 +38,6 @@ if (isset($_GET['lista'])) {
     <?php include "config/config-header.php" ?>
     <title>Listas</title>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <div class="wrapper">
@@ -97,11 +96,13 @@ if (isset($_GET['lista'])) {
                         <style>
                             .tasks {
                                 width: 95% !important;
-                                transition: .1s;
+                                transition: .2s;
+                                height: auto !important;
+                                max-height: 110px;
                             }
 
                             .tasks:hover {
-                                box-shadow: 0 0 10px rgb(200, 200, 200);
+                                box-shadow: 0 0 10px rgb(230, 230, 230);
                             }
 
                             .card {
@@ -124,11 +125,9 @@ if (isset($_GET['lista'])) {
                         </style>
 
                         <div class="col-12" id="app">
-                            <div class="card position-relative">
-                                <?php include('../assets/loader2.html'); ?>
+                            <div class="card ">
 
-                                <div class="card-body">
-
+                                <div class="card-body ">
                                     <?php
                                     if (isset($_GET['lista'])) {
                                     } else {
@@ -137,7 +136,7 @@ if (isset($_GET['lista'])) {
                                             <div class="col-12 text-end">
                                                 <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
                                                 <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered modal-lg text-start">
+                                                    <div class="modal-dialog modal-dialog-centered text-start">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h4 class="modal-title" id="myCenterModalLabel"> Agregar nueva lista</h4>
@@ -159,15 +158,15 @@ if (isset($_GET['lista'])) {
                                                                                 </div>
                                                                                 <div class="col-6 mt-2">
                                                                                     <label class="form-label" for="semestre">Semestre</label>
-                                                                                    <input type="text" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list" />
+                                                                                    <input type="number" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list" maxlength="2" />
                                                                                 </div>
 
                                                                                 <div class="col-6 pt-1">
-                                                                                    <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Agregar Lista</button>
+                                                                                    <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
                                                                                 </div>
                                                                             </div>
 
-                                                                            <div class="col-6 mt-1" id="resultado-list">
+                                                                            <div class="col-12 mt-1" id="resultado-list">
 
                                                                             </div>
                                                                         </form>
@@ -194,7 +193,7 @@ if (isset($_GET['lista'])) {
                                         } else {
                                             $datos = $sentencia2->fetchAll();
                                         ?>
-                                            <div class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
+                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
                                                 <?php
                                                 foreach ($datos as $dato) {
                                                 ?>
@@ -203,53 +202,55 @@ if (isset($_GET['lista'])) {
                                                         <div id="task-list-two" class="task-list-items">
 
                                                             <!-- Task Item -->
-                                                            <div class="card mb-0">
-                                                                <div class="card-body p-2 ">
-                                                                    <small class="float-end text-muted"><?php echo $dato['fecha']; ?></small>
+                                                            <div class="card px-2 mb-0">
+                                                                <div class="card-body p-1 px-2 ">
+                                                                    <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
-                                                                    <h5 class="mt-2 mb-2">
+                                                                    <h5 class="mt-1 mb-1">
                                                                         <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-primary"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
-                                                                    <p class="mb-0">
-                                                                        <span class="pe-2 text-nowrap mb-2 d-inline-block">
-                                                                            <i class="mdi mdi-briefcase-outline text-muted"></i>
-                                                                            Hyper
-                                                                        </span>
-                                                                        <span class="text-nowrap mb-2 d-inline-block">
-                                                                            <i class="uil uil-user"></i>
-                                                                            <b>
-                                                                                <?php
-                                                                                $cantidad = 'SELECT * from estudiantes WHERE id_lista = ? ';
-                                                                                $sentenciacantidad = $mbd->prepare($cantidad);
-                                                                                $sentenciacantidad->bindParam(1, $dato['id']);
-                                                                                $sentenciacantidad->execute();
-                                                                                $filascantidad = $sentenciacantidad->rowCount();
-                                                                                echo $filascantidad;
-                                                                                // var_dump($resultadocantidad);
-                                                                                ?>
-                                                                            </b> Estudiantes
-                                                                        </span>
-                                                                    </p>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">
+                                                                            <span class="pe-2 text-nowrap mb-1 d-inline-block">
+                                                                                <i class="mdi mdi-briefcase-outline text-muted"></i>
+                                                                                Hyper
+                                                                            </span>
+                                                                            <span class="text-nowrap mb-1 d-inline-block">
+                                                                                <i class="uil uil-user"></i>
+                                                                                <b>
+                                                                                    <?php
+                                                                                    $cantidad = 'SELECT * from estudiantes WHERE id_lista = ? ';
+                                                                                    $sentenciacantidad = $mbd->prepare($cantidad);
+                                                                                    $sentenciacantidad->bindParam(1, $dato['id']);
+                                                                                    $sentenciacantidad->execute();
+                                                                                    $filascantidad = $sentenciacantidad->rowCount();
+                                                                                    echo $filascantidad;
+                                                                                    // var_dump($resultadocantidad);
+                                                                                    ?>
+                                                                                </b> Estudiantes
+                                                                            </span>
+                                                                            <span class="align-middle"> - Semestre: <?php echo $dato['semestre']; ?></span>
 
-                                                                    <div class="dropdown float-end">
-                                                                        <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            <i class="mdi mdi-dots-vertical font-18"></i>
-                                                                        </a>
-                                                                        <div class="dropdown-menu dropdown-menu-end bg-dark">
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item text-danger"><i class="mdi mdi-delete me-1"></i>Borrar</a>
+                                                                        </p>
+                                                                        <div class="dropdown ">
+                                                                            <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                                <i class="mdi mdi-dots-vertical font-18"></i>
+                                                                            </a>
+                                                                            <div class="dropdown-menu dropdown-menu-end bg-dark">
+                                                                                <!-- item-->
+                                                                                <a href="javascript:void(0);" class="dropdown-item text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
+                                                                                <!-- item-->
+                                                                                <a href="javascript:void(0);" class="dropdown-item text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
+                                                                                <!-- item-->
+                                                                                <a href="javascript:void(0);" class="dropdown-item text-danger"><i class="mdi mdi-delete me-1"></i>Borrar</a>
 
+                                                                            </div>
                                                                         </div>
                                                                     </div>
 
-                                                                    <p class="mb-0">
-                                                                        <span class="align-middle">Semestre: <?php echo $dato['semestre']; ?></span>
-                                                                    </p>
+
+
                                                                 </div> <!-- end card-body -->
                                                             </div>
                                                         </div>
@@ -285,8 +286,7 @@ if (isset($_GET['lista'])) {
     <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
-    <script src="../assets/js/main.js">
-    </script>
+
 </body>
 
 </html>

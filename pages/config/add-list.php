@@ -1,7 +1,7 @@
 <?php
 include_once('../databases/connectToBD.php');
 if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre-list']) == 0) {
-    echo '<small class="text-danger">Por favor complete todos los cambio</small>';
+    echo '<small class="text-danger">&#x2718; Por favor complete todos los campos</small>';
 } else {
 
     $_nombre = trim($_POST['nombre-list']);
@@ -22,16 +22,11 @@ if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre-list']) == 0)
         $sentenciainsert->execute(array($_nombre, $_semestre, $_fecha));
         $filas = $sentenciainsert->rowCount();
         if ($filas > 0) {
-            echo '<h4 class="text-success">se creo la lista <strong>' . $_nombre . '</strong></h4>';
-            print '<script>
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000)
-                </script>';
+            echo '<h4 class="text-success">&#x2714; Lista agregada</h4>';
         } else {
-            echo '<small class="text-danger">Erron en la consulta</small>';
+            echo '<small class="text-danger">&#x2718; Erron en la consulta</small>';
         }
     } else {
-        echo '<small class="text-danger">Ya esta lista existe</small>';
+        echo '<small class="text-danger">&#x2718; Ya esta lista existe</small>';
     }
 }

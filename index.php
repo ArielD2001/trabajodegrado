@@ -18,6 +18,7 @@ if ($_SESSION) {
     <link rel="shortcut icon" href="assets/images/logo_sm.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
     <title>Login</title>
 </head>
@@ -26,12 +27,30 @@ if ($_SESSION) {
         width: 400px !important;
         min-width: 350px;
     }
+    .load-item{
+        width: 15px;
+        height: 15px;
+        border: 2px solid grey;
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: giro-item .6s linear infinite;
+        margin-top: 11px;
+        margin-bottom: 3px;    
+    }
+@keyframes giro-item {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
 </style>
 <body>
 
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="" style="z-index: 100;">
-            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate">
+            <form id="formulario-login" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate">
 
                 <div class="logo flex justify-center mb-5">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="130px">
@@ -84,9 +103,9 @@ if ($_SESSION) {
                             }  
                         </script>
                 </div>
-                    <?php include('pages/config/validate.php') ?>
+                    <div id="result-login"></div>
                 <div class="">
-                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
+                    <button id="boton-login" class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="button" name="boton">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">
@@ -108,6 +127,22 @@ if ($_SESSION) {
         </div>
     </div>
     <img src="assets/images/svg.png" draggable="false" alt="" style="position: absolute !important; bottom:0; width:100% ">
+    <script>
+        $('#boton-login').click(function(){
+            console.log('clok')
+            $.ajax({
+                url:'pages/config/validate.php',
+                type:'post',
+                data:$('#formulario-login').serialize(),
+                success:function(res){
+                    $('#result-login').html('<div class="load-item"></div>');
+                    setTimeout(() => {
+                        $('#result-login').html(res)
+                    }, 1300);
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
