@@ -43,8 +43,8 @@
     }
     
     .load-item{
-        width: 10px;
-        height: 10px;
+        width: 20px;
+        height: 20px;
         border: 2px solid grey;
         border-top: 2px solid transparent;
         border-radius: 50%;

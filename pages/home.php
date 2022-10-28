@@ -38,7 +38,7 @@ include('config/validatesesion.php') ;
                 <div class="contenedor">
                     <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Cuidado medico</h3>
+                            <h3>Home</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>

@@ -38,7 +38,11 @@ if (isset($_GET['lista'])) {
     <?php include "config/config-header.php" ?>
     <title>Listas</title>
 </head>
-
+<style>
+    body > div.wrapper > div.content-page > div.navbar-custom > ul > li:nth-child(1) > a > i::before{
+        margin-top: -45px !important;
+    }
+</style>
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <div class="wrapper">
 
@@ -95,10 +99,11 @@ if (isset($_GET['lista'])) {
                     <div class="row">
                         <style>
                             .tasks {
-                                width: 95% !important;
+                                width: 45% !important;
                                 transition: .2s;
                                 height: auto !important;
                                 max-height: 110px;
+                                min-width: 300px;
                             }
 
                             .tasks:hover {
