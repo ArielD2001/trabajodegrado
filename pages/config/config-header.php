@@ -7,5 +7,3 @@
     <link href="../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/css/style.css">
-
-    <

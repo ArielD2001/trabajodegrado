@@ -1,4 +1,4 @@
-<div class="leftside-menu">
+<div class="leftside-menu" style="max-height: 100vh;  position: fixed">
     <a href="home" class="logo text-center logo-light">
         <span class="logo-lg">
             <img src="../assets/images/logo.png" alt="" height="60" draggable="false">

@@ -1,3 +1,50 @@
+function agregareventDelete(){
+    console.log('function activate')
+    $('.eliminar-btn').click( function (e) { 
+    
+        e.preventDefault();
+        var dato = $(this).attr('href');
+        Swal.fire({
+            title: 'Eliminar Registro',
+            text: "¿Seguro que desea eliminar este registro?",
+            icon: 'warning',
+            showCancelButton: true,
+            showConfirmButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar',
+            cancelButtonColor: '#d33',
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log(dato);
+                   $.ajax({
+                    url:'config/delete-list.php',
+                    type:'get',
+                    data:dato,
+                    success:function(res){
+                            console.log(res)
+                        Swal.fire({
+                            text: 'Eliminado correctamente',
+                            confirmButtonColor: '#3085d6',
+                            icon:'success',
+                            width:300,
+    
+                        })
+                        setTimeout(() => {
+                            $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
+                            setTimeout(() => {
+                            $("#tabla-list").load('listas.php #tabla-list',agregareventDelete);
+                            }, 1000);
+                        }, 500);
+                    }
+    
+                   })
+                }
+                })
+        });
+}
+agregareventDelete();
+
 $('#agregar-list').click(function() {
     $.ajax({
         url: 'config/add-list.php',
@@ -13,7 +60,7 @@ $('#agregar-list').click(function() {
                         $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
                         document.getElementById('semestre').value ='';
                         setTimeout(() => {
-                            $("#tabla-list").load("listas.php #tabla-list");
+                            $("#tabla-list").load("listas.php #tabla-list",agregareventDelete);
                         }, 1000);
                      },400)
                 }

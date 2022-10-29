@@ -109,7 +109,18 @@ if (isset($_GET['lista'])) {
                                     ?>
                                         <div class="row ">
                                             <div class="col-12 text-end">
-                                                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
+                                                <div class="d-flex justify-content-between align-items-center container">
+                                                    <div class="app-search dropdown d-none d-lg-block">
+                                                        <form>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control dropdown-toggle" placeholder="Buscar lista..." id="top-search">
+                                                                <span class="mdi mdi-magnify search-icon"></span>
+                                                                <button class="input-group-text btn-info" type="submit">Buscar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
+                                                </div>
                                                 <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered text-start">
                                                         <div class="modal-content">
@@ -182,7 +193,7 @@ if (isset($_GET['lista'])) {
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
                                                                     <h5 class="mt-1 mb-1">
-                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-primary"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
                                                                     <div class="d-flex justify-content-between">
@@ -208,42 +219,28 @@ if (isset($_GET['lista'])) {
                                                                             <span class="align-middle"> - Semestre: <?php echo $dato['semestre']; ?></span>
 
                                                                         </p>
-                                                                        <div class="dropdown ">
-                                                                            <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                                <i class="mdi mdi-dots-vertical font-18"></i>
-                                                                            </a>
-                                                                            <div class="dropdown-menu dropdown-menu-end">
-                                                                                <!-- item-->
-                                                                                <a href="javascript:void(0);" class="dropdown-item text-center text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
-                                                                                <!-- item-->
-                                                                                <a href="javascript:void(0);" class="dropdown-item text-center text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
-                                                                                <!-- item-->
-                                                                                <button type="button" class="dropdown-iten w-100 text-left  d-block text-danger btn" data-bs-toggle="modal" data-bs-target="#standard-modal"><i class="mdi mdi-delete"></i> Borrar</button>
+
+                                                                        <div class="end d-flex align-items-center ">
+                                                                            <a href="list=<?php echo $dato['id'] ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
+
+                                                                            <div class="dropdown ">
+                                                                                <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false" style=" margin-left:10px !important;  padding:7px 5px ; border: 1px solid lightgrey">
+                                                                                    <i class="mdi mdi-dots-vertical font-18"></i>
+                                                                                </a>
+                                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                                    <!-- item-->
+                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
+                                                                                    <!-- item-->
+                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
+                                                                                    <!-- item-->
 
 
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        
-                                                                        
-                                                                        
+
+
                                                                     </div> <!-- end card-body -->
-                                                                    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
-                                                                        <div class="modal-dialog modal-dialog-centered">
-                                                                            <div class="modal-content">
-                                                                                <div class="modal-header">
-                                                                                    <h4 class="modal-title" id="standard-modalLabel">Confirmacion</h4>
-                                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                                                                </div>
-                                                                                <div class="modal-body">
-                                                                                    <p class=" h5 font-weight-light">¿Seguro que desea borrar la lista <span class="text-danger"><?php echo $dato['nombre']; ?></span>?</p>
-                                                                                </div>
-                                                                                <div class="modal-footer">
-                                                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                                                                                    <a href="config/delete-list.php?list=<?php echo $dato['id']; ?>" class="btn btn-info">Si, borrar</a>
-                                                                                </div>
-                                                                            </div><!-- /.modal-content -->
-                                                                        </div><!-- /.modal-dialog -->
-                                                                    </div><!-- /.modal -->
                                                                 </div>
                                                             </div>
                                                         </div>
