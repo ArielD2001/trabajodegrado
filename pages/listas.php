@@ -39,10 +39,11 @@ if (isset($_GET['lista'])) {
     <title>Listas</title>
 </head>
 <style>
-    body > div.wrapper > div.content-page > div.navbar-custom > ul > li:nth-child(1) > a > i::before{
+    body>div.wrapper>div.content-page>div.navbar-custom>ul>li:nth-child(1)>a>i::before {
         margin-top: -45px !important;
     }
 </style>
+
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <div class="wrapper">
 
@@ -81,7 +82,7 @@ if (isset($_GET['lista'])) {
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary"><a href="listas">Listas</a></li>
+                                        <li class="breadcrumb-item text-primary"><a href="listas.php">Listas</a></li>
                                         <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
                                 </nav>
@@ -97,37 +98,6 @@ if (isset($_GET['lista'])) {
                         </div>
                     </div>
                     <div class="row">
-                        <style>
-                            .tasks {
-                                width: 45% !important;
-                                transition: .2s;
-                                height: auto !important;
-                                max-height: 110px;
-                                min-width: 300px;
-                            }
-
-                            .tasks:hover {
-                                box-shadow: 0 0 10px rgb(230, 230, 230);
-                            }
-
-                            .card {
-                                transition: .1s;
-                            }
-
-                            .tasks:hover .card {
-                                background-color: rgb(240, 240, 240);
-                            }
-
-                            .mdi.mdi-dots-vertical.font-18 {
-                                transition: .1s;
-                                padding: 5px;
-                                border-radius: 50%;
-                            }
-
-                            .mdi.mdi-dots-vertical.font-18:hover {
-                                background-color: rgb(210, 210, 210);
-                            }
-                        </style>
 
                         <div class="col-12" id="app">
                             <div class="card ">
@@ -242,21 +212,39 @@ if (isset($_GET['lista'])) {
                                                                             <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
                                                                                 <i class="mdi mdi-dots-vertical font-18"></i>
                                                                             </a>
-                                                                            <div class="dropdown-menu dropdown-menu-end bg-dark">
+                                                                            <div class="dropdown-menu dropdown-menu-end">
                                                                                 <!-- item-->
-                                                                                <a href="javascript:void(0);" class="dropdown-item text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item text-center text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
                                                                                 <!-- item-->
-                                                                                <a href="javascript:void(0);" class="dropdown-item text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item text-center text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
                                                                                 <!-- item-->
-                                                                                <a href="javascript:void(0);" class="dropdown-item text-danger"><i class="mdi mdi-delete me-1"></i>Borrar</a>
+                                                                                <button type="button" class="dropdown-iten w-100 text-left  d-block text-danger btn" data-bs-toggle="modal" data-bs-target="#standard-modal"><i class="mdi mdi-delete"></i> Borrar</button>
+
 
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-
-
-
-                                                                </div> <!-- end card-body -->
+                                                                        
+                                                                        
+                                                                        
+                                                                    </div> <!-- end card-body -->
+                                                                    <div id="standard-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h4 class="modal-title" id="standard-modalLabel">Confirmacion</h4>
+                                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <p class=" h5 font-weight-light">¿Seguro que desea borrar la lista <span class="text-danger"><?php echo $dato['nombre']; ?></span>?</p>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                                                                    <a href="config/delete-list.php?list=<?php echo $dato['id']; ?>" class="btn btn-info">Si, borrar</a>
+                                                                                </div>
+                                                                            </div><!-- /.modal-content -->
+                                                                        </div><!-- /.modal-dialog -->
+                                                                    </div><!-- /.modal -->
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -19,33 +19,10 @@ if ($_SESSION) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="assets/css/index.css">
     <title>Login</title>
 </head>
-<style>
-    form{
-        width: 400px !important;
-        min-width: 350px;
-    }
-    .load-item{
-        width: 15px;
-        height: 15px;
-        border: 2px solid grey;
-        border-top: 2px solid transparent;
-        border-radius: 50%;
-        animation: giro-item .6s linear infinite;
-        margin-top: 11px;
-        margin-bottom: 3px;    
-    }
-@keyframes giro-item {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-</style>
+
 <body>
 
     <div class=" flex items-center justify-center h-screen bg-gray-200">
@@ -68,40 +45,7 @@ if ($_SESSION) {
                     </label>
                     <input class=" campo border-gray-300 shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  placeholder="************" name="password">
                     <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:10px;top:calc(50% - 3px); cursor:pointer"></i>
-                        <script>
-                            document.getElementById('boton-eye').addEventListener('click', () => {
-                                if (document.getElementById('password').type == 'password') {
-                                    document.getElementById('boton-eye').classList.remove('fas');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye');
-                                    document.getElementById('boton-eye').classList.add('fa-solid');
-                                    document.getElementById('boton-eye').classList.add('fa-eye-slash');
-
-                                    
-
-                                    document.getElementById('password').type = 'text';
-                                    document.getElementById('password').focus();
-                                } else {
-                                    document.getElementById('boton-eye').classList.add('fas');
-                                    document.getElementById('boton-eye').classList.add('fa-eye');
-                                    document.getElementById('boton-eye').classList.remove('fa-solid');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye-slash');
-                                    document.getElementById('password').type = 'password';
-                                    document.getElementById('password').focus();
-                                }
-                            })
-                            document.querySelectorAll('.campo').forEach(element=>{
-                                cambio(element);
-                            })
-                            function cambio(key){
-                            key.addEventListener('keyup',()=>{
-                                if(key.value == ''){
-                                    key.classList.replace('border-gray-300', 'border-red-500');
-                                }else{
-                                    key.classList.replace('border-red-500', 'border-gray-300');
-                                }
-                            })
-                            }  
-                        </script>
+                      
                 </div>
                     <div id="result-login"></div>
                 <div class="">
@@ -127,21 +71,8 @@ if ($_SESSION) {
         </div>
     </div>
     <img src="assets/images/svg.png" draggable="false" alt="" style="position: absolute !important; bottom:0; width:100% ">
-    <script>
-        $('#boton-login').click(function(){
-            console.log('clok')
-            $.ajax({
-                url:'pages/config/validate.php',
-                type:'post',
-                data:$('#formulario-login').serialize(),
-                success:function(res){
-                    $('#result-login').html('<div class="load-item"></div>');
-                    setTimeout(() => {
-                        $('#result-login').html(res)
-                    }, 1300);
-                }
-            })
-        })
+    <script src="assets/js/main.js">
+
     </script>
 </body>
 
