@@ -2,7 +2,6 @@
 include('databases/connectToBD.php');
 include('config/validatesesion.php');
 
-$listactive = true;
 $consulta = "SELECT * from usuarios WHERE id = ?";
 $sentencia = $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id);
@@ -183,30 +182,30 @@ if (isset($_GET['lista'])) {
                                         if ($filas2 < 1) {
                                         ?>
 
-                                            <div class="col-12 d-flex flex-column align-items-center">
-                                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
-                                                <span class="h4">No se encontraron Listas</span>
-                                            </div>
-                                        <?php
-                                        } else {
-                                            $datos = $sentencia2->fetchAll();
-                                        ?>
-                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                                <?php
-                                                foreach ($datos as $dato) {
-                                                ?>
-                                                    <div class="tasks border p-1 ">
+                            <div class="col-12 d-flex flex-column align-items-center">
+                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
+                                <span class="h4">No se encontraron Listas</span>
+                            </div>
+                        <?php
+                        } else {
+                            $datos = $sentencia2->fetchAll();
+                        ?>
+                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
+                                <?php
+                                foreach ($datos as $dato) {
+                                ?>
+                                    <div class="tasks border p-1 ">
 
-                                                        <div id="task-list-two" class="task-list-items">
+                                        <div id="task-list-two" class="task-list-items">
 
                                                             <!-- Task Item -->
                                                             <div class="card px-2 mb-0">
                                                                 <div class="card-body p-1 px-2 ">
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
-                                                                    <h5 class="mt-1 mb-1">
-                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
-                                                                    </h5>
+                                                    <h5 class="mt-1 mb-1">
+                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                    </h5>
 
                                                                     <div class="d-flex justify-content-between">
                                                                         <p class="mb-0">
@@ -290,5 +289,3 @@ if (isset($_GET['lista'])) {
     <?php include "config/config-footer.php" ?>
 
 </body>
-
-</html>

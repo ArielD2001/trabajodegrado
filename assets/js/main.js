@@ -67,7 +67,7 @@ $('#agregar-list').on('click',function() {
                         document.getElementById('semestre').value ='';
                         $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
                         setTimeout(() => {
-                            $("#tabla-list").load("listas.php #tabla-list",agregareventDelete);
+                            $("#app").load("listas.php #app",agregareventDelete);
                         }, 1000);
                      },400)
                 }

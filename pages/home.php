@@ -15,7 +15,7 @@ $home = true;
     <?php include('config/config-header.php') ?>
     <link rel="shortcut icon" href="../assets/images/logo_sm.png">
     <title>Home</title>
-
+   
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>

@@ -4,10 +4,10 @@ include_once('../databases/connectToBD.php');
 
 use  PhpOffice\PhpSpreadsheet\Spreadsheet;
 $excel = new Spreadsheet();
-$excel->getProperties();->setCreator('')
+$excel->getProperties()->setCreator('');
 
 
-if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre']) == 0  || strlen($_FILES['adjunto']) == 0){
+if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre']) == 0  ){
     echo '<h5 class="text-danger">&#x2718; Por favor complete todos los campos</h5>';
 } else {
 
