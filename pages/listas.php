@@ -140,18 +140,19 @@ if (isset($_GET['lista'])) {
                                                                                 </div>
 
                                                                                 <div class="col-12 mt-2">
+                                                                                    <label class="form-label" for="semestre">Semestre:</label>
                                                                                     <select name="semestre" class="form-select" id="semestre">
                                                                                         <option  selected>Seleccionar semestre</option>
-                                                                                        <option value="I (Primero)"     >I (Primero)    </option>
-                                                                                        <option value="II (Segundo)"    >II (Segundo)   </option>
-                                                                                        <option value="III (Tercer)"    >III (Tercer)   </option>
-                                                                                        <option value="IV (Cuarto)"     >IV (Cuarto)    </option>
-                                                                                        <option value="V (Quinto)"      >V (Quinto)     </option>
-                                                                                        <option value="VI (Sexto)"      >VI (Sexto)     </option>
-                                                                                        <option value="VII (Septimo)"   >VII (Septimo)  </option>
-                                                                                        <option value="VIII (Octavo)"   >VIII (Octavo)  </option>
-                                                                                        <option value="IX (Noveno)"     >IX (Noveno)    </option>
-                                                                                        <option value="X (Decimo)"      >X (Decimo)     </option>
+                                                                                        <option value="I (Primer)"     >   I   (Primero) </option>
+                                                                                        <option value="II (Segundo)"    >  II   (Segundo) </option>
+                                                                                        <option value="III (Tercero)"   > III   (Tercero) </option>
+                                                                                        <option value="IV (Cuarto)"     >  IV   (Cuarto)  </option>
+                                                                                        <option value="V (Quinto)"      >   V   (Quinto)  </option>
+                                                                                        <option value="VI (Sexto)"      >  VI   (Sexto)   </option>
+                                                                                        <option value="VII (Septimo)"   > VII   (Septimo) </option>
+                                                                                        <option value="VIII (Octavo)"   >VIII   (Octavo)  </option>
+                                                                                        <option value="IX (Noveno)"     >  IX   (Noveno)  </option>
+                                                                                        <option value="X (Decimo)"      >   X   (Decimo)  </option>
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-12 mt-2">
@@ -227,7 +228,7 @@ if (isset($_GET['lista'])) {
                                                                                     ?>
                                                                                 </b> Estudiantes
                                                                             </span>
-                                                                            <span class="align-middle"> - Semestre: <?php echo $dato['semestre']; ?></span>
+                                                                            <span class="align-middle"> - <?php echo $dato['semestre']; ?> Semestre </span>
 
                                                                         </p>
 

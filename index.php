@@ -71,7 +71,7 @@ if ($_SESSION) {
         </div>
     </div>
     <img src="assets/images/svg.png" draggable="false" alt="" style="position: absolute !important; bottom:0; width:100% ">
-    <script src="assets/js/main.js">
+    <script src="assets/js/index.js">
 
     </script>
 </body>

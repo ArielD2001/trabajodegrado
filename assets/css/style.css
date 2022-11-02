@@ -89,3 +89,4 @@ table tbody tr:hover {
 .dropdown-toggle:hover, #button-modal:hover{
     background-color: rgb(230, 230, 230) !important;
 }
+#tabla-list{width: 100%;}

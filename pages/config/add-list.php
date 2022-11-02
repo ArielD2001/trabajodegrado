@@ -1,11 +1,18 @@
 <?php
+require '../../vendor/autoload.php';
 include_once('../databases/connectToBD.php');
-if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre-list']) == 0) {
+
+use  PhpOffice\PhpSpreadsheet\Spreadsheet;
+$excel = new Spreadsheet();
+$excel->getProperties();->setCreator('')
+
+
+if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre']) == 0  || strlen($_FILES['adjunto']) == 0){
     echo '<h5 class="text-danger">&#x2718; Por favor complete todos los campos</h5>';
 } else {
 
     $_nombre = trim($_POST['nombre-list']);
-    $_semestre = trim($_POST['semestre-list']);
+    $_semestre = trim($_POST['semestre']);
     $_fecha = date('d/m/y');
 
     $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?";
