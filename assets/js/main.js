@@ -41,40 +41,41 @@ function agregareventDelete(){
                 }
                 })
         });
+        $('#agregar-list').on('click', function() {
+            $.ajax({
+                url: 'config/add-list.php',
+                type: 'post',
+                data: $('#formulario-list').serialize(),
+                success: function(resultado) {
+                    $('#resultado-list').html('<div class="load-item"></div>');
+                    setTimeout(() => {
+                        $('#resultado-list').html(resultado);
+                        if(resultado == '<h5 class="text-success mt-2">&#x2714; Lista agregada</h5>'){
+                            document.querySelector('.btn-close').click();
+                            Swal.fire({
+                                text: 'agregado correctamente correctamente',
+                                confirmButtonColor: '#3085d6',
+                                icon:'success',
+                                width:300,
+        
+                            })
+                            setTimeout(() => {
+                                document.getElementById('nombre').value ='';
+                                document.getElementById('semestre').value ='';
+                                $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
+                                setTimeout(() => {
+                                    $("#app").load("listas.php #app",agregareventDelete);
+                                }, 1000);
+                             },400)
+                        }
+                    }, 1000);
+                }
+            })
+        })
 }
 agregareventDelete();
 
-$('#agregar-list').on('click',function() {
-    $.ajax({
-        url: 'config/add-list.php',
-        type: 'post',
-        data: $('#formulario-list').serialize(),
-        success: function(resultado) {
-            $('#resultado-list').html('<div class="load-item"></div>');
-            setTimeout(() => {
-                $('#resultado-list').html(resultado);
-                if(resultado == '<h5 class="text-success mt-2">&#x2714; Lista agregada</h5>'){
-                    document.querySelector('.btn-close').click();
-                    Swal.fire({
-                        text: 'agregado correctamente correctamente',
-                        confirmButtonColor: '#3085d6',
-                        icon:'success',
-                        width:300,
 
-                    })
-                    setTimeout(() => {
-                        document.getElementById('nombre').value ='';
-                        document.getElementById('semestre').value ='';
-                        $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
-                        setTimeout(() => {
-                            $("#app").load("listas.php #app",agregareventDelete);
-                        }, 1000);
-                     },400)
-                }
-            }, 1000);
-        }
-    })
-})
 
 setInterval(function() {
     var hoy = new Date();
