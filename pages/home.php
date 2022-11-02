@@ -1,17 +1,17 @@
-<?php 
+<?php
 include_once('databases/connectToBD.php');
-include('config/validatesesion.php') ;
+include('config/validatesesion.php');
 
- include('../assets/loader.html'); 
- $home = true;
- ?>
+include('../assets/loader.html');
+$home = true;
+?>
 
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    
+
     <?php include('config/config-header.php') ?>
     <link rel="shortcut icon" href="../assets/images/logo_sm.png">
     <title>Home</title>
@@ -19,7 +19,7 @@ include('config/validatesesion.php') ;
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-<div class="wrapper">
+    <div class="wrapper">
 
         <!-- ========== sidebar =========-->
         <?php include "templates/plantilla-sidebar.php"; ?>
@@ -34,45 +34,61 @@ include('config/validatesesion.php') ;
             <!-- ========= end header ========= -->
 
             <!-- ========= contenido ========= -->
+
+            <div class="card">
+                <div class="card-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                               <a target="blank" href="https://www.curn.edu.co/inscripciones"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn1.jpg" alt="First slide"></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a target="blank" href="https://www.curn.edu.co/jornadaactualizacioniq.html"><img class="d-block img-fluid -100" src="../assets/images/layouts/curn2.jpg" alt="Second slide"></a>
+                            </div>
+                            <div class="carousel-item">
+                               <a target="blanl" href="https://unicurn.sharepoint.com/sites/public/Documentos/Forms/AllItems.aspx?id=%2Fsites%2Fpublic%2FDocumentos%2Fpublic%2Fweb%2Fotros%2FCONVOCATORIA%20REVISTA%20VIRTUAL%20PORTAL%20DE%20LAS%20PALABRAS%208%2Epdf&parent=%2Fsites%2Fpublic%2FDocumentos%2Fpublic%2Fweb%2Fotros&p=true&ga=1"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn3.jpg" alt="Third slide"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
             <div class="content container">
                 <div class="contenedor">
-                    <div class="row   px-3 my-3">
+                    <div class="row   px-3 mt-3">
                         <div class="col-6  ">
-                            <h3>Cuidado medico</h3>
+                            <h4>Bienvenido <?php echo  ucwords(strtolower($nombre)). ' '. ucwords(strtolower($apellido)) ?></h4>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
-                            <div class="hora_hoy" style="display: inline;">00:00:00</div>
-                        </span>
+                                <div class="hora_hoy" style="display: inline;">00:00:00</div>
+                            </span>
+                        </div>
+
                     </div>
-                </div>
-                <script>
-                    setInterval(function() {
-                        var hoy = new Date();
-                        var hora_h = hoy.getHours() < 10 ? '0' + hoy.getHours() : hoy.getHours();
-                        var hora_m = hoy.getMinutes() < 10 ? '0' + hoy.getMinutes() : hoy.getMinutes();
-                        var hora_s = hoy.getSeconds() < 10 ? '0' + hoy.getSeconds() : hoy.getSeconds();
-                        var hora = hora_h + ":" + hora_m + ":" + hora_s;
-                        document.querySelector(".hora_hoy").innerHTML = hora;
-                    }, 1000);
-                    </script>
                 </div>
             </div>
             <!-- ========= end contenido ========= -->
-            
+
             <!-- ========= footer =========-->
-              <?php include "templates/plantilla-footer.php" ;?>
+            <?php include "templates/plantilla-footer.php"; ?>
             <!-- ========= end footer ========= -->
 
         </div>
 
         <!-- ========= aside ========= -->
-          <?php include "templates/plantilla-aside.php" ;?>
+        <?php include "templates/plantilla-aside.php"; ?>
         <!-- ========= end aside ========= -->
 
     </div>
 
 
-<?php include('config/config-footer.php'); ?>
+    <?php include('config/config-footer.php'); ?>
 </body>
+
 </html>

@@ -11,3 +11,7 @@
     <!-- demo app -->
     <script src="../assets/js/pages/demo.dashboard.js"></script>
     <!-- end demo js-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../assets/js/main.js">
+    </script>

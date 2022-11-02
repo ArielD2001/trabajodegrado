@@ -1,8 +1,7 @@
 <?php
+include('../databases/connectToBD.php');
 
-use LDAP\Result;
 
-if (isset($_POST['boton'])) {
     echo "<style>.loader{display: none !important; animation:none !important;</style>";
 
     if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
@@ -20,18 +19,18 @@ if (isset($_POST['boton'])) {
 
         if($filas > 0){
             $res = $sentencia->fetch();
+            session_start();
             $_SESSION['id'] = $res['id'];
             $sentencia=null;
-            print "<script>window.setTimeout(function() { window.location = 'pages/home' }, 10);</script>";
+            print "<script> window.location = 'pages/home';</script>";
         }
         else{
         echo '<p class="text-red-500 text-xs italic mt-2"  >Correo o contraseña incorrecta</p>';
         }
     }
-}
 
 
-elseif (isset($_POST['registrar'])) {
+/* elseif (isset($_POST['registrar'])) {
     echo "<style>.loader{display: none !important; animation:none !important;</style>";
 
     if (
@@ -74,3 +73,4 @@ elseif (isset($_POST['registrar'])) {
         }
     }
 }
+*/

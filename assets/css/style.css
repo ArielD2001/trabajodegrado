@@ -1,0 +1,91 @@
+.leftside-menu {
+    transition: .1s;
+}
+
+body {
+    overflow: hidden;
+}
+
+.content-page {
+    overflow-y: auto;
+    max-height: 80vh;
+    scroll-behavior: smooth;
+    padding-bottom: 30px;
+}
+
+.content-page::-webkit-scrollbar {
+    z-index: 10000000000000;
+    width: 10px;
+    background-color: rgb(180, 180, 180);
+}
+
+.content-page::-webkit-scrollbar-thumb {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+table tbody tr {
+    transition: .1s;
+    font-size: 15px;
+}
+
+table tbody tr:hover {
+    background-color: lightgray;
+}
+
+.content-page {
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.load-item {
+    width: 20px;
+    height: 20px;
+    border: 2px solid grey;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: giro-item .6s linear infinite;
+    margin-top: 9px;
+    margin-bottom: 5px;
+}
+
+@keyframes giro-item {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tasks {
+    width: 45% !important;
+    transition: .2s;
+    height: auto !important;
+    max-height: 120px;
+    min-width: 400px;
+}
+
+.tasks:hover {
+    box-shadow: 0 0 15px rgb(200, 200, 200);
+}
+
+.card {
+    transition: .1s;
+}
+
+
+
+.mdi.mdi-dots-vertical.font-18 {
+    transition: .1s;
+    padding: 5px;
+    border-radius: 50%;
+}
+.dropdown-toggle{
+    border-radius: 2px;
+}
+
+.dropdown-toggle:hover, #button-modal:hover{
+    background-color: rgb(230, 230, 230) !important;
+}

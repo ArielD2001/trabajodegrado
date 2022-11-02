@@ -18,20 +18,16 @@ if ($_SESSION) {
     <link rel="shortcut icon" href="assets/images/logo_sm.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="assets/css/index.css">
     <title>Login</title>
 </head>
-<style>
-    form{
-        width: 400px !important;
-        min-width: 350px;
-    }
-</style>
+
 <body>
 
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="" style="z-index: 100;">
-            <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate">
+            <form id="formulario-login" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate">
 
                 <div class="logo flex justify-center mb-5">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="130px">
@@ -48,44 +44,11 @@ if ($_SESSION) {
                     </label>
                     <input class=" campo border-gray-300 shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password"  placeholder="************" name="password">
                     <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:10px;top:calc(50% - 3px); cursor:pointer"></i>
-                        <script>
-                            document.getElementById('boton-eye').addEventListener('click', () => {
-                                if (document.getElementById('password').type == 'password') {
-                                    document.getElementById('boton-eye').classList.remove('fas');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye');
-                                    document.getElementById('boton-eye').classList.add('fa-solid');
-                                    document.getElementById('boton-eye').classList.add('fa-eye-slash');
-
-                                    
-
-                                    document.getElementById('password').type = 'text';
-                                    document.getElementById('password').focus();
-                                } else {
-                                    document.getElementById('boton-eye').classList.add('fas');
-                                    document.getElementById('boton-eye').classList.add('fa-eye');
-                                    document.getElementById('boton-eye').classList.remove('fa-solid');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye-slash');
-                                    document.getElementById('password').type = 'password';
-                                    document.getElementById('password').focus();
-                                }
-                            })
-                            document.querySelectorAll('.campo').forEach(element=>{
-                                cambio(element);
-                            })
-                            function cambio(key){
-                            key.addEventListener('keyup',()=>{
-                                if(key.value == ''){
-                                    key.classList.replace('border-gray-300', 'border-red-500');
-                                }else{
-                                    key.classList.replace('border-red-500', 'border-gray-300');
-                                }
-                            })
-                            }  
-                        </script>
+                      
                 </div>
-                    <?php include('pages/config/validate.php') ?>
+                    <div id="result-login"></div>
                 <div class="">
-                    <button class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="submit" name="boton">
+                    <button id="boton-login" class="mt-6 transition  duration-100 hover:text-white hover:bg-yellow-600 block border border-yellow-600 w-full  py-2 px-4 rounded focus:outline-none focus:bg-yellow-600 focus:text-white  bg-white text-yellow-600 font-bold" type="button" name="boton">
                         Iniciar sesion
                     </button>
                     <button class=" transition  duration-100 mt-2 text-white hover:bg-gray-900 block border  w-full  py-2 px-4 rounded focus:outline-none bg-gray-800  " type="button">
@@ -107,6 +70,9 @@ if ($_SESSION) {
         </div>
     </div>
     <img src="assets/images/svg.png" draggable="false" alt="" style="position: absolute !important; bottom:0; width:100% ">
+    <script src="assets/js/main.js">
+
+    </script>
 </body>
 
 </html>

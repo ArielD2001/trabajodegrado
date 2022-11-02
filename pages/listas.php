@@ -1,5 +1,3 @@
-<?php include('../assets/loader.html'); ?>
-
 <?php
 include('databases/connectToBD.php');
 include('config/validatesesion.php');
@@ -19,12 +17,18 @@ if ($filas > 0) {
 }
 
 
-$consulta2 = "SELECT * from listas";
+$consulta2 = "SELECT * from listas ORDER BY id DESC ";
 $sentencia2 = $mbd->prepare($consulta2);
 $sentencia2->execute();
 $filas2 = $sentencia2->rowCount();
 
-
+if (isset($_GET['lista'])) {
+    $consultal = "SELECT * from listas WHERE id = ? ";
+    $sentencial = $mbd->prepare($consultal);
+    $sentencial->bindParam(1, $_GET['lista']);
+    $sentencial->execute();
+    $datal = $sentencial->fetch();
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +38,11 @@ $filas2 = $sentencia2->rowCount();
     <?php include "config/config-header.php" ?>
     <title>Listas</title>
 </head>
+<style>
+    body>div.wrapper>div.content-page>div.navbar-custom>ul>li:nth-child(1)>a>i::before {
+        margin-top: -45px !important;
+    }
+</style>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <div class="wrapper">
@@ -55,10 +64,32 @@ $filas2 = $sentencia2->rowCount();
 
             <!-- ========= contenido ========= -->
             <div class="content container">
-                <div class="contenedor">
+                <div class="contenedor ">
+
+
+
+
+
+
                     <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Listas</h3>
+                            <?php
+                            if (!isset($_GET['lista'])) {
+                            ?>
+                                <h3>Listas</h3>
+                            <?php
+                            } else {
+                            ?>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item text-primary"><a href="listas.php">Listas</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
+                                    </ol>
+                                </nav>
+                            <?php
+                            }
+                            ?>
+
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
@@ -66,24 +97,75 @@ $filas2 = $sentencia2->rowCount();
                             </span>
                         </div>
                     </div>
-                    <script>
-                        setInterval(function() {
-                            var hoy = new Date();
-                            var hora_h = hoy.getHours() < 10 ? '0' + hoy.getHours() : hoy.getHours();
-                            var hora_m = hoy.getMinutes() < 10 ? '0' + hoy.getMinutes() : hoy.getMinutes();
-                            var hora_s = hoy.getSeconds() < 10 ? '0' + hoy.getSeconds() : hoy.getSeconds();
-                            var hora = hora_h + ":" + hora_m + ":" + hora_s;
-                            document.querySelector(".hora_hoy").innerHTML = hora;
-                        }, 1000);
-                    </script>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
 
-                                    <div class="row container">
-                                        <div class="col-12 text-end">
-                                            <a href="new-list" class="btn btn/success" style="background-color: #6b5eae; color:white">Subir nueva lista</a>
+                        <div class="col-12" id="app">
+                            <div class="card ">
+
+                                <div class="card-body ">
+                                    <?php
+                                    if (isset($_GET['lista'])) {
+                                    } else {
+                                    ?>
+                                        <div class="row ">
+                                            <div class="col-12 text-end">
+                                                <div class="d-flex justify-content-between align-items-center container">
+                                                    <div class="app-search dropdown d-none d-lg-block">
+                                                        <form>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control dropdown-toggle" placeholder="Buscar lista..." id="top-search">
+                                                                <span class="mdi mdi-magnify search-icon"></span>
+                                                                <button class="input-group-text btn-info" type="submit">Buscar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
+                                                </div>
+                                                <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered text-start">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myCenterModalLabel"> Agregar nueva lista</h4>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                            </div>
+                                                            <div class="modal-body ">
+
+                                                                <div class="container">
+                                                                    <div class="row border p-3 rounded">
+                                                                        <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
+                                                                            <div class="row ">
+                                                                                <div class="col-12">
+                                                                                    <label class="form-label" for="nombre">Nombre:</label>
+                                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list" />
+                                                                                </div>
+                                                                                <div class="col-12 mt-2">
+                                                                                    <label class="form-label" for="lista">Lista</label>
+                                                                                    <input type="file" class="form-control" id="lista" placeholder="Nombre de lista" name="nombre-list" />
+                                                                                </div>
+                                                                                <div class="col-6 mt-2">
+                                                                                    <label class="form-label" for="semestre">Semestre</label>
+                                                                                    <input type="number" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list" maxlength="2" />
+                                                                                </div>
+
+                                                                                <div class="col-6 pt-1">
+                                                                                    <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-12 mt-1" id="resultado-list">
+
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                            </div><!-- /.modal -->
                                         </div>
                                         <?php
                                         if ($filas2 < 1) {
@@ -97,56 +179,69 @@ $filas2 = $sentencia2->rowCount();
                                         } else {
                                             $datos = $sentencia2->fetchAll();
                                         ?>
-                                            <div class=" flex-wrap d-flex justify-content-center mt-3">
+                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
                                                 <?php
                                                 foreach ($datos as $dato) {
                                                 ?>
-                                                    <div class="tasks border w-25" style="min-width: 300px;">
+                                                    <div class="tasks border p-1 ">
 
                                                         <div id="task-list-two" class="task-list-items">
 
                                                             <!-- Task Item -->
-                                                            <div class="card mb-0">
-                                                                <div class="card-body p-3">
-                                                                    <small class="float-end text-muted"><?php echo $dato['fecha']; ?></small>
-                                                                    <span class="badge bg-success text-light">Medium</span>
+                                                            <div class="card px-2 mb-0">
+                                                                <div class="card-body p-1 px-2 ">
+                                                                    <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
-                                                                    <h5 class="mt-2 mb-2">
-                                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#task-detail-modal" class="text-body"><?php echo $dato['nombre']; ?></a>
+                                                                    <h5 class="mt-1 mb-1">
+                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
-                                                                    <p class="mb-0">
-                                                                        <span class="pe-2 text-nowrap mb-2 d-inline-block">
-                                                                            <i class="mdi mdi-briefcase-outline text-muted"></i>
-                                                                            Hyper
-                                                                        </span>
-                                                                        <span class="text-nowrap mb-2 d-inline-block">
-                                                                            <i class="uil uil-user"></i>
-                                                                            <b>0</b> Estudiantes
-                                                                        </span>
-                                                                    </p>
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">
+                                                                            <span class="pe-2 text-nowrap mb-1 d-inline-block">
+                                                                                <i class="mdi mdi-briefcase-outline text-muted"></i>
+                                                                                Hyper
+                                                                            </span>
+                                                                            <span class="text-nowrap mb-1 d-inline-block">
+                                                                                <i class="uil uil-user"></i>
+                                                                                <b>
+                                                                                    <?php
+                                                                                    $cantidad = 'SELECT * from estudiantes WHERE id_lista = ? ';
+                                                                                    $sentenciacantidad = $mbd->prepare($cantidad);
+                                                                                    $sentenciacantidad->bindParam(1, $dato['id']);
+                                                                                    $sentenciacantidad->execute();
+                                                                                    $filascantidad = $sentenciacantidad->rowCount();
+                                                                                    echo $filascantidad;
+                                                                                    // var_dump($resultadocantidad);
+                                                                                    ?>
+                                                                                </b> Estudiantes
+                                                                            </span>
+                                                                            <span class="align-middle"> - Semestre: <?php echo $dato['semestre']; ?></span>
 
-                                                                    <div class="dropdown float-end">
-                                                                        <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
-                                                                            <i class="mdi mdi-dots-vertical font-18"></i>
-                                                                        </a>
-                                                                        <div class="dropdown-menu dropdown-menu-end">
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-pencil me-1"></i>Edit</a>
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-delete me-1"></i>Delete</a>
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-plus-circle-outline me-1"></i>Add People</a>
-                                                                            <!-- item-->
-                                                                            <a href="javascript:void(0);" class="dropdown-item"><i class="mdi mdi-exit-to-app me-1"></i>Leave</a>
+                                                                        </p>
+
+                                                                        <div class="end d-flex align-items-center ">
+                                                                            <a href="list=<?php echo $dato['id'] ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
+
+                                                                            <div class="dropdown ">
+                                                                                <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false" style=" margin-left:10px !important;  padding:7px 5px ; border: 1px solid lightgrey">
+                                                                                    <i class="mdi mdi-dots-vertical font-18"></i>
+                                                                                </a>
+                                                                                <div class="dropdown-menu dropdown-menu-end">
+                                                                                    <!-- item-->
+                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
+                                                                                    <!-- item-->
+                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
+                                                                                    <!-- item-->
+
+
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <p class="mb-0">
-                                                                        <img src="assets/images/users/avatar-5.jpg" alt="user-img" class="avatar-xs rounded-circle me-1">
-                                                                        <span class="align-middle">Sean White</span>
-                                                                    </p>
-                                                                </div> <!-- end card-body -->
+
+                                                                    </div> <!-- end card-body -->
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -156,27 +251,32 @@ $filas2 = $sentencia2->rowCount();
                                         <?php
                                         }
                                         ?>
-                                    </div>
                                 </div>
+                            <?php
+                                    }
+                            ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php include "templates/plantilla-footer.php"; ?>
             </div>
-            <!-- ========= end contenido ========= -->
-
-
         </div>
+        <?php include "templates/plantilla-footer.php"; ?>
+    </div>
+    <!-- ========= end contenido ========= -->
 
-        <!-- ========= aside ========= -->
-        <?php include "templates/plantilla-aside.php"; ?>
-        <!-- ========= end aside ========= -->
 
-        <!-- ========= footer =========-->
-        <!-- ========= end footer ========= -->
+    </div>
+
+    <!-- ========= aside ========= -->
+    <?php include "templates/plantilla-aside.php"; ?>
+    <!-- ========= end aside ========= -->
+
+    <!-- ========= footer =========-->
+    <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
+
 </body>
 
 </html>
