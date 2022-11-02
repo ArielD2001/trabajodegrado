@@ -132,7 +132,7 @@ if (isset($_GET['lista'])) {
 
                                                                 <div class="container">
                                                                     <div class="row border p-3 rounded">
-                                                                        <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
+                                                                        <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx" enctype="multipart/form-data">
                                                                             <div class="row ">
                                                                                 <div class="col-12">
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
@@ -148,13 +148,30 @@ if (isset($_GET['lista'])) {
                                                                                 </div>
 
                                                                                 <div class="col-6 pt-1">
-                                                                                    <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
+                                                                                    <button type="submit" onclick="cargar_lista()" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
                                                                                 </div>
                                                                             </div>
-
+                                                                            
                                                                             <div class="col-12 mt-1" id="resultado-list">
 
                                                                             </div>
+                                                                            <script type="text/javascript">
+                                                                                function cargar_lista(){
+                                                                                    var form = new FormData($('#formulario-list'[0]));
+                                                                                    $.ajax(
+                                                                                        {
+                                                                                            url: "add-list1.php",
+                                                                                            type:"post",
+                                                                                            data: Form,
+                                                                                            processData: false,
+                                                                                            contentType: false,
+                                                                                            success: function(data){
+                                                                                                alert('Tabla agregada');
+                                                                                            }
+                                                                                        }
+                                                                                    );
+                                                                                }
+                                                                            </script>
                                                                         </form>
 
                                                                     </div>
