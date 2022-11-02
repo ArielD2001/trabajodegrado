@@ -132,21 +132,32 @@ if (isset($_GET['lista'])) {
 
                                                                 <div class="container">
                                                                     <div class="row border p-3 rounded">
-                                                                        <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
+                                                                        <form method="post" id="formulario-list" enctype="multipart/form-data" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
                                                                             <div class="row ">
                                                                                 <div class="col-12">
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
                                                                                     <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list" />
                                                                                 </div>
-                                                                                <div class="col-12 mt-2">
-                                                                                    <label class="form-label" for="lista">Lista</label>
-                                                                                    <input type="file" class="form-control" id="lista" placeholder="Nombre de lista" name="nombre-list" />
-                                                                                </div>
-                                                                                <div class="col-6 mt-2">
-                                                                                    <label class="form-label" for="semestre">Semestre</label>
-                                                                                    <input type="number" class="form-control" id="semestre" placeholder="Semestre" name="semestre-list" maxlength="2" />
-                                                                                </div>
 
+                                                                                <div class="col-12 mt-2">
+                                                                                    <select name="semestre" class="form-select" id="semestre">
+                                                                                        <option  selected>Seleccionar semestre</option>
+                                                                                        <option value="I (Primero)"     >I (Primero)    </option>
+                                                                                        <option value="II (Segundo)"    >II (Segundo)   </option>
+                                                                                        <option value="III (Tercer)"    >III (Tercer)   </option>
+                                                                                        <option value="IV (Cuarto)"     >IV (Cuarto)    </option>
+                                                                                        <option value="V (Quinto)"      >V (Quinto)     </option>
+                                                                                        <option value="VI (Sexto)"      >VI (Sexto)     </option>
+                                                                                        <option value="VII (Septimo)"   >VII (Septimo)  </option>
+                                                                                        <option value="VIII (Octavo)"   >VIII (Octavo)  </option>
+                                                                                        <option value="IX (Noveno)"     >IX (Noveno)    </option>
+                                                                                        <option value="X (Decimo)"      >X (Decimo)     </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-12 mt-2">
+                                                                                    <label class="form-label" for="adjunto">Lista</label>
+                                                                                    <input type="file" class="form-control" id="adjunto"  name="adjunto" />
+                                                                                </div>
                                                                                 <div class="col-6 pt-1">
                                                                                     <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
                                                                                 </div>
