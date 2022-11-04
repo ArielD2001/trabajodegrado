@@ -22,6 +22,9 @@ $data = $spreadsheet->getActiveSheet()->toArray();
 
         echo $nombre_estudiante;
         echo $documento.'<br>';
+
+        $consulta_estudiante = 'INSERT INTO estudiandes(nombre, documento, id_lista) VALUES(?,?,?)';
+        $sentencia_estudiante = $mbd->prepare($consulta_estudiante);
     }
 
 // if (isset($_FILES['adjunto'])) {
