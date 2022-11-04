@@ -1,62 +1,94 @@
 <?php
-include_once('../databases/connectToBD.php');
-require '../../vendor/autoload.php';
-
-use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
-
-$archivo =  'datos.xlsx';
-$doc = IOFactory::load($archivo);
-$pestañas = $doc->getSheetCount();
-
-// for( $i =0; $i<$pestañas; $i++){
 
 
-$actual = $doc->getSheet(0);
-$filasdoc = $actual->getHighestDataRow();
-$letra = $actual->getHighestDataColumn();
-$numeroletra = Coordinate::columnIndexFromString($letra);
+require_once('../databases/connectToBD.php');
+require_once('../../vendor/autoload.php');
 
-for ($i = 1; $i <= $filasdoc; $i++) {
-    for ($j = 1; $j <= $numeroletra; $j++) {
-        $val = $actual->getCellByColumnAndRow($j, $i);
-        echo $i. '  '. $val;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+
+
+$adjuntoName =   basename($_FILES['adjunto']['name']);
+$file_ext = pathinfo($adjuntoName, PATHINFO_EXTENSION);
+
+$tmp =   $_FILES['adjunto']['tmp_name'];
+$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($tmp);
+$data = $spreadsheet->getActiveSheet()->toArray();
+
+
+    foreach ($data as $dato) {
+        $nombre_estudiante = $dato[0];
+        $documento = $dato[1];
+
+        echo $nombre_estudiante;
+        echo $documento.'<br>';
     }
-    echo '<br>';
-}
 
+// if (isset($_FILES['adjunto'])) {
 
-// if (strlen($_POST['nombre-list']) == 0  || strlen($_POST['semestre']) == 0) {
-//     echo '<h5 class="text-danger">&#x2718; Por favor complete todos los campos</h5>';
-// } else {
+//     //Se toman los valores del archivo adjunto
+//     $adjuntoName =   $_FILES['adjunto']['name'];
+   
+    //     $tipo = pathinfo($adjuntoName, PATHINFO_EXTENSION);
 
-//     $_nombre = trim($_POST['nombre-list']);
-//     $_semestre = trim($_POST['semestre']);
-//     $_fecha = date('d/m/y');
+//     //Se le asigna una variable a los datos enviados por metodo POST
+//     parse_str($_POST["data"], $data);
 
-//     $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?";
-//     $sentencia = $mbd->prepare($consulta);
-//     $sentencia->bindParam(1, $_nombre);
-//     $sentencia->bindParam(2, $_semestre);
-//     $sentencia->execute();
-//     $fila = $sentencia->rowCount();
+//     // Se validan que los campos NO esten vacios
+//     if (strlen($data['nombre-list']) == 0  || strlen($data['semestre']) == 0) {
 
-//     if ($fila < 1) {
-
-//         $consultainsert = "INSERT INTO listas( nombre, semestre, fecha) VALUES(?,?,?)";
-//         $sentenciainsert = $mbd->prepare($consultainsert);
-//         $sentenciainsert->execute(array($_nombre, $_semestre, $_fecha));
-//         $filas = $sentenciainsert->rowCount();
-//         if ($filas > 0) {
-//             $idlista = $mbd->lastInsertID();
-
-           
-//             // }
-
-//         } else {
-//             echo '<h5 class="text-danger mt-2">&#x2718; Erron en la consulta</h5>';
-//         }
+//         //mensaje de error
+//         echo 'campos vacios';
 //     } else {
-//         echo '<h5 class="text-danger mt-2">&#x2718; Ya esta lista existe</h5>';
+
+//         // Se valida el tipo de fichero que se va a enviar 
+//         if ($tipo == 'xls' || $tipo == 'xlsx') {
+
+//             //Al ser un fichero valido se toman las variables enviadas
+//             $nombre = $data['nombre-list'];
+//             $semestre = $data['semestre'];
+//             $fecha = date('d/m/y');
+//             $adjuntoName;
+
+//             //Se verifica que la lista a insertar ya no este registrada
+//             $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?";
+//             $sentencia = $mbd->prepare($consulta);
+//             $sentencia->bindParam(1, $nombre);
+//             $sentencia->bindParam(2, $semestre);
+//             $sentencia->execute();
+//             $fila = $sentencia->rowCount();
+
+//             //Se valida
+//             if ($fila < 1) {
+
+//                 //Al validar que la lista no se encuentra registrada se registra
+//                 $consultainsert = "INSERT INTO listas( nombre, semestre, fecha) VALUES(?,?,?)";
+//                 $sentenciainsert = $mbd->prepare($consultainsert);
+//                 $sentenciainsert->execute(array($nombre, $semestre, $fecha));
+//                 $filas = $sentenciainsert->rowCount();
+
+//                 //Se verifica que la fila se inserto
+//                 if ($filas > 0) {
+                    
+//                     echo 'ok';
+//                     //Se toma el id de la lista insertada
+
+//                 } else {
+//                     //Mensaje de error
+//                     echo 'error - consulta';
+//                 }
+//             } else {
+
+//                 //Mensaje de error
+//                 echo 'error - existente';
+//             }
+//         } else {
+
+//             //Mensaje de error
+//             echo 'error - tipo';
+//         }
 //     }
+// } else {
+//     //Mensaje de error
+//     echo 'campos vacios';
 // }

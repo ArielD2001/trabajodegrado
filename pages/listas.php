@@ -24,7 +24,7 @@ $filas2 = $sentencia2->rowCount();
 if (isset($_GET['lista'])) {
     $consultal = "SELECT * from listas WHERE id = ? ";
     $sentencial = $mbd->prepare($consultal);
-    $sentencial->bindParam(1, $_GET['lista']);
+    $sentencial->bindParam(1, base64_decode($_GET['lista']));
     $sentencial->execute();
     $datal = $sentencial->fetch();
 }
@@ -135,28 +135,28 @@ if (isset($_GET['lista'])) {
                                                                             <div class="row ">
                                                                                 <div class="col-12">
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
-                                                                                    <input type="text" class="form-control" id="nombre" placeholder="Nombre de lista" name="nombre-list" />
+                                                                                    <input type="text" class="form-control" id="nombre-list" placeholder="Nombre de lista" name="nombre-list" />
                                                                                 </div>
 
                                                                                 <div class="col-12 mt-2">
                                                                                     <label class="form-label" for="semestre">Semestre:</label>
-                                                                                    <select name="semestre" class="form-select" id="semestre">
-                                                                                        <option  selected>Seleccionar semestre</option>
-                                                                                        <option value="I (Primer)"     >   I   (Primero) </option>
-                                                                                        <option value="II (Segundo)"    >  II   (Segundo) </option>
-                                                                                        <option value="III (Tercero)"   > III   (Tercero) </option>
-                                                                                        <option value="IV (Cuarto)"     >  IV   (Cuarto)  </option>
-                                                                                        <option value="V (Quinto)"      >   V   (Quinto)  </option>
-                                                                                        <option value="VI (Sexto)"      >  VI   (Sexto)   </option>
-                                                                                        <option value="VII (Septimo)"   > VII   (Septimo) </option>
-                                                                                        <option value="VIII (Octavo)"   >VIII   (Octavo)  </option>
-                                                                                        <option value="IX (Noveno)"     >  IX   (Noveno)  </option>
-                                                                                        <option value="X (Decimo)"      >   X   (Decimo)  </option>
+                                                                                    <select name="semestre" class="form-select" id="semestre-list">
+                                                                                        <option selected value="">Seleccionar semestre</option>
+                                                                                        <option value="I (Primer)"> I (Primero) </option>
+                                                                                        <option value="II (Segundo)"> II (Segundo) </option>
+                                                                                        <option value="III (Tercero)"> III (Tercero) </option>
+                                                                                        <option value="IV (Cuarto)"> IV (Cuarto) </option>
+                                                                                        <option value="V (Quinto)"> V (Quinto) </option>
+                                                                                        <option value="VI (Sexto)"> VI (Sexto) </option>
+                                                                                        <option value="VII (Septimo)"> VII (Septimo) </option>
+                                                                                        <option value="VIII (Octavo)">VIII (Octavo) </option>
+                                                                                        <option value="IX (Noveno)"> IX (Noveno) </option>
+                                                                                        <option value="X (Decimo)"> X (Decimo) </option>
                                                                                     </select>
                                                                                 </div>
                                                                                 <div class="col-12 mt-2">
                                                                                     <label class="form-label" for="adjunto">Lista</label>
-                                                                                    <input type="file" class="form-control" id="adjunto"  name="adjunto" />
+                                                                                    <input type="file" class="form-control" id="adjunto" name="adjunto" />
                                                                                 </div>
                                                                                 <div class="col-6 pt-1">
                                                                                     <button type="button" name="agregar-list" class="w-100 col-6 btn btn-success mt-4" id="agregar-list">Subir Lista</button>
@@ -182,30 +182,30 @@ if (isset($_GET['lista'])) {
                                         if ($filas2 < 1) {
                                         ?>
 
-                            <div class="col-12 d-flex flex-column align-items-center">
-                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
-                                <span class="h4">No se encontraron Listas</span>
-                            </div>
-                        <?php
-                        } else {
-                            $datos = $sentencia2->fetchAll();
-                        ?>
-                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                <?php
-                                foreach ($datos as $dato) {
-                                ?>
-                                    <div class="tasks border p-1 ">
+                                            <div class="col-12 d-flex flex-column align-items-center">
+                                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
+                                                <span class="h4">No se encontraron Listas</span>
+                                            </div>
+                                        <?php
+                                        } else {
+                                            $datos = $sentencia2->fetchAll();
+                                        ?>
+                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
+                                                <?php
+                                                foreach ($datos as $dato) {
+                                                ?>
+                                                    <div class="tasks border p-1 ">
 
-                                        <div id="task-list-two" class="task-list-items">
+                                                        <div id="task-list-two" class="task-list-items">
 
                                                             <!-- Task Item -->
                                                             <div class="card px-2 mb-0">
                                                                 <div class="card-body p-1 px-2 ">
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
-                                                    <h5 class="mt-1 mb-1">
-                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
-                                                    </h5>
+                                                                    <h5 class="mt-1 mb-1">
+                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                    </h5>
 
                                                                     <div class="d-flex justify-content-between">
                                                                         <p class="mb-0">
@@ -232,7 +232,7 @@ if (isset($_GET['lista'])) {
                                                                         </p>
 
                                                                         <div class="end d-flex align-items-center ">
-                                                                            <a href="list=<?php echo $dato['id'] ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
+                                                                            <a href="list=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
 
                                                                             <div class="dropdown ">
                                                                                 <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false" style=" margin-left:10px !important;  padding:7px 5px ; border: 1px solid lightgrey">
@@ -287,6 +287,6 @@ if (isset($_GET['lista'])) {
     <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
-    
+
 
 </body>

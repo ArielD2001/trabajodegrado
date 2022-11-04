@@ -90,3 +90,11 @@ table tbody tr:hover {
     background-color: rgb(230, 230, 230) !important;
 }
 #tabla-list{width: 100%;}
+input{
+    transition: .1s;
+}
+input:hover, input:active, select:hover{
+    border-radius: 1px solid grey !important;
+    background-color: rgb(250, 250, 250) !important;
+    box-shadow: 0 5px 15px rgb(210, 210, 210) !important;
+}
