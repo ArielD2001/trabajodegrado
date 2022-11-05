@@ -60,11 +60,9 @@ table tbody tr:hover {
 }
 
 .tasks {
-    width: 45% !important;
     transition: .2s;
     height: auto !important;
     max-height: 120px;
-    min-width: 400px;
 }
 
 .tasks:hover {

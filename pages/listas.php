@@ -190,11 +190,11 @@ if (isset($_GET['lista'])) {
                                         } else {
                                             $datos = $sentencia2->fetchAll();
                                         ?>
-                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
+                                            <div id="tabla-list" class=" d-flex mt-4">
                                                 <?php
                                                 foreach ($datos as $dato) {
                                                 ?>
-                                                    <div class="tasks border p-1 ">
+                                                    <div class="tasks border p-1 w-50">
 
                                                         <div id="task-list-two" class="task-list-items">
 
@@ -204,7 +204,7 @@ if (isset($_GET['lista'])) {
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
                                                                     <h5 class="mt-1 mb-1">
-                                                                        <a href="listas?lista=<?php echo $dato['id']; ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                        <a href="lista=<?php echo base64_encode($dato['id']); ?>" class="text-info" id="link-list"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
                                                                     <div class="d-flex justify-content-between">
@@ -258,6 +258,32 @@ if (isset($_GET['lista'])) {
                                                     </div>
                                                 <?php
                                                 } ?>
+                                                <div class="tabla-res w-50">
+                                                    <div class="w-100">
+                                                        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nombre</th>
+                                                                    <th>documento</th>
+                                                                    <th>nota</th>
+                                                                    <th></th>
+                                                                </tr>
+                                                            </thead>
+
+
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>61</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         <?php
                                         }

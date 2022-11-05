@@ -1,8 +1,12 @@
+//eventos para agregar y eliminar
 function eventos() {
-  console.log("function activate");
+
+  //============Evento click a boton eliminar lista===================
   $(".eliminar-btn").click(function (e) {
     e.preventDefault();
     var dato = $(this).attr("href");
+
+    //Alerta de confirmacion
     Swal.fire({
       title: "Eliminar Registro",
       text: "¿Seguro que desea eliminar este registro?",
@@ -14,14 +18,18 @@ function eventos() {
       cancelButtonText: "Cancelar",
       cancelButtonColor: "#d33",
     }).then((result) => {
+
+      //resultado postivo de la confirmacion
       if (result.isConfirmed) {
-        console.log(dato);
+      
+        //Se envian los datos al archvio para borrar
         $.ajax({
           url: "config/delete-list.php",
           type: "get",
           data: dato,
           success: function (res) {
-            console.log(res);
+            
+            //Mensaje de notificacion
             Swal.fire({
               text: "Eliminado correctamente",
               confirmButtonColor: "#3085d6",
@@ -29,10 +37,13 @@ function eventos() {
               width: 300,
             });
 
+            //Loader
             $("#tabla-list").html(
               '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
             );
             setTimeout(() => {
+
+              //Se actualiza la tabla de listas
               $("#app").load("listas.php #app", eventos);
             }, 500);
           },
@@ -40,19 +51,26 @@ function eventos() {
       }
     });
   });
+
+  //==============Evento Agregar Lista====================
   $("#agregar-list").click(function () {
+
+    //Adjuncion de datos del formulario y del fichero excel
     var data = $("#formulario-list").serialize();
     var adjunto = $("#adjunto")[0].files[0];
     var formulario = new FormData();
     formulario.append("adjunto", adjunto);
     formulario.append("data", data);
 
+    //Se envian los datos al archivo para agregar
     $.ajax({
       url: "config/add-list.php",
       type: "post",
       data: formulario,
       contentType: false,
       processData: false,
+
+      //resultado postivo de la confirmacion
       success: function (resultado) {
         $("#resultado-list").html('<div class="load-item"></div>');
         verificarCampos();
@@ -82,10 +100,10 @@ function eventos() {
               width: 300,
             });
             $("#tabla-list").html(
-                '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
-              );
+              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
+            );
             setTimeout(() => {
-                $("#app").load("listas.php #app", eventos);
+              $("#app").load("listas.php #app", eventos);
             }, 1000);
           } else {
             $("#resultado-list").html(resultado);
