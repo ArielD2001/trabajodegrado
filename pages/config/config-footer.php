@@ -8,9 +8,7 @@
     <script src="../assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
     <!-- third party js ends -->
 
-    <script src="assets/js/vendor/dropzone.min.js"></script>
 <!-- init js -->
-<script src="assets/js/ui/component.fileupload.js"></script>
     <!-- demo app -->
     <script src="../assets/js/pages/demo.dashboard.js"></script>
     <!-- end demo js-->

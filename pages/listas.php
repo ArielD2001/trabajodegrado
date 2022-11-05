@@ -2,6 +2,7 @@
 include('databases/connectToBD.php');
 include('config/validatesesion.php');
 
+$listactive =true;
 $consulta = "SELECT * from usuarios WHERE id = ?";
 $sentencia = $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id);
@@ -24,7 +25,8 @@ $filas2 = $sentencia2->rowCount();
 if (isset($_GET['lista'])) {
     $consultal = "SELECT * from listas WHERE id = ? ";
     $sentencial = $mbd->prepare($consultal);
-    $sentencial->bindParam(1, base64_decode($_GET['lista']));
+    $idlistae =base64_decode(base64_decode($_GET['lista']));
+    $sentencial->bindParam(1, $idlistae);
     $sentencial->execute();
     $datal = $sentencial->fetch();
 }
@@ -81,7 +83,7 @@ if (isset($_GET['lista'])) {
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary"><a href="listas.php">Listas</a></li>
+                                        <li class="breadcrumb-item text-primary"><a href="javascript:history.go(-1)">Listas</a></li>
                                         <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
                                 </nav>
@@ -104,6 +106,7 @@ if (isset($_GET['lista'])) {
                                 <div class="card-body ">
                                     <?php
                                     if (isset($_GET['lista'])) {
+                                        include('config/estudiantes-list.php');
                                     } else {
                                     ?>
                                         <div class="row ">
@@ -190,11 +193,11 @@ if (isset($_GET['lista'])) {
                                         } else {
                                             $datos = $sentencia2->fetchAll();
                                         ?>
-                                            <div id="tabla-list" class=" d-flex mt-4">
+                                            <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
                                                 <?php
                                                 foreach ($datos as $dato) {
                                                 ?>
-                                                    <div class="tasks border p-1 w-50">
+                                                    <div class="tasks border p-1 ">
 
                                                         <div id="task-list-two" class="task-list-items">
 
@@ -204,7 +207,7 @@ if (isset($_GET['lista'])) {
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
                                                                     <h5 class="mt-1 mb-1">
-                                                                        <a href="lista=<?php echo base64_encode($dato['id']); ?>" class="text-info" id="link-list"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                        <a href="listas?lista=<?php echo base64_encode( base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
                                                                     <div class="d-flex justify-content-between">
@@ -258,32 +261,6 @@ if (isset($_GET['lista'])) {
                                                     </div>
                                                 <?php
                                                 } ?>
-                                                <div class="tabla-res w-50">
-                                                    <div class="w-100">
-                                                        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Nombre</th>
-                                                                    <th>documento</th>
-                                                                    <th>nota</th>
-                                                                    <th></th>
-                                                                </tr>
-                                                            </thead>
-
-
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>61</td>
-                                                                </tr>
-
-                                                            </tbody>
-                                                        </table>
-
-                                                    </div>
-                                                </div>
                                             </div>
                                         <?php
                                         }

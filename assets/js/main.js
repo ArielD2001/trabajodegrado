@@ -21,14 +21,14 @@ function eventos() {
 
       //resultado postivo de la confirmacion
       if (result.isConfirmed) {
-      
+
         //Se envian los datos al archvio para borrar
         $.ajax({
           url: "config/delete-list.php",
           type: "get",
           data: dato,
           success: function (res) {
-            
+
             //Mensaje de notificacion
             Swal.fire({
               text: "Eliminado correctamente",
@@ -73,45 +73,71 @@ function eventos() {
       //resultado postivo de la confirmacion
       success: function (resultado) {
         $("#resultado-list").html('<div class="load-item"></div>');
+
+        //Verificaion de campos vacios
         verificarCampos();
         setTimeout(() => {
+
+          //Validaciones por tipo de error
           if (resultado == "error - tipo") {
             $("#resultado-list").html(
+              //Mensaje de error
               '<h6 class="text-danger mt-2 mb-1">Solo se admiten archivos Excel (.xlsx)</h6>'
             );
+
+            //Mensaje de error
           } else if (resultado == "campos vacios") {
             $("#resultado-list").html(
               '<h6 class="text-danger mt-2 mb-1"> Por favor complete todos los campos</h6>'
             );
+
+            //Mensaje de error
           } else if (resultado == "error - existente") {
             $("#resultado-list").html(
               '<h6 class="text-primary mt-2 mb-1"> Esta lista a existe por favor cambia el nombre</h6>'
             );
+
+            //Mensaje de error
           } else if (resultado == "error - consulta") {
             $("#resultado-list").html(
               '<h6 class="text-danger mt-2 mb-1"> Ha ocurrido un error en la consulta</h6>'
             );
+            
+            //Respuesta positiva
           } else if (resultado == "ok") {
+
+            //Se cierra el modal
             document.querySelector(".btn-close").click();
+
+            //Alerta de notificacion de lista agregada
             Swal.fire({
               text: "Agregado correctamente",
               confirmButtonColor: "#3085d6",
               icon: "success",
               width: 300,
             });
+
+            //Loader
             $("#tabla-list").html(
               '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
             );
             setTimeout(() => {
+
+              //Actualizacion de lista
               $("#app").load("listas.php #app", eventos);
             }, 1000);
           } else {
+
+            //Verificaion de error no validado
             $("#resultado-list").html(resultado);
           }
         }, 500);
       },
     });
   });
+
+  
+
 }
 eventos();
 
