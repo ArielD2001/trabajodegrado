@@ -8,11 +8,10 @@
     <script src="../assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
     <!-- third party js ends -->
 
-<!-- init js -->
     <!-- demo app -->
     <script src="../assets/js/pages/demo.dashboard.js"></script>
     <!-- end demo js-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    
+    <!-- Validaciones -->
     <script src="../assets/js/main.js"> </script>

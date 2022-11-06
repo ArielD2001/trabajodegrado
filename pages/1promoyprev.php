@@ -1,22 +1,8 @@
-<?php include('../assets/loader.html'); ?>
-
 <?php
-include('databases/connectToBD.php');
+include('../assets/loader.html');
+include_once('databases/connectToBD.php');
 include('config/validatesesion.php');
-
 $pypactive = true;
-$consulta = "SELECT * from usuarios WHERE id = ?";
-$sentencia = $mbd->prepare($consulta);
-$sentencia->bindParam(1, $id);
-$sentencia->execute();
-$filas = $sentencia->rowCount();
-echo $filas;
-
-if ($filas > 0) {
-    $resultado = $sentencia->fetch();
-    $nombre  = $resultado['nombre'];
-    $apellido  = $resultado['apellido'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +34,7 @@ if ($filas > 0) {
             <!-- ========= contenido ========= -->
             <div class="content container">
                 <div class="contenedor">
-                <div class="row   px-3 my-3">
+                    <div class="row   px-3 my-3">
                         <div class="col-6  ">
                             <h3>Promoción y prevención</h3>
                         </div>
@@ -58,7 +44,7 @@ if ($filas > 0) {
                             </span>
                         </div>
                     </div>
-                 
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">

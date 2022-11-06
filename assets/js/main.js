@@ -43,7 +43,7 @@ function eventos() {
             );
             setTimeout(() => {
 
-              //Se actualiza la tabla de listas
+              //Se actualiza la tabla de listas y de callbac se llama la misma funcion
               $("#app").load("listas.php #app", eventos);
             }, 500);
           },
@@ -54,6 +54,7 @@ function eventos() {
 
   //==============Evento Agregar Lista====================
   $("#agregar-list").click(function () {
+    $("#resultado-list").html('<div class="load-item"></div>');
 
     //Adjuncion de datos del formulario y del fichero excel
     var data = $("#formulario-list").serialize();
@@ -72,7 +73,6 @@ function eventos() {
 
       //resultado postivo de la confirmacion
       success: function (resultado) {
-        $("#resultado-list").html('<div class="load-item"></div>');
 
         //Verificaion de campos vacios
         verificarCampos();
@@ -116,14 +116,9 @@ function eventos() {
               icon: "success",
               width: 300,
             });
-
-            //Loader
-            $("#tabla-list").html(
-              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
-            );
             setTimeout(() => {
 
-              //Actualizacion de lista
+              //Actualizacion de lista y de callback se llama la misma funcion
               $("#app").load("listas.php #app", eventos);
             }, 1000);
           } else {
@@ -139,6 +134,8 @@ function eventos() {
   
 
 }
+
+//Se da inicio a las funciones de agregar y eliminar listas
 eventos();
 
 setInterval(function () {

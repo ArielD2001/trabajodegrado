@@ -2,32 +2,40 @@
 include('../databases/connectToBD.php');
 
 
-    echo "<style>.loader{display: none !important; animation:none !important;</style>";
+//Se comprueba que los campos no esten vacios
+if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
 
-    if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
-        echo '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete todos los campos.</p>';
+    //Mensaje de error
+    echo 'campos vacios';
+} else {
+
+    //se toman los vaores de los campos
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Se realiza la consulta para comprobar si existe el usuario
+    $consulta = "SELECT * from usuarios WHERE correo = ?  AND clave = ?";
+    $sentencia = $mbd->prepare($consulta);
+    $sentencia->bindParam(1, $email);
+    $sentencia->bindParam(2, $password);
+    $sentencia->execute();
+    $filas = $sentencia->rowCount();
+
+    //Se inicia la sesion
+    if ($filas > 0) {
+        $res = $sentencia->fetch();
+        session_start();
+        $_SESSION['id'] = $res['id'];
+        $sentencia = null;
+
+        //Mensaje de satisfaccion
+        echo 'ok';
     } else {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
 
-        $consulta = "SELECT * from usuarios WHERE correo = ?  AND clave = ?";
-        $sentencia= $mbd->prepare($consulta);
-        $sentencia->bindParam(1, $email);
-        $sentencia->bindParam(2, $password);
-        $sentencia->execute();
-        $filas=$sentencia->rowCount();
-
-        if($filas > 0){
-            $res = $sentencia->fetch();
-            session_start();
-            $_SESSION['id'] = $res['id'];
-            $sentencia=null;
-            print "<script> window.location = 'pages/home';</script>";
-        }
-        else{
-        echo '<p class="text-red-500 text-xs italic mt-2"  >Correo o contraseña incorrecta</p>';
-        }
+        // Mensaje de error
+        echo 'error datos';
     }
+}
 
 
 /* elseif (isset($_POST['registrar'])) {
