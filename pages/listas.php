@@ -1,31 +1,29 @@
 <?php
-include('databases/connectToBD.php');
+
+//Loader
+include('../assets/loader.html');
+
+//Conexion a base de datos
+include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
 include('config/validatesesion.php');
 
-$listactive =true;
-$consulta = "SELECT * from usuarios WHERE id = ?";
-$sentencia = $mbd->prepare($consulta);
-$sentencia->bindParam(1, $id);
-$sentencia->execute();
-$filas = $sentencia->rowCount();
-//echo $filas;
+//Modulos
+include('config/sqlmodulos.php');
 
-if ($filas > 0) {
-    $resultado = $sentencia->fetch();
-    $nombre  = $resultado['nombre'];
-    $apellido  = $resultado['apellido'];
-}
+//Listas
+include('config/sqllistas.php');
+
+$listactive = true;
 
 
-$consulta2 = "SELECT * from listas ORDER BY id DESC ";
-$sentencia2 = $mbd->prepare($consulta2);
-$sentencia2->execute();
-$filas2 = $sentencia2->rowCount();
+
 
 if (isset($_GET['lista'])) {
     $consultal = "SELECT * from listas WHERE id = ? ";
     $sentencial = $mbd->prepare($consultal);
-    $idlistae =base64_decode(base64_decode($_GET['lista']));
+    $idlistae = base64_decode(base64_decode($_GET['lista']));
     $sentencial->bindParam(1, $idlistae);
     $sentencial->execute();
     $datal = $sentencial->fetch();
@@ -140,7 +138,15 @@ if (isset($_GET['lista'])) {
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
                                                                                     <input type="text" class="form-control" id="nombre-list" placeholder="Nombre de lista" name="nombre-list" />
                                                                                 </div>
-
+                                                                                <div class="col-12 mt-2">
+                                                                                    <label class="form-label" for="modulo-list">Modulo:</label>
+                                                                                    <select name="modulo-list" class="form-select" id="modulo-list">
+                                                                                        <option selected value="">Seleccionar modulo</option>
+                                                                                        <?php foreach ($modulos as $modulo) : ?>
+                                                                                            <option value="<?php echo $modulo['id'] ?>"><?php echo $modulo['nombre'] ?></option>
+                                                                                        <?php endforeach ?>
+                                                                                    </select>
+                                                                                </div>
                                                                                 <div class="col-12 mt-2">
                                                                                     <label class="form-label" for="semestre">Semestre:</label>
                                                                                     <select name="semestre" class="form-select" id="semestre-list">
@@ -191,7 +197,7 @@ if (isset($_GET['lista'])) {
                                             </div>
                                         <?php
                                         } else {
-                                            $datos = $sentencia2->fetchAll();
+                                            $datos = $sentencialistas->fetchAll();
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
                                                 <?php
@@ -207,15 +213,24 @@ if (isset($_GET['lista'])) {
                                                                     <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
 
                                                                     <h5 class="mt-1 mb-1">
-                                                                        <a href="listas?lista=<?php echo base64_encode( base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                        <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                     </h5>
 
                                                                     <div class="d-flex justify-content-between">
                                                                         <p class="mb-0">
                                                                             <span class="pe-2 text-nowrap mb-1 d-inline-block">
                                                                                 <i class="mdi mdi-briefcase-outline text-muted"></i>
-                                                                                Hyper
+                                                                                <?php
+                                                                                    $modulo = 'SELECT * from modulos WHERE id = ? ';
+                                                                                    $nmodulo = $mbd->prepare($modulo);
+                                                                                    $nmodulo->bindParam(1, $dato['id_modulo']);
+                                                                                    $nmodulo->execute();
+                                                                                    $nombre = $nmodulo->fetch();
+                                                                                    echo $nombre['nombre'];
+                                                                                    // var_dump($resultadocantidad);
+                                                                                    ?>
                                                                             </span>
+                                                                            <br>
                                                                             <span class="text-nowrap mb-1 d-inline-block">
                                                                                 <i class="uil uil-user"></i>
                                                                                 <b>

@@ -1,7 +1,16 @@
 <?php
+
+//Loader
 include('../assets/loader.html');
+
+//Conexion a base de datos
 include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
 include('config/validatesesion.php');
+$idmodulo=1;
+
+include('config/listas-modulo.php');
 $pypactive = true;
 ?>
 
@@ -49,7 +58,7 @@ $pypactive = true;
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-
+                        <?php var_dump($listas) ?>
                                 </div>
                             </div>
                         </div>

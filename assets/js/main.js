@@ -105,7 +105,9 @@ function eventos() {
             
             //Respuesta positiva
           } else if (resultado == "ok") {
-
+            $("#tabla-list").html(
+              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
+            );
             //Se cierra el modal
             document.querySelector(".btn-close").click();
 
@@ -117,9 +119,25 @@ function eventos() {
               width: 300,
             });
             setTimeout(() => {
+                $('#resultado-list').html(resultado);
+                if(resultado == '<h5 class="text-success mt-2">&#x2714; Lista agregada</h5>'){
+                    document.querySelector('.btn-close').click();
+                    Swal.fire({
+                        text: 'Agregado correctamente',
+                        confirmButtonColor: '#3085d6',
+                        icon:'success',
+                        width:300,
 
-              //Actualizacion de lista y de callback se llama la misma funcion
-              $("#app").load("listas.php #app", eventos);
+                    })
+                    setTimeout(() => {
+                        document.getElementById('nombre').value ='';
+                        $("#tabla-list").html('<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>');
+                        document.getElementById('semestre').value ='';
+                        setTimeout(() => {
+                            $("#tabla-list").load("listas.php #tabla-list",agregareventDelete);
+                        }, 1000);
+                     },400)
+                }
             }, 1000);
           } else {
 
@@ -149,22 +167,49 @@ setInterval(function () {
   document.querySelector(".hora_hoy").innerHTML = hora;
 }, 1000);
 
-function verificarCampos() {
-  if (document.getElementById("nombre-list").value == "") {
-    document.getElementById("nombre-list").style.border = "1px solid #F56547";
-  } else {
-    document.getElementById("nombre-list").style.border = "1px solid #64BB62";
-  }
+$('#boton-login').click(function(){
+    console.log('clok')
+    $.ajax({
+        url:'pages/config/validate.php',
+        type:'post',
+        data:$('#formulario-login').serialize(),
+        success:function(res){
+            $('#result-login').html('<div class="load-item"></div>');
+            setTimeout(() => {
+                $('#result-login').html(res)
+            }, 1300);
+        }
+    })
+})
+document.getElementById('boton-eye').addEventListener('click', () => {
+    if (document.getElementById('password').type == 'password') {
+        document.getElementById('boton-eye').classList.remove('fas');
+        document.getElementById('boton-eye').classList.remove('fa-eye');
+        document.getElementById('boton-eye').classList.add('fa-solid');
+        document.getElementById('boton-eye').classList.add('fa-eye-slash');
 
-  if (document.getElementById("semestre-list").value == "") {
-    document.getElementById("semestre-list").style.border = "1px solid #F56547";
-  } else {
-    document.getElementById("semestre-list").style.border = "1px solid #64BB62";
-  }
+        
 
-  if (document.getElementById("adjunto").value == "") {
-    document.getElementById("adjunto").style.border = "1px solid #F56547";
-  } else {
-    document.getElementById("adjunto").style.border = "1px solid #64BB62";
-  }
+        document.getElementById('password').type = 'text';
+        document.getElementById('password').focus();
+    } else {
+        document.getElementById('boton-eye').classList.add('fas');
+        document.getElementById('boton-eye').classList.add('fa-eye');
+        document.getElementById('boton-eye').classList.remove('fa-solid');
+        document.getElementById('boton-eye').classList.remove('fa-eye-slash');
+        document.getElementById('password').type = 'password';
+        document.getElementById('password').focus();
+    }
+})
+document.querySelectorAll('.campo').forEach(element=>{
+    cambio(element);
+})
+function cambio(key){
+key.addEventListener('keyup',()=>{
+    if(key.value == ''){
+        key.classList.replace('border-gray-300', 'border-red-500');
+    }else{
+        key.classList.replace('border-red-500', 'border-gray-300');
+    }
+})
 }
