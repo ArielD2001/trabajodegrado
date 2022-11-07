@@ -1,8 +1,13 @@
 <?php
-include_once('databases/connectToBD.php');
-include('config/validatesesion.php');
 
+//Loader
 include('../assets/loader.html');
+
+//Conexion a base de datos
+include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
+include('config/validatesesion.php');
 $home = true;
 ?>
 

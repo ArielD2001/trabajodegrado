@@ -82,3 +82,4 @@ if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
     }
 }
 */
+?>

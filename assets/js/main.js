@@ -105,7 +105,9 @@ function eventos() {
             
             //Respuesta positiva
           } else if (resultado == "ok") {
-
+            $("#tabla-list").html(
+              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
+            );
             //Se cierra el modal
             document.querySelector(".btn-close").click();
 
@@ -154,6 +156,11 @@ function verificarCampos() {
     document.getElementById("nombre-list").style.border = "1px solid #F56547";
   } else {
     document.getElementById("nombre-list").style.border = "1px solid #64BB62";
+  }
+  if (document.getElementById("modulo-list").value == "") {
+    document.getElementById("modulo-list").style.border = "1px solid #F56547";
+  } else {
+    document.getElementById("modulo-list").style.border = "1px solid #64BB62";
   }
 
   if (document.getElementById("semestre-list").value == "") {

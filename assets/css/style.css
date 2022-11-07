@@ -65,7 +65,7 @@ table tbody tr:hover {
     width: 45% !important;
     transition: .2s;
     height: auto !important;
-    max-height: 120px;
+    max-height: 150px;
     min-width: 400px;
 }
 

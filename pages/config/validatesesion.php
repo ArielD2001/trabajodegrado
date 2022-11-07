@@ -24,3 +24,4 @@ if (!$_SESSION) {
     $nombre  = $resultado['nombre'];
     $apellido  = $resultado['apellido'];
 }
+?>

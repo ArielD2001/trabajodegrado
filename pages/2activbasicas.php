@@ -1,6 +1,13 @@
-<?php include('../assets/loader.html');
+<?php 
+
+//Loader
+include('../assets/loader.html');
+
+//Conexion a base de datos
 include_once('databases/connectToBD.php');
-include('config/validatesesion.php') ; 
+
+//Verificacion de Sesion
+include('config/validatesesion.php');
 $actactive =true;
 ?>
 

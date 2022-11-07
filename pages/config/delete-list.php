@@ -24,3 +24,4 @@
         //Se redirecciona a la pagina de listas
         header('location: ../listas.php');
     }
+?>

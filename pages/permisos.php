@@ -1,24 +1,17 @@
-<?php include('../assets/loader.html'); ?>
+<?php 
 
-<?php
-include('databases/connectToBD.php');
+//Loader
+include('../assets/loader.html');
+
+//Conexion a base de datos
+include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
 include('config/validatesesion.php');
 
 $permisosactive = true;
-$consulta = "SELECT * from usuarios WHERE id = ?";
-$sentencia = $mbd->prepare($consulta);
-$sentencia->bindParam(1, $id);
-$sentencia->execute();
-$filas = $sentencia->rowCount();
-//echo $filas;
 
-if ($filas > 0) {
-    $resultado = $sentencia->fetch();
-    $nombre  = $resultado['nombre'];
-    $apellido  = $resultado['apellido'];
-}
-
-
+//Contulta para obtener los modulos
 $consulta2 = "SELECT * from modulos";
 $sentencia2 = $mbd->prepare($consulta2);
 $sentencia2->execute();

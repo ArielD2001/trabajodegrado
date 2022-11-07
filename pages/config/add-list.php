@@ -27,7 +27,7 @@ if (isset($_FILES['adjunto'])) {
     parse_str($_POST["data"], $data);
 
     //Se validan que los campos NO esten vacios
-    if (strlen($data['nombre-list']) == 0  || strlen($data['semestre']) == 0) {
+    if (strlen($data['nombre-list']) == 0  || strlen($data['semestre']) == 0 || strlen($data['modulo-list']) == 0) {
 
 
         //mensaje de error
@@ -39,15 +39,16 @@ if (isset($_FILES['adjunto'])) {
 
             //Al ser un fichero valido se toman las variables enviadas
             $nombre = $data['nombre-list'];
+            $modulo = $data['modulo-list'];
             $semestre = $data['semestre'];
             $fecha = date('d/m/y');
-            $adjuntoName;
 
             //Se verifica que la lista a insertar ya no este registrada
-            $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?";
+            $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?  AND id_modulo = ?";
             $sentencia = $mbd->prepare($consulta);
             $sentencia->bindParam(1, $nombre);
             $sentencia->bindParam(2, $semestre);
+            $sentencia->bindParam(3, $modulo);
             $sentencia->execute();
             $fila = $sentencia->rowCount();
 
@@ -55,9 +56,9 @@ if (isset($_FILES['adjunto'])) {
             if ($fila < 1) {
 
                 //Al validar que la lista no se encuentra registrada se registra
-                $consultainsert = "INSERT INTO listas( nombre, semestre, fecha) VALUES(?,?,?)";
+                $consultainsert = "INSERT INTO listas(id_modulo, nombre, semestre, fecha) VALUES(?,?,?,?)";
                 $sentenciainsert = $mbd->prepare($consultainsert);
-                $sentenciainsert->execute(array($nombre, $semestre, $fecha));
+                $sentenciainsert->execute(array($modulo, $nombre, $semestre, $fecha));
                 $filas = $sentenciainsert->rowCount();
 
                 //Se verifica que la fila se inserto
