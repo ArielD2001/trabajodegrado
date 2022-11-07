@@ -8,6 +8,11 @@ include_once('databases/connectToBD.php');
 
 //Verificacion de Sesion
 include('config/validatesesion.php');
+
+$idmodulo=6;
+include('config/listas-modulo.php');
+
+
 $adulactive =true;
 ?>
 
@@ -40,14 +45,24 @@ $adulactive =true;
             <!-- ========= contenido ========= -->
             <div class="content container">
                 <div class="contenedor">
-                <div class="row   px-3 my-3">
+                    <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Adulto Mayor</h3>
+                            <h3>Promoción y prevención</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
                                 <div class="hora_hoy" style="display: inline;">00:00:00</div>
                             </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <?php var_dump($listas) ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

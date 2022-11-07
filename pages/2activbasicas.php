@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 //Loader
 include('../assets/loader.html');
@@ -8,7 +8,11 @@ include_once('databases/connectToBD.php');
 
 //Verificacion de Sesion
 include('config/validatesesion.php');
-$actactive =true;
+
+$idmodulo = 2;
+include('config/listas-modulo.php');
+
+$actactive = true;
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +20,7 @@ $actactive =true;
 
 <head>
     <?php include "config/config-header.php" ?>
-     <title>Actividades  basicas</title>
+    <title>Actividades basicas</title>
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -36,13 +40,13 @@ $actactive =true;
 
 
 
-            
+
             <!-- ========= contenido ========= -->
             <div class="content container">
                 <div class="contenedor">
-                <div class="row   px-3 my-3">
+                    <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Actividades Basicas</h3>
+                            <h3>Promoción y prevención</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
@@ -50,10 +54,20 @@ $actactive =true;
                             </span>
                         </div>
                     </div>
-              
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <?php var_dump($listas) ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- ========= footer =========-->
-                  <?php include "templates/plantilla-footer.php" ;?>
+                <?php include "templates/plantilla-footer.php"; ?>
                 <!-- ========= end footer ========= -->
             </div>
             <!-- ========= end contenido ========= -->
@@ -62,10 +76,11 @@ $actactive =true;
         </div>
 
         <!-- ========= aside ========= -->
-          <?php include "templates/plantilla-aside.php" ;?>
+        <?php include "templates/plantilla-aside.php"; ?>
         <!-- ========= end aside ========= -->
 
     </div>
     <?php include "config/config-footer.php" ?>
 </body>
+
 </html>

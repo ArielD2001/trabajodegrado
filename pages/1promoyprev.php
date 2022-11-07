@@ -8,8 +8,8 @@ include_once('databases/connectToBD.php');
 
 //Verificacion de Sesion
 include('config/validatesesion.php');
-$idmodulo=1;
 
+$idmodulo=1;
 include('config/listas-modulo.php');
 $pypactive = true;
 ?>
