@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2022 a las 00:08:56
+-- Tiempo de generación: 07-11-2022 a las 22:52:19
 -- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 7.4.29
+-- Versión de PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,20 @@ CREATE TABLE `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`id`, `Nombre`, `documento`, `id_lista`) VALUES
-(2, 'Ariel Caraballo Diaz', 1001903378, 29);
+(8, 'Ariel', 123213, 15),
+(9, 'celeste', 121313, 15),
+(10, 'monica', 12312, 15),
+(11, 'Pedro', 312312, 15),
+(12, 'Catalino', 123123, 15),
+(13, 'Fernando', 123123, 15),
+(14, 'Luis', 12312, 15),
+(15, 'Ariel', 123213, 16),
+(16, 'celeste', 121313, 16),
+(17, 'monica', 12312, 16),
+(18, 'Pedro', 312312, 16),
+(19, 'Catalino', 123123, 16),
+(20, 'Fernando', 123123, 16),
+(21, 'Luis', 12312, 16);
 
 -- --------------------------------------------------------
 
@@ -49,20 +62,19 @@ INSERT INTO `estudiantes` (`id`, `Nombre`, `documento`, `id_lista`) VALUES
 
 CREATE TABLE `listas` (
   `id` int(10) NOT NULL,
+  `id_modulo` int(10) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `fecha` varchar(60) NOT NULL,
-  `semestre` varchar(15) NOT NULL
+  `semestre` varchar(15) NOT NULL,
+  `fecha` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `listas`
 --
 
-INSERT INTO `listas` (`id`, `nombre`, `fecha`, `semestre`) VALUES
-(27, 'Lista grupo 1', '27/10/22', '2'),
-(28, 'Grupo 2', '27/10/22', '5'),
-(29, 'lista 3', '27/10/22', '2'),
-(30, 'Grupo 20', '28/10/22', '14');
+INSERT INTO `listas` (`id`, `id_modulo`, `nombre`, `semestre`, `fecha`) VALUES
+(15, 1, 'Lista 21', 'I (Primer)', '07/11/22'),
+(16, 3, 'Lista 21', 'I (Primer)', '07/11/22');
 
 -- --------------------------------------------------------
 
@@ -112,8 +124,7 @@ CREATE TABLE `modulo_nota` (
 CREATE TABLE `permisos` (
   `id` int(10) NOT NULL,
   `id_modulo` int(10) NOT NULL,
-  `id_docente` int(10) NOT NULL,
-  `id_lista` int(10) NOT NULL
+  `id_docente` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -178,8 +189,7 @@ ALTER TABLE `modulo_nota`
 ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_docentes` (`id_docente`),
-  ADD KEY `fk_modulos` (`id_modulo`),
-  ADD KEY `fk_lista1` (`id_lista`);
+  ADD KEY `fk_modulos` (`id_modulo`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -195,13 +205,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `listas`
 --
 ALTER TABLE `listas`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `modulos`
@@ -232,23 +242,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `estudiantes`
---
-ALTER TABLE `estudiantes`
-  ADD CONSTRAINT `fk_lista` FOREIGN KEY (`id_lista`) REFERENCES `listas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `modulo_nota`
---
-ALTER TABLE `modulo_nota`
-  ADD CONSTRAINT `fk_estudiante` FOREIGN KEY (`id_estudiante`) REFERENCES `estudiantes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `permisos`
 --
 ALTER TABLE `permisos`
   ADD CONSTRAINT `fk_docentes` FOREIGN KEY (`id_docente`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_lista1` FOREIGN KEY (`id_lista`) REFERENCES `listas` (`id`),
   ADD CONSTRAINT `fk_modulos` FOREIGN KEY (`id_modulo`) REFERENCES `modulos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
