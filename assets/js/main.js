@@ -155,6 +155,11 @@ function verificarCampos() {
   } else {
     document.getElementById("nombre-list").style.border = "1px solid #64BB62";
   }
+  if (document.getElementById("modulo-list").value == "") {
+    document.getElementById("modulo-list").style.border = "1px solid #F56547";
+  } else {
+    document.getElementById("modulo-list").style.border = "1px solid #64BB62";
+  }
 
   if (document.getElementById("semestre-list").value == "") {
     document.getElementById("semestre-list").style.border = "1px solid #F56547";
