@@ -9,7 +9,7 @@ include_once('databases/connectToBD.php');
 //Verificacion de Sesion
 include('config/validatesesion.php');
 
-$idmodulo=1;
+$idmodulo = 1;
 include('config/listas-modulo.php');
 $pypactive = true;
 ?>
@@ -58,7 +58,25 @@ $pypactive = true;
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-                        <?php var_dump($listas) ?>
+                                    <?php var_dump($listas) ?>
+                                    <!-- Scrollable modal -->
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#scrollable-modal">Scrollable Modal</button>
+                                    <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-full-width modal-dialog-scrollable" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
                                 </div>
                             </div>
                         </div>
