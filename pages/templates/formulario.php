@@ -1,5 +1,4 @@
 <style>
-
     * {
         padding: 0;
         margin: 0;
@@ -22,9 +21,12 @@
         margin: 0 auto;
         transform: scale(0.9);
     }
-.item:hover, textarea:hover{
-    background: rgb(0,0,0,0.2);
-}
+
+    .item:hover,
+    textarea:hover {
+        background: rgb(0, 0, 0, 0.2);
+    }
+
     input {
         text-align: center;
         border: none;
@@ -32,9 +34,11 @@
         font-size: 15px;
         background: transparent;
     }
-input:focus{
-    background-color: rgb(0,0,0,0.2);
-}
+
+    input:focus {
+        background-color: rgb(0, 0, 0, 0.2);
+    }
+
     input::placeholder {
         color: black;
     }
@@ -50,7 +54,9 @@ input:focus{
         font-weight: bold;
         text-align: center;
     }
-
+.left{
+    column-gap: 40px;
+}
     .left,
     .center {
         width: 40%;
@@ -269,7 +275,8 @@ input:focus{
 <div class="contenedor">
     <div class="cabecera flex border">
         <div class="left flex">
-            <img src="../../assets/images/logo-form.jpg" alt="" width="100px">
+            <img src="../../assets/images/logo-form.jpg" alt="" width="115px">
+            <img src="../../assets/images/logo-form2.jpg" alt="" width="115px">
         </div>
         <div class="center border-left flex">
             FORMATO DE EVALUACIÓN PRACTICA
@@ -897,54 +904,36 @@ input:focus{
         //PREGUNTAS A2
         var preguntasA2 = document.querySelectorAll('.campoA2')
         var totalA2 = document.getElementById('totalA2');
-        
+
         //SUBTOTAL A
         var subtotalA = document.getElementById('subtotalA');
 
-        subA1.forEach(i=>{
-            i.addEventListener('keyup',function(){
-               let sub  = 0;
-               subA1.forEach(j=>{
-                if(j.value != ''){
-                sub += parseFloat(j.value)
-               }
-               })
-               pregunta1.value = sub/4;
-
-               let total = 0;
-                preguntasA1.forEach(pregunta => {
-
-                    if (pregunta.value != '') {
-                        total += parseFloat(pregunta.value);
+        subA1.forEach(i => {
+            i.addEventListener('keyup', function() {
+                let sub = 0;
+                subA1.forEach(j => {
+                    if (j.value != '') {
+                        sub += parseFloat(j.value)
                     }
                 })
-                totalA1.value = total / 5
+                pregunta1.value = sub / 4;
+                updateTotal();
             })
         })
+
         preguntasA1.forEach(item => {
-
-            item.addEventListener('keyup', function() {
-              
-                let total = 0;
-                preguntasA1.forEach(pregunta => {
-
-                    if (pregunta.value != '') {
-                        total += parseFloat(pregunta.value);
-                    }
-                })
-                totalA1.value = total / 5
-
-            })
+            item.addEventListener('keyup', updateTotal)
         })
 
-        // camposA1.forEach(element=>{
-        //     element.addEventListener('keydown',getTotalA1())
-        // })
-        // function getTotalA1(){
-        //     let total=0;
-        //     camposA1.forEach(element=>{
-        //         total += element.value();
-        //     })
-        //     totalA1.innerHTML = total;
-        // }
+        function updateTotal() {
+            let total = 0;
+            preguntasA1.forEach(pregunta => {
+
+                if (pregunta.value != '') {
+                    total += parseFloat(pregunta.value);
+                }
+            })
+            totalA1.value = (total / 5)*0.1
+            subtotalA.innerHTML=totalA1.value;
+        }
     </script>
