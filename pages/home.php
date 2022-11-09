@@ -39,30 +39,6 @@ $home = true;
             <!-- ========= end header ========= -->
 
             <!-- ========= contenido ========= -->
-
-            <div class="card">
-                <div class="card-body">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                               <a target="blank" href="https://www.curn.edu.co/inscripciones"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn1.jpg" alt="First slide"></a>
-                            </div>
-                            <div class="carousel-item">
-                                <a target="blank" href="https://www.curn.edu.co/jornadaactualizacioniq.html"><img class="d-block img-fluid -100" src="../assets/images/layouts/curn2.jpg" alt="Second slide"></a>
-                            </div>
-                            <div class="carousel-item">
-                               <a target="blanl" href="https://curn.edu.co/buengobierno"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn3.jpg" alt="Third slide"></a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
             <div class="content container">
                 <div class="contenedor">
                     <div class="row   px-3 mt-3">
@@ -78,6 +54,30 @@ $home = true;
                     </div>
                 </div>
             </div>
+            <div class="card mt-2">
+                <div class="card-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                               <a target="blank" href="https://www.curn.edu.co/inscripciones"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn1.jpg" alt="First slide"></a>
+                            </div>
+                            <div class="carousel-item">
+                                <a target="blank" href="https://www.curn.edu.co/jornadaactualizacioniq.html"><img class="d-block img-fluid w-100" src="../assets/images/layouts/curn2.jpg" alt="Second slide"></a>
+                            </div>
+                            <div class="carousel-item">
+                               <a target="blank" href="https://curn.edu.co/buengobierno"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn3.jpg" alt="Third slide"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+          
             <!-- ========= end contenido ========= -->
 
             <!-- ========= footer =========-->

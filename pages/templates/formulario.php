@@ -275,8 +275,8 @@
 <div class="contenedor">
     <div class="cabecera flex border">
         <div class="left flex">
-            <img src="../../assets/images/logo-form.jpg" alt="" width="115px">
-            <img src="../../assets/images/logo-form2.jpg" alt="" width="115px">
+            <img src="../../assets/images/logo-form.jpg" alt="" width="115px" draggable="false">
+            <img src="../../assets/images/logo-form2.jpg" alt="" width="115px" draggable="false">
         </div>
         <div class="center border-left flex">
             FORMATO DE EVALUACIÓN PRACTICA
@@ -458,7 +458,7 @@
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Se presenta a sus actividades 15 a 10 minutos antes y a la hora de recibir</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -587,7 +587,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -625,7 +625,7 @@
                         <span class="nombre-item ">Maneja los conceptos sobre:
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
                 </div>
 
                 <div class="item   flex">
@@ -715,7 +715,7 @@
                         <span class="nombre-item ">Demuestra seguridad y confianza en la realización de sus actividades.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -733,7 +733,7 @@
                         <span class="nombre-item ">Planea,ejecuta y evalua:
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
                 </div>
 
                 <div class="item   flex">
