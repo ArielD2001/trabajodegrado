@@ -132,7 +132,7 @@ if (isset($_GET['lista'])) {
 
                                                                 <div class="container">
                                                                     <div class="row border p-3 rounded">
-                                                                        <form method="post" id="formulario-list" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
+                                                                        <form method="post" accept=".xls,.xlsx" id="formulario-list" enctype="multipart/form-data" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate" accept=".xlsx">
                                                                             <div class="row ">
                                                                                 <div class="col-12">
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
