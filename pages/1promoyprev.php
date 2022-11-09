@@ -1,22 +1,17 @@
-<?php include('../assets/loader.html'); ?>
-
 <?php
-include('databases/connectToBD.php');
+
+//Loader
+include('../assets/loader.html');
+
+//Conexion a base de datos
+include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
 include('config/validatesesion.php');
 
+$idmodulo = 1;
+include('config/listas-modulo.php');
 $pypactive = true;
-$consulta = "SELECT * from usuarios WHERE id = ?";
-$sentencia = $mbd->prepare($consulta);
-$sentencia->bindParam(1, $id);
-$sentencia->execute();
-$filas = $sentencia->rowCount();
-echo $filas;
-
-if ($filas > 0) {
-    $resultado = $sentencia->fetch();
-    $nombre  = $resultado['nombre'];
-    $apellido  = $resultado['apellido'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +43,7 @@ if ($filas > 0) {
             <!-- ========= contenido ========= -->
             <div class="content container">
                 <div class="contenedor">
-                <div class="row   px-3 my-3">
+                    <div class="row   px-3 my-3">
                         <div class="col-6  ">
                             <h3>Promoción y prevención</h3>
                         </div>
@@ -58,12 +53,30 @@ if ($filas > 0) {
                             </span>
                         </div>
                     </div>
-                 
+
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body">
-
+                                    <?php var_dump($listas) ?>
+                                    <!-- Scrollable modal -->
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#scrollable-modal">Scrollable Modal</button>
+                                    <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-full-width modal-dialog-scrollable" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
                                 </div>
                             </div>
                         </div>

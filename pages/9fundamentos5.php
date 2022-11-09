@@ -1,7 +1,17 @@
 <?php 
+
+//Loader
 include('../assets/loader.html');
+
+//Conexion a base de datos
 include_once('databases/connectToBD.php');
-include('config/validatesesion.php') ; 
+
+//Verificacion de Sesion
+include('config/validatesesion.php');
+
+$idmodulo=9;
+include('config/listas-modulo.php');
+
 $vactive =true;
 ?>
 <!DOCTYPE html>
@@ -33,9 +43,9 @@ $vactive =true;
             <!-- ========= contenido ========= -->
             <div class="content container">
                 <div class="contenedor">
-                <div class="row   px-3 my-3">
+                    <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Fundamentos Socioeducativos V</h3>
+                            <h3>Promoción y prevención</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
@@ -44,8 +54,17 @@ $vactive =true;
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <?php var_dump($listas) ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
             <!-- ========= end contenido ========= -->
 
 

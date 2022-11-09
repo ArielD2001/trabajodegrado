@@ -1,8 +1,13 @@
 <?php
-include_once('databases/connectToBD.php');
-include('config/validatesesion.php');
 
+//Loader
 include('../assets/loader.html');
+
+//Conexion a base de datos
+include_once('databases/connectToBD.php');
+
+//Verificacion de Sesion
+include('config/validatesesion.php');
 $home = true;
 ?>
 
@@ -15,7 +20,7 @@ $home = true;
     <?php include('config/config-header.php') ?>
     <link rel="shortcut icon" href="../assets/images/logo_sm.png">
     <title>Home</title>
-
+   
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -51,7 +56,7 @@ $home = true;
                                 <a target="blank" href="https://www.curn.edu.co/jornadaactualizacioniq.html"><img class="d-block img-fluid -100" src="../assets/images/layouts/curn2.jpg" alt="Second slide"></a>
                             </div>
                             <div class="carousel-item">
-                               <a target="blanl" href="https://unicurn.sharepoint.com/sites/public/Documentos/Forms/AllItems.aspx?id=%2Fsites%2Fpublic%2FDocumentos%2Fpublic%2Fweb%2Fotros%2FCONVOCATORIA%20REVISTA%20VIRTUAL%20PORTAL%20DE%20LAS%20PALABRAS%208%2Epdf&parent=%2Fsites%2Fpublic%2FDocumentos%2Fpublic%2Fweb%2Fotros&p=true&ga=1"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn3.jpg" alt="Third slide"></a>
+                               <a target="blanl" href="https://curn.edu.co/buengobierno"> <img class="d-block img-fluid w-100" src="../assets/images/layouts/curn3.jpg" alt="Third slide"></a>
                             </div>
                         </div>
 
