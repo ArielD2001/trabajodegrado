@@ -10,6 +10,8 @@ $sentenciae->bindParam(1, $ide);
 $sentenciae->execute();
 $datae = $sentenciae->fetchAll();
 $cont = 1;
+
+var_dump($datae);
 ?>
 
 <!-- interfaz de la tabla de estudiante -->

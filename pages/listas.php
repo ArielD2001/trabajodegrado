@@ -109,17 +109,9 @@ if (isset($_GET['lista'])) {
                                     ?>
                                         <div class="row ">
                                             <div class="col-12 text-end">
-                                                <div class="d-flex justify-content-between align-items-center container">
-                                                    <div class="app-search dropdown d-none d-lg-block">
-                                                        <form>
-                                                            <div class="input-group">
-                                                                <input type="text" class="form-control dropdown-toggle" placeholder="Buscar lista..." id="top-search">
-                                                                <span class="mdi mdi-magnify search-icon"></span>
-                                                                <button class="input-group-text btn-info" type="submit">Buscar</button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
+                                                <div class="d-flex justify-content-end align-items-center container">
+
+                                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#centermodal"> + Agregar nueva lista</button>
                                                 </div>
                                                 <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
                                                     <div class="modal-dialog modal-dialog-centered text-start">
@@ -200,82 +192,69 @@ if (isset($_GET['lista'])) {
                                             $datos = $sentencialistas->fetchAll();
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                                <?php
-                                                foreach ($datos as $dato) {
-                                                ?>
-                                                    <div class="tasks border p-1 ">
+                                                <table class="table table-sm table-centered mb-5">
+                                                    <thead class="text-center">
+                                                        <tr>
+                                                            <th>Lista</th>
+                                                            <th> Modulo</th>
+                                                            <th>Semestre</th>
+                                                            <th> Estudiantes</th>
+                                                            <th>Fecha de añadido</th>
+                                                            <th>Opciones</th>
+                                                        </tr>
+                                                    </thead>
 
-                                                        <div id="task-list-two" class="task-list-items">
+                                                    <tbody class="text-center">
+                                                        <?php
+                                                        foreach ($datos as $dato) {
+                                                        ?>
+                                                            <tr>
+                                                                <td class="fw-bold">
+                                                                    <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                                </td>
 
-                                                            <!-- Task Item -->
-                                                            <div class="card px-2 mb-0">
-                                                                <div class="card-body p-1 px-2 ">
-                                                                    <small class="float-end text-muted">Fecha:<?php echo $dato['fecha']; ?></small>
+                                                                <td>
+                                                                    <?php
+                                                                    $modulo = 'SELECT * from modulos WHERE id = ? ';
+                                                                    $nmodulo = $mbd->prepare($modulo);
+                                                                    $nmodulo->bindParam(1, $dato['id_modulo']);
+                                                                    $nmodulo->execute();
+                                                                    $nombre = $nmodulo->fetch();
+                                                                    echo $nombre['nombre'];
+                                                                    // var_dump($resultadocantidad);
+                                                                    ?>
+                                                                </td>
 
-                                                                    <h5 class="mt-1 mb-1">
-                                                                        <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
-                                                                    </h5>
+                                                                <td>
+                                                                    <?php echo $dato['semestre']; ?>
+                                                                </td>
 
-                                                                    <div class="d-flex justify-content-between">
-                                                                        <p class="mb-0">
-                                                                            <span class="pe-2 text-nowrap mb-1 d-inline-block">
-                                                                                <i class="mdi mdi-briefcase-outline text-muted"></i>
-                                                                                <?php
-                                                                                    $modulo = 'SELECT * from modulos WHERE id = ? ';
-                                                                                    $nmodulo = $mbd->prepare($modulo);
-                                                                                    $nmodulo->bindParam(1, $dato['id_modulo']);
-                                                                                    $nmodulo->execute();
-                                                                                    $nombre = $nmodulo->fetch();
-                                                                                    echo $nombre['nombre'];
-                                                                                    // var_dump($resultadocantidad);
-                                                                                    ?>
-                                                                            </span>
-                                                                            <br>
-                                                                            <span class="text-nowrap mb-1 d-inline-block">
-                                                                                <i class="uil uil-user"></i>
-                                                                                <b>
-                                                                                    <?php
-                                                                                    $cantidad = 'SELECT * from estudiantes WHERE id_lista = ? ';
-                                                                                    $sentenciacantidad = $mbd->prepare($cantidad);
-                                                                                    $sentenciacantidad->bindParam(1, $dato['id']);
-                                                                                    $sentenciacantidad->execute();
-                                                                                    $filascantidad = $sentenciacantidad->rowCount();
-                                                                                    echo $filascantidad;
-                                                                                    // var_dump($resultadocantidad);
-                                                                                    ?>
-                                                                                </b> Estudiantes
-                                                                            </span>
-                                                                            <span class="align-middle"> - <?php echo $dato['semestre']; ?> Semestre </span>
+                                                                <td>
+                                                                    <?php
+                                                                    $cantidad = 'SELECT * from estudiantes WHERE id_lista = ? ';
+                                                                    $sentenciacantidad = $mbd->prepare($cantidad);
+                                                                    $sentenciacantidad->bindParam(1, $dato['id']);
+                                                                    $sentenciacantidad->execute();
+                                                                    $filascantidad = $sentenciacantidad->rowCount();
+                                                                    echo $filascantidad;
+                                                                    ?>
+                                                                </td>
 
-                                                                        </p>
+                                                                <td>
+                                                                    <?php echo $dato['fecha']; ?>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="list=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
+                                                                </td>
 
-                                                                        <div class="end d-flex align-items-center ">
-                                                                            <a href="list=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
-
-                                                                            <div class="dropdown ">
-                                                                                <a href="#" class="dropdown-toggle text-muted arrow-none" data-bs-toggle="dropdown" aria-expanded="false" style=" margin-left:10px !important;  padding:7px 5px ; border: 1px solid lightgrey">
-                                                                                    <i class="mdi mdi-dots-vertical font-18"></i>
-                                                                                </a>
-                                                                                <div class="dropdown-menu dropdown-menu-end">
-                                                                                    <!-- item-->
-                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-success"><i class="mdi mdi-pencil me-1"></i>Calificar</a>
-                                                                                    <!-- item-->
-                                                                                    <a href="javascript:void(0);" class="dropdown-item text-center text-info"><i class="mdi mdi-pencil me-1"></i>Editar</a>
-                                                                                    <!-- item-->
+                                                            </tr>
 
 
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
 
-
-                                                                    </div> <!-- end card-body -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                <?php
-                                                } ?>
+                                                        <?php
+                                                        } ?>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         <?php
                                         }

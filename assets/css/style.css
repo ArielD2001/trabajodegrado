@@ -32,8 +32,9 @@ table tbody tr {
 }
 
 table tbody tr:hover {
-    background-color: lightgray;
+    background-color: rgb(250, 250, 250);
 }
+
 
 .content-page {
     padding-bottom: 100px;
