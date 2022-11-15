@@ -17,9 +17,9 @@
     }
 
     .contenedor {
+        padding: 100px 0;
         width: 900px;
         margin: 0 auto;
-        transform: scale(0.9);
     }
 
     .item:hover,
@@ -54,9 +54,11 @@
         font-weight: bold;
         text-align: center;
     }
-.left{
-    column-gap: 40px;
-}
+
+    .left {
+        column-gap: 40px;
+    }
+
     .left,
     .center {
         width: 40%;
@@ -458,7 +460,7 @@
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Se presenta a sus actividades 15 a 10 minutos antes y a la hora de recibir</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -587,7 +589,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -597,7 +599,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -607,7 +609,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -617,7 +619,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -625,7 +627,7 @@
                         <span class="nombre-item ">Maneja los conceptos sobre:
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input readonly placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5" id="preguntab5" style="background-color: #FCABC4;">
                 </div>
 
                 <div class="item   flex">
@@ -634,7 +636,7 @@
                         <span class="nombre-item ">Instrumentos para el abordaje comunitario
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input  subB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -642,7 +644,7 @@
                         <span class="nombre-item ">Charla Educativa
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB1 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -650,7 +652,7 @@
                         <span class="nombre-item ">Visita Domiciliaria
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB1 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -658,7 +660,7 @@
                         <span class="nombre-item ">Maneja conceptos de APGAR- FAMILIOGRAMA-ECOMAPA
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
 
@@ -669,7 +671,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
 
@@ -680,7 +682,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border no-top campoB1 no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -689,14 +691,14 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border no-top no-left campoB1 padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5 cell-yellow">
 
                         <span class="nombre-item bold ">TOTAL B1:</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" type="text" id="totalB1" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
@@ -715,7 +717,7 @@
                         <span class="nombre-item ">Demuestra seguridad y confianza en la realización de sus actividades.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -724,7 +726,7 @@
                         <span class="nombre-item ">Realiza remisión de necesidades detectadas en la familia.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -733,7 +735,7 @@
                         <span class="nombre-item ">Planea,ejecuta y evalua:
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input readonly id="preguntab3" placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5" style="background-color: #FCABC4;">
                 </div>
 
                 <div class="item   flex">
@@ -742,7 +744,7 @@
                         <span class="nombre-item "> Plan de Actividades diarias.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input subB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -750,7 +752,7 @@
                         <span class="nombre-item "> Charlas Educativas.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -759,7 +761,7 @@
                         <span class="nombre-item "> Instrumentos de la salud familiar.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -768,7 +770,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -777,7 +779,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -785,7 +787,7 @@
                         <span class="nombre-item ">Control
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -794,7 +796,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border subB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -804,7 +806,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -814,7 +816,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -824,7 +826,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -834,7 +836,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -844,7 +846,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border no-top campoB2 no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -854,7 +856,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border no-top no-left campoB2 padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -864,7 +866,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border no-top no-left campoB2 padding-5">
                 </div>
 
 
@@ -873,14 +875,14 @@
 
                         <span class="nombre-item bold ">TOTAL B2</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" id="totalB2" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
         </div>
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalB">0.00</p>
         </div>
     </div>
 
@@ -891,49 +893,168 @@
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
     </div>
+</div>
+<script>
+    //PREGUNTAS A1
+    var preguntasA1 = document.querySelectorAll('.campoA1')
+    var pregunta1 = document.getElementById('A-1-1')
+    var subA1 = document.querySelectorAll('.subA1')
+    var totalA1 = document.getElementById('totalA1');
 
-    <script>
-        //PREGUNTAS A1
-        var preguntasA1 = document.querySelectorAll('.campoA1')
-        var pregunta1 = document.getElementById('A-1-1')
-        var subA1 = document.querySelectorAll('.subA1')
-        var totalA1 = document.getElementById('totalA1');
+    //PREGUNTAS A2
+    var preguntasA2 = document.querySelectorAll('.campoA2')
+    var totalA2 = document.getElementById('totalA2');
 
-        //PREGUNTAS A2
-        var preguntasA2 = document.querySelectorAll('.campoA2')
-        var totalA2 = document.getElementById('totalA2');
+    //SUBTOTAL A
+    var subtotalA = document.getElementById('subtotalA');
 
-        //SUBTOTAL A
-        var subtotalA = document.getElementById('subtotalA');
+    
+    //Preguntas B1
+    var preguntasB1 = document.querySelectorAll('.campoB1');
+    var pregubtab5 = document.getElementById('preguntab5');
+    var subB1 = document.querySelectorAll('.subB1');
+    var totalB1 = document.getElementById('totalB1');
+    
+    //preguntasB2
+    var preguntasB2 = document.querySelectorAll('.campoB2');
+    var preguntab3 = document.getElementById('preguntab3');
+    var subB2 = document.querySelectorAll('.subB2');
+    var totalB2 = document.getElementById('totalB2');
+    
+    //total final
+    var totalF = document.getElementById('totalF');
 
-        subA1.forEach(i => {
-            i.addEventListener('keyup', function() {
-                let sub = 0;
-                subA1.forEach(j => {
-                    if (j.value != '') {
-                        sub += parseFloat(j.value)
-                    }
-                })
-                pregunta1.value = sub / 4;
-                updateTotal();
-            })
-        })
-
-        preguntasA1.forEach(item => {
-            item.addEventListener('keyup', updateTotal)
-        })
-
-        function updateTotal() {
-            let total = 0;
-            preguntasA1.forEach(pregunta => {
-
-                if (pregunta.value != '') {
-                    total += parseFloat(pregunta.value);
+    //preguntas pertenecientes a la pregunta 1
+    subA1.forEach(i => {
+        i.addEventListener('keyup', function() {
+            let sub = 0;
+            subA1.forEach(j => {
+                if (j.value != '') {
+                    sub += parseFloat(j.value)
                 }
             })
-            totalA1.value = (total / 5)*0.1
-            subtotalA.innerHTML=totalA1.value;
-        }
-    </script>
+            pregunta1.value = sub / 4;
+            updateTotalA1();
+        })
+    })
+
+    //Eventos de preguntas 1
+    preguntasA1.forEach(item => {
+        item.addEventListener('keyup', updateTotalA1)
+    })
+
+    preguntasA2.forEach(item => {
+        item.addEventListener('keyup', updateTotalA2)
+    })
+
+    function updateTotalA1() {
+        let total = 0;
+        preguntasA1.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalA1.value = (total / 5) * 0.1
+        let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
+
+        subtotalA.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+
+    }
+
+    function updateTotalA2() {
+        let total = 0;
+        preguntasA2.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalA2.value = (total / 10) * 0.1
+        let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
+        subtotalA.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+
+
+    }
+
+
+
+   
+
+    //preguntas pertenecientes a la pregunta 2
+    subB1.forEach(i => {
+        i.addEventListener('keyup', function() {
+            let sub = 0;
+            subB1.forEach(j => {
+                if (j.value != '') {
+                    sub += parseFloat(j.value)
+                }
+            })
+            pregubtab5.value = sub / 3;
+            updateTotalB1();
+        })
+    })
+
+    //Eventos de preguntas 2
+    preguntasB1.forEach(item => {
+        item.addEventListener('keyup', updateTotalB1)
+    })
+
+    function updateTotalB1() {
+        let total = 0;
+        preguntasB1.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB1.value = (total / 9) * 0.4
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+        
+
+    }
+
+    
+
+    //preguntas pertenecientes a la pregunta 2
+    subB2.forEach(i => {
+        i.addEventListener('keyup', function() {
+            let sub = 0;
+            subB2.forEach(j => {
+                if (j.value != '') {
+                    sub += parseFloat(j.value)
+                }
+            })
+            preguntab3.value = sub / 7;
+            updateTotalB2();
+        })
+    })
+
+    //Eventos de preguntas 2
+    preguntasB2.forEach(item => {
+        item.addEventListener('keyup', updateTotalB2)
+    })
+
+    function updateTotalB2() {
+        let total = 0;
+        preguntasB2.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB2.value = (total / 10) * 0.4
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+
+    }
+</script>

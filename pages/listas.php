@@ -193,7 +193,7 @@ if (isset($_GET['lista'])) {
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
                                                 <table class="table table-sm table-centered mb-5">
-                                                    <thead class="text-center">
+                                                    <thead class="text-center bg-dark text-white">
                                                         <tr>
                                                             <th>Lista</th>
                                                             <th> Modulo</th>
