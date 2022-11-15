@@ -1,7 +1,7 @@
 <?php
 
 //se realiza la consulta para obtener los estudiantes de la lista
-$estudiantes_sql = 'SELECT * FROM estudiantes WHERE id_lista = ?';
+$estudiantes_sql = 'SELECT * FROM estudiantes WHERE id_lista = ? ORDER BY nombre ASC';
 $sentenciae = $mbd->prepare($estudiantes_sql);
 
 //se descifra el id de la lista 
@@ -11,7 +11,9 @@ $sentenciae->execute();
 $datae = $sentenciae->fetchAll();
 $cont = 1;
 
-var_dump($datae);
+$sqlList = 'SELECT * FROM listas WHERE id = ?';
+$sentenciaList = $mbd->prepare($sqlListt);
+
 ?>
 
 <!-- interfaz de la tabla de estudiante -->
@@ -23,23 +25,19 @@ var_dump($datae);
 
 
         <hr>
-
-        <!-- contenido-->
-        <div class="tab-content">
-            <div class="tab-pane show active" id="multi-item-preview">
-                <div id="selection-datatable_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                    <div class="px-5">
-                        <p class="text-muted font-14 px-5">
-                        <div class="alert alert-info" role="alert" style="display: flex; align-items:center; height:100%">
-                            <i class="dripicons-information me-2"></i>
-                            <p>En este apartado solamente puede borrar o editar alguna informacion de los estudiantes para calificar por favor seleccione la lista <strong> <?php echo $datal['nombre'] ?> </strong> en el modulo correspondiente a calificar.</p>
-                        </div>
-                        </p>
-                    </div>
-                </div>
-            </div> <!-- end preview-->
-
-        </div> <!-- end tab-content-->
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre:</th>
+                        <th>Documento</th>
+                        <th>Nombre:</th>
+                        <th>Nombre:</th>
+                        <th>Nombre:</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
 
 
     </div><!-- end col-->

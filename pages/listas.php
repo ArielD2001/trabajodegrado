@@ -143,7 +143,7 @@ if (isset($_GET['lista'])) {
                                                                                     <label class="form-label" for="semestre">Semestre:</label>
                                                                                     <select name="semestre" class="form-select" id="semestre-list">
                                                                                         <option selected value="">Seleccionar semestre</option>
-                                                                                        <option value="I (Primer)"> I (Primero) </option>
+                                                                                        <option value="I (Primero)"> I (Primero) </option>
                                                                                         <option value="II (Segundo)"> II (Segundo) </option>
                                                                                         <option value="III (Tercero)"> III (Tercero) </option>
                                                                                         <option value="IV (Cuarto)"> IV (Cuarto) </option>
@@ -204,12 +204,12 @@ if (isset($_GET['lista'])) {
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody class="text-center">
+                                                    <tbody class="text-center border">
                                                         <?php
                                                         foreach ($datos as $dato) {
                                                         ?>
                                                             <tr>
-                                                                <td class="fw-bold">
+                                                                <td class="fw-bold fs-5">
                                                                     <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                 </td>
 
