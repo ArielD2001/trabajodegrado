@@ -3,8 +3,7 @@ include('../databases/connectToBD.php');
 
 
 //Se comprueba que los campos no esten vacios
-if (strlen($_POST['email']) == 0 || strlen($_POST['password'] == 0)) {
-
+if ($_POST['email'] == '' || $_POST['password'] == '') {
     //Mensaje de error
     echo 'campos vacios';
 } else {

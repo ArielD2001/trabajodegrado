@@ -1,5 +1,8 @@
 /* Estilos globales */
-
+*::selection{
+    background-color: orange !important;
+    color: white;
+}
 .leftside-menu {
     transition: .1s;
 }
@@ -29,6 +32,7 @@ body {
 table tbody tr {
     transition: .1s;
     font-size: 15px;
+    font-size: 13px !important;
 }
 
 table tbody tr:hover {

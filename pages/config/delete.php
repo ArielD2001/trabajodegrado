@@ -19,7 +19,21 @@
         $sentencia = $mbd->prepare($consulta);
         $sentencia->bindParam(1, $lista);
         $sentencia->execute();
-    } else {
+    }else if(isset($_GET['student'])){
+        //se descifra y se toma el id del estudiante 
+        $estudiante = base64_decode($_GET['student']);
+
+
+        //se realiza la consulta para eliminar los estudiantes de la lista
+        $consultae = "DELETE  from estudiantes WHERE id =?";
+        $sentenciae = $mbd->prepare($consultae);
+        $sentenciae->bindParam(1, $estudiante);
+        $sentenciae->execute();
+
+
+       
+    } 
+    else {
 
         //Se redirecciona a la pagina de listas
         header('location: ../listas.php');

@@ -15,7 +15,7 @@ include('config/sqlmodulos.php');
 //Listas
 include('config/sqllistas.php');
 
-$listactive = true;
+
 
 
 
@@ -27,6 +27,15 @@ if (isset($_GET['lista'])) {
     $sentencial->bindParam(1, $idlistae);
     $sentencial->execute();
     $datal = $sentencial->fetch();
+    $idm = $datal['id_modulo'];
+    $sqlList = 'SELECT * FROM modulos WHERE id = ?';
+    $sentenciaList = $mbd->prepare($sqlList);
+    $sentenciaList->bindParam(1, $idm);
+    $sentenciaList->execute();
+    $modulo = $sentenciaList->fetch();
+}
+else{
+    $listactive = true;
 }
 ?>
 
@@ -81,7 +90,8 @@ if (isset($_GET['lista'])) {
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary"><a href="javascript:history.go(-1)">Listas</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"> <?php echo $modulo['nombre'] ?></li>
+                                        <li class="breadcrumb-item active">Listas</li>
                                         <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
                                 </nav>
@@ -101,7 +111,7 @@ if (isset($_GET['lista'])) {
                         <div class="col-12" id="app">
                             <div class="card ">
 
-                                <div class="card-body ">
+                                <div class="card-body " id="card-body">
                                     <?php
                                     if (isset($_GET['lista'])) {
                                         include('config/estudiantes-list.php');
@@ -184,7 +194,7 @@ if (isset($_GET['lista'])) {
                                         ?>
 
                                             <div class="col-12 d-flex flex-column align-items-center">
-                                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="300px" alt="No hay ningun registro!" style="opacity: .8;">
+                                                <img src="../assets/images/layouts/not-found.png" draggable="false" width="200px" alt="No hay ningun registro!" style="opacity: .8;">
                                                 <span class="h4">No se encontraron Listas</span>
                                             </div>
                                         <?php
