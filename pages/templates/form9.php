@@ -586,7 +586,7 @@
                         <span class="nombre-item ">Demuestra conocimiento del tema a desarrollar.													
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -595,7 +595,7 @@
                         <span class="nombre-item ">Identifica los conocimientos pedagogicos utilizados en el plan de charla										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -604,7 +604,7 @@
                         <span class="nombre-item ">Cumple con la metodologia para la elaboración del Plan y Contenido de Charla.													
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
                 
@@ -613,7 +613,7 @@
 
                         <span class="nombre-item bold ">TOTAL B1:</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" type="text" id="totalB1" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
@@ -632,7 +632,7 @@
                         <span class="nombre-item ">Presenta el objetivo de la clase a los estudiantes.										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -641,7 +641,7 @@
                         <span class="nombre-item ">Utiliza adecuadamente los recursos audiovisuales.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -650,7 +650,7 @@
                         <span class="nombre-item ">Maneja en forma correcta el tiempo asignado para la clase.						
                         </span>
                     </div>
-                    <input  placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input  placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5" >
                 </div>
 
                
@@ -660,7 +660,7 @@
                         <span class="nombre-item "> Domina al grupo manteniendo la atención del mismo.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -669,7 +669,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -677,7 +677,7 @@
                         <span class="nombre-item ">Relaciona el tema con la práctica profesional.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -685,7 +685,7 @@
                         <span class="nombre-item ">Utiliza la evaluación para retroalimentar el proceso. 						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
 
 
@@ -694,7 +694,7 @@
 
                         <span class="nombre-item bold ">TOTAL B2</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" type="text" id="totalB2" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
@@ -728,9 +728,15 @@
                         <span class="nombre-item ">Entrega productos y participa en Mesa redonda, foros, seminarios, panel de discusión, Debate, Phillips 66, lluvia de ideas y simposio
                         Reconocer las tendencias pedagógicas actuales.</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input placeholder="0.00" type="text" class="input  campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
-               
+                <div class="item   flex">
+                    <div class="pregunta border no-top padding-5 cell-blue">
+
+                        <span class="nombre-item bold ">TOTAL C</span>
+                    </div>
+                    <input readonly value="0.00" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow">
+                </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
     </div>
@@ -762,9 +768,15 @@
                         <span class="numero "><b>D1. </b></span>
                         <span class="nombre-item ">demuestra revisión bibliográfica y plantea con criterio científico la aplicabilidad del mismo en el contexto, de acuerdo a la tematica asignada por el programa.	</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input placeholder="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
-               
+                <div class="item   flex">
+                    <div class="pregunta border no-top padding-5 cell-blue">
+
+                        <span class="nombre-item bold ">TOTAL D</span>
+                    </div>
+                    <input readonly value="0.00" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
+                </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
     </div>
@@ -772,7 +784,7 @@
 
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B - Conocimiento Cientifíco y Desempeño - PRODUCTO FINAL DE ROTACION  6% -TEMA ASIGNADO 4%</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+            <p class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
         </div>
     </div>
 
@@ -783,7 +795,7 @@
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
     </div>
 
     <script>
@@ -800,18 +812,24 @@
     //SUBTOTAL A
     var subtotalA = document.getElementById('subtotalA');
 
-    
     //Preguntas B1
     var preguntasB1 = document.querySelectorAll('.campoB1');
-    var pregubtab5 = document.getElementById('preguntab5');
-    var subB1 = document.querySelectorAll('.subB1');
     var totalB1 = document.getElementById('totalB1');
     
     //preguntasB2
     var preguntasB2 = document.querySelectorAll('.campoB2');
-    var preguntab3 = document.getElementById('preguntab3');
-    var subB2 = document.querySelectorAll('.subB2');
     var totalB2 = document.getElementById('totalB2');
+    var subtotalB = document.getElementById('subtotalB');
+
+    //Pregunta C
+    var preguntasC = document.querySelectorAll('.campoC');
+    var totalC = document.getElementById('totalC');
+    var subtotalC = document.getElementById('subtotalC');
+
+    //Preguntas D
+    var preguntasD = document.querySelectorAll('.campoD');
+    var totalD = document.getElementById('totalD');
+    var subtotalD = document.getElementById('subtotalD');
     
     //total final
     var totalF = document.getElementById('totalF');
@@ -837,6 +855,22 @@
 
     preguntasA2.forEach(item => {
         item.addEventListener('keyup', updateTotalA2)
+    })
+    //Evento de prguntas B
+    preguntasB1.forEach(item => {
+        item.addEventListener('keyup', updateTotalB1)
+    })
+
+    preguntasB2.forEach(item => {
+        item.addEventListener('keyup', updateTotalB2)
+    })
+    //Evento de prguntas C
+    preguntasC.forEach(item => {
+        item.addEventListener('keyup', updateTotalC)
+    })
+    //Evento de preguntas D
+    preguntasD.forEach(item => {
+        item.addEventListener('keyup', updateTotalD)
     })
 
     function updateTotalA1() {
@@ -868,6 +902,67 @@
         subtotalA.innerHTML = inner;
         totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
 
+
+    }
+    function updateTotalB1() {
+        let total = 0;
+        preguntasB1.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB1.value = (total / 3) * 0.4
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value)+parseFloat(totalC.value)+parseFloat(totalD.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) ;
+
+    }
+    function updateTotalB2() {
+        let total = 0;
+        preguntasB2.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB2.value = (total / 7) * 0.4
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value)+parseFloat(totalC.value)+parseFloat(totalD.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) ;
+
+    }
+
+    function updateTotalC() {
+        let total = 0;
+        preguntasC.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalC.value = (total / 1) * 0.06
+        let inner = parseFloat(totalC.value)
+
+        subtotalC.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML);
+
+    }
+    function updateTotalD() {
+        let total = 0;
+        preguntasD.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalD.value = (total / 1) * 0.04
+        let inner = parseFloat(totalD.value)
+
+        subtotalD.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML);
 
     }
     </script>

@@ -360,8 +360,8 @@
         <div class="col-1">
             <div class="header flex">
                 <div class="titulo-1 ">
-                    <p class="padding-5 border no-top titulo-1-p bold">A.COMPETENCIAS ACTITUDINALES Y DE COMPORTAMIENTO (20%)</p>
-                    <p class="padding-5 border no-top bold fs-14">A.1 Relaciones interpersonales(10%)</p>
+                    <p class="padding-5 border no-top titulo-1-p bold">A.COMPETENCIAS ACTITUDINALES Y DE COMPORTAMIENTO (15%)</p>
+                    <p class="padding-5 border no-top bold fs-14">A.1 Relaciones interpersonales(7%)</p>
                 </div>
                 <div class="titulo-2 border center no-top bold no-left padding-5">
                     Nota
@@ -458,7 +458,7 @@
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
-        <p class="padding-10 border no-top fs-14 bold" style="width: 100%">A2 Responsabilidad y compromiso (10%)</p>
+        <p class="padding-10 border no-top fs-14 bold" style="width: 100%">A2 Responsabilidad y compromiso (8%)</p>
 
 
 
@@ -599,7 +599,7 @@
                         <span class="nombre-item "> Identifica conceptos y funciones generales de administración						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -609,7 +609,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -619,7 +619,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -629,7 +629,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -637,7 +637,7 @@
                         <span class="nombre-item ">Describe indicadores de gestión del área funcional							
                         </span>
                     </div>
-                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -646,7 +646,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
 
@@ -657,7 +657,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
 
 
@@ -668,7 +668,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -676,7 +676,7 @@
                         <span class="nombre-item ">Interpreta los resultados de lo examenes de laboratorios y estudios especiales				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -684,7 +684,7 @@
                         <span class="nombre-item ">Enuncia el tratamiento de su paciente y describe la acción farmacologica del mismo según la patologia.				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -692,7 +692,7 @@
                         <span class="nombre-item ">Conoce las diferentes escalas de valoración del Paciente con transtorno mental				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -700,7 +700,7 @@
                         <span class="nombre-item ">Aplica las diferentes escalas en la valoración del paciente con transtorno mental 				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -708,14 +708,14 @@
                         <span class="nombre-item ">Apoya las terapias individuales y familiares realizadas a los pacientes 				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5 cell-yellow">
 
                         <span class="nombre-item bold ">TOTAL B1:</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" type="text" id="totalB1" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
@@ -734,7 +734,7 @@
                         <span class="nombre-item ">Elabora diagnóstico situacional de la instituciones de salud como herramienta de planeación.		
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -743,7 +743,7 @@
                         <span class="nombre-item ">Elabora planes estratégicos de acuerdo a los requerimientos de la institución		
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -752,7 +752,7 @@
                         <span class="nombre-item ">Supervisa actividades del personal a su cargo y rinde informe						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5" >
                 </div>
                 
                 <div class="item   flex">
@@ -761,7 +761,7 @@
                         <span class="nombre-item ">Establece prioridades en la asignación de funciones y actividades del personal a su cargo										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -769,7 +769,7 @@
                         <span class="nombre-item ">Demuestra autonomia, asume el liderazgo y gestiona el cuidado de Enfermeria  integrando el Ser, Saber y Saber Hacer.				
                         </span>
                     </div>
-                    <input  placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input  placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -777,7 +777,7 @@
                         <span class="nombre-item ">Aplica y evalúa encuestas de satisfacción de clientes, de acuerdo a los resultados obtenidos propone estrategias de mejoramiento.									
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -785,7 +785,7 @@
                         <span class="nombre-item ">Elabora y participa en Programas de Educación Contínua y realiza entrenamiento al personal a su cargo de acuerdo a las necesidades					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -793,7 +793,7 @@
                         <span class="nombre-item ">Elabora horarios de acuerdo a los lineamientos establecidos en la institución				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -801,7 +801,7 @@
                         <span class="nombre-item ">Observa y Valora clinicamente a su paciente				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -809,7 +809,7 @@
                         <span class="nombre-item ">Planea el cuidados de Enfermería de acuerdo con los problemas identificados en el paciente de acuerdo al formato del programa. 				
                         </span>
                     </div>
-                    <input  placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input  placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -817,7 +817,7 @@
                         <span class="nombre-item ">Brinda cuidado integral de enfemeria a los usuarios de su servicio				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -825,7 +825,7 @@
                         <span class="nombre-item ">Ejecuta los planes de cuidado según lo planeado															
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -833,7 +833,7 @@
                         <span class="nombre-item ">Reajusta y evalua el plan de cuidados de acuerdo a los cambios presentados, dando las recomendaciones necesarias.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -842,7 +842,7 @@
 		
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -850,7 +850,7 @@
                         <span class="nombre-item ">Diligencia correctamente los registros de enfermería y realiza auditoria de los mismos						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -858,7 +858,7 @@
                         <span class="nombre-item ">Motiva e incentiva al personal en el cumplimiento de funciones y normas de seguridad y bioseguridad						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -866,7 +866,7 @@
                         <span class="nombre-item ">Tiene en cuenta los criterios establecidos en la institución para la admisión y egreso de pacientes						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -874,7 +874,7 @@
                         <span class="nombre-item ">Realiza rondas de Enfermeria y planea acciones de acuerdo a la situacion encontrada. 						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -882,7 +882,7 @@
                         <span class="nombre-item ">Recibe y entrega el turno de acuerdo al procedimiento establecido en la institucion de salud.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -890,7 +890,7 @@
                         <span class="nombre-item ">Maneja adecuadamente los registros de historia clínica y formatos del servicio						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -899,7 +899,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -907,7 +907,7 @@
                         <span class="nombre-item ">Organiza el equipo necesario para la ejecución de procedimientos y verifica su funciónamiento.					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -915,7 +915,7 @@
                         <span class="nombre-item ">Demuestra seguridad y confianza en la realización de sus actividades.						
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -923,14 +923,14 @@
                         <span class="nombre-item ">Apoya las actividades realizadas al paciente (lúdicas y recreativas)										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5" style="background-color: rgb(253,233,217);">
 
                         <span class="nombre-item bold ">TOTAL B2</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="0.00" type="text" id="totalB2" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
@@ -938,7 +938,7 @@
         
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+            <p class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
         </div>
     </div>
 
@@ -975,7 +975,7 @@
                         <span class="numero "><b>C-</b></span>
                         <span class="nombre-item ">Evaluación Escrita de la rotación 10%</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input placeholder="0.00" type="text" class="input  campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
 
                 <div class="item   flex">
@@ -991,7 +991,7 @@
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (10%) </p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="total1 border bold no-top no-left padding-5" id="subtotalC" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
     </div>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -1026,7 +1026,7 @@
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">CLUB DE REVISTA  :                                          5%		                        </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input placeholder="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
 
                 <div class="item   flex">
@@ -1034,14 +1034,14 @@
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">NARRATIVAS y PAE:                                          5%		</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="A-1-3">
+                    <input placeholder="0.00" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="A-1-3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">DOFA y actividades educativas 10%			</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="A-1-3">
+                    <input placeholder="0.00" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="A-1-3">
                 </div>
 
                 <div class="item   flex">
@@ -1056,7 +1056,7 @@
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal D:  CLUB DE REVISTA : (5%) + NARRATIVAS y PAE: (5%) + DOFA y actividades educativas (10%)</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="total1 border bold no-top no-left padding-5" id="subtotalD" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
     </div>
 
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -1066,7 +1066,7 @@
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
     </div>
 
     <script>
@@ -1083,18 +1083,24 @@
     //SUBTOTAL A
     var subtotalA = document.getElementById('subtotalA');
 
-    
-    //Preguntas B1
-    var preguntasB1 = document.querySelectorAll('.campoB1');
-    var pregubtab5 = document.getElementById('preguntab5');
-    var subB1 = document.querySelectorAll('.subB1');
+     //Preguntas B1
+     var preguntasB1 = document.querySelectorAll('.campoB1');
     var totalB1 = document.getElementById('totalB1');
     
     //preguntasB2
     var preguntasB2 = document.querySelectorAll('.campoB2');
-    var preguntab3 = document.getElementById('preguntab3');
-    var subB2 = document.querySelectorAll('.subB2');
     var totalB2 = document.getElementById('totalB2');
+    var subtotalB = document.getElementById('subtotalB');
+
+    //Pregunta C
+    var preguntasC = document.querySelectorAll('.campoC');
+    var totalC = document.getElementById('totalC');
+    var subtotalC = document.getElementById('subtotalC');
+
+    //Preguntas D
+    var preguntasD = document.querySelectorAll('.campoD');
+    var totalD = document.getElementById('totalD');
+    var subtotalD = document.getElementById('subtotalD');
     
     //total final
     var totalF = document.getElementById('totalF');
@@ -1120,6 +1126,22 @@
 
     preguntasA2.forEach(item => {
         item.addEventListener('keyup', updateTotalA2)
+    })
+    //Evento de prguntas B
+    preguntasB1.forEach(item => {
+        item.addEventListener('keyup', updateTotalB1)
+    })
+
+    preguntasB2.forEach(item => {
+        item.addEventListener('keyup', updateTotalB2)
+    })
+    //Evento de prguntas C
+    preguntasC.forEach(item => {
+        item.addEventListener('keyup', updateTotalC)
+    })
+    //Evento de preguntas D
+    preguntasD.forEach(item => {
+        item.addEventListener('keyup', updateTotalD)
     })
 
     function updateTotalA1() {
@@ -1150,7 +1172,67 @@
         let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
         subtotalA.innerHTML = inner;
         totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+    }
+    function updateTotalB1() {
+        let total = 0;
+        preguntasB1.forEach(pregunta => {
 
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB1.value = (total / 13) * 0.2
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+        
+
+    }
+    function updateTotalB2() {
+        let total = 0;
+        preguntasB2.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalB2.value = (total / 24) * 0.35
+        let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+
+        subtotalB.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)  + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+
+    }
+
+    function updateTotalC() {
+        let total = 0;
+        preguntasC.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalC.value = (total / 1) * 0.1
+        let inner = parseFloat(totalC.value)
+
+        subtotalC.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+
+    }
+    function updateTotalD() {
+        let total = 0;
+        preguntasD.forEach(pregunta => {
+
+            if (pregunta.value != '') {
+                total += parseFloat(pregunta.value);
+            }
+        })
+        totalD.value = (total / 3) * 0.2
+        let inner = parseFloat(totalD.value)
+
+        subtotalD.innerHTML = inner;
+        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
 
     }
     </script>
