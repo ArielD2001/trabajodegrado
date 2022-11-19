@@ -23,5 +23,6 @@ if (!$_SESSION) {
     $resultado = $sentencia->fetch();
     $nombre  = $resultado['nombre'];
     $apellido  = $resultado['apellido'];
+    $avatar    = $resultado['avatar'];
 }
 ?>

@@ -46,7 +46,7 @@ $cuimactive =true;
                 <div class="contenedor">
                     <div class="row   px-3 my-3">
                         <div class="col-6  ">
-                            <h3>Promoción y prevención</h3>
+                            <h3>Cuidado materno infantil</h3>
                         </div>
                         <div class="col-6 justify-content-end  d-flex align-items-center">
                             <span class="h6"><?php echo date('d/m/y') . ' - ' ?>
@@ -69,7 +69,6 @@ $cuimactive =true;
                                                         <th>Semestre</th>
                                                         <th> Estudiantes</th>
                                                         <th>Fecha de añadido</th>
-                                                        <th>Opciones</th>
                                                     </tr>
                                                 </thead>
 
@@ -112,9 +111,7 @@ $cuimactive =true;
                                                             <td>
                                                                 <?php echo $dato['fecha']; ?>
                                                             </td>
-                                                            <td>
-                                                                <a href="list=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-btn"><i class="mdi mdi-delete"></i></a>
-                                                            </td>
+                                                           
 
                                                         </tr>
 

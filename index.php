@@ -31,7 +31,9 @@ if (isset($_GET['code'])) {
     $google_oauth = new Google_Service_Oauth2($client);
     $google_account_info = $google_oauth->userinfo->get();
     $email =  $google_account_info->email;
-    $name =  $google_account_info->name;
+    $name =  $google_account_info->givenName;
+    $apellido =  $google_account_info->familyName;
+    $avatar =  $google_account_info->picture;
     $tipo = 'GOOGLE';
     $fecha = date('d/m/y');
 
@@ -45,13 +47,15 @@ if (isset($_GET['code'])) {
     $filas = $sentencia->rowCount();
 
     if ($filas < 1) {
-        $inser = "INSERT INTO usuarios(nombre, correo, ultima_sesion, fecha) VALUES(:nombre,:correo, :sesion, :fecha, :tipo)";
+        $inser = "INSERT INTO usuarios(nombre, apellido, correo, ultima_sesion, fecha, tipo, avatar) VALUES(:nombre, :apellido, :correo, :sesion, :fecha, :tipo, :avatar)";
         $sentencial = $mbd->prepare($inser);
         $sentencial->bindParam(':nombre', $name, PDO::PARAM_STR);
+        $sentencial->bindParam(':apellido', $apellido, PDO::PARAM_STR);
         $sentencial->bindParam(':correo', $email, PDO::PARAM_STR);
         $sentencial->bindParam(':sesion', $fecha, PDO::PARAM_STR);
         $sentencial->bindParam(':fecha', $fecha, PDO::PARAM_STR);
         $sentencial->bindParam(':tipo', $tipo, PDO::PARAM_STR);
+        $sentencial->bindParam(':avatar', $avatar, PDO::PARAM_STR);
         $sentencial->execute();
 
         $id = $mbd->lastInsertId();
@@ -60,7 +64,7 @@ if (isset($_GET['code'])) {
     }else{
         $_SESSION['id'] = $data['id'];
        header('Location:pages/home');
-    }
+    };
 
     
 

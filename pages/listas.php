@@ -21,7 +21,7 @@ include('config/sqllistas.php');
 
 
 if (isset($_GET['lista'])) {
-    $consultal = "SELECT * from listas WHERE id = ? ";
+    $consultal = "SELECT * from listas WHERE id = ? AND ";
     $sentencial = $mbd->prepare($consultal);
     $idlistae = base64_decode(base64_decode($_GET['lista']));
     $sentencial->bindParam(1, $idlistae);
@@ -90,7 +90,7 @@ else{
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary" aria-current="page" onclick="history.back()"> <?php echo $modulo['nombre'] ?></li>
+                                        <li class="breadcrumb-item text-primary" aria-current="page" ><a onclick="history.back()" class="text-primary"> <?php echo $modulo['nombre'] ?></a></li> 
                                         <li class="breadcrumb-item active">Listas</li>
                                         <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
@@ -205,8 +205,8 @@ else{
                                                 <table class="table table-sm table-centered mb-5">
                                                     <thead class="text-center bg-dark text-white">
                                                         <tr>
-                                                            <th>Lista</th>
-                                                            <th> Modulo</th>
+                                                            <th class="text-start ps-3">Nombre</th>
+                                                            <th class="text-start"> Modulo</th>
                                                             <th>Semestre</th>
                                                             <th> Estudiantes</th>
                                                             <th>Fecha de añadido</th>
@@ -219,11 +219,11 @@ else{
                                                         foreach ($datos as $dato) {
                                                         ?>
                                                             <tr>
-                                                                <td class="fw-bold fs-5">
+                                                                <td class="fw-bold fs-5 text-start ps-3">
                                                                     <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                 </td>
 
-                                                                <td>
+                                                                <td class="text-start"> 
                                                                     <?php
                                                                     $modulo = 'SELECT * from modulos WHERE id = ? ';
                                                                     $nmodulo = $mbd->prepare($modulo);

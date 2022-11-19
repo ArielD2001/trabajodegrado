@@ -83,7 +83,9 @@ table tbody tr:hover {
 }
 
 
-
+a{
+    cursor: pointer !important ;
+}
 .mdi.mdi-dots-vertical.font-18 {
     transition: .1s;
     padding: 5px;
