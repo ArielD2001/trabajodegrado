@@ -45,12 +45,13 @@ if (isset($_GET['code'])) {
     $filas = $sentencia->rowCount();
 
     if ($filas < 1) {
-        $inser = "INSERT INTO usuarios(nombre, correo, ultima_sesion, fecha) VALUES(:nombre,:correo, :sesion, :fecha)";
+        $inser = "INSERT INTO usuarios(nombre, correo, ultima_sesion, fecha) VALUES(:nombre,:correo, :sesion, :fecha, :tipo)";
         $sentencial = $mbd->prepare($inser);
         $sentencial->bindParam(':nombre', $name, PDO::PARAM_STR);
         $sentencial->bindParam(':correo', $email, PDO::PARAM_STR);
         $sentencial->bindParam(':sesion', $fecha, PDO::PARAM_STR);
         $sentencial->bindParam(':fecha', $fecha, PDO::PARAM_STR);
+        $sentencial->bindParam(':tipo', $tipo, PDO::PARAM_STR);
         $sentencial->execute();
 
         $id = $mbd->lastInsertId();

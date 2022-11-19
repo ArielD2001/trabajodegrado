@@ -79,7 +79,7 @@ $pypactive = true;
                                                     foreach ($listas as $dato) {
                                                     ?>
                                                         <tr>
-                                                            <td class="fw-bold fs-5">
+                                                            <td class="fw-bold fs-5 text-start ps-3">
                                                                 <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-dark"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                             </td>
 

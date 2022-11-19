@@ -20,7 +20,7 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
 <div class="row pt-3 px-3" id="estudiantes-table">
     <div class="col-12 d-flex justify-content-between align-items-center">
         <!--Nombre de la lista -->
-        <b class="header-title fs-3 col-4 text-primary"><?php echo $datal['nombre'] ?></b>
+        <b class="header-title fs-3 col-4 text-dark"><?php echo $datal['nombre'] ?></b>
 
 
 
@@ -86,7 +86,7 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
                     <tbody class=" border">
                         <?php foreach ($datae as $dato) : ?>
                             <tr>
-                                <td class="fw-bold fs-5 px-2 text-left">
+                                <td class="fw-bold fs-5 ps-3 text-left">
                                     <?php echo $dato['Nombre'] . ' ' . $dato['Nombre'] ?>
                                 </td>
 
