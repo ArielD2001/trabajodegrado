@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2022 a las 22:52:19
+-- Tiempo de generación: 16-11-2022 a las 17:00:22
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.0.19
 
@@ -52,7 +52,46 @@ INSERT INTO `estudiantes` (`id`, `Nombre`, `documento`, `id_lista`) VALUES
 (18, 'Pedro', 312312, 16),
 (19, 'Catalino', 123123, 16),
 (20, 'Fernando', 123123, 16),
-(21, 'Luis', 12312, 16);
+(21, 'Luis', 12312, 16),
+(22, 'Ariel', 123213, 17),
+(23, 'celeste', 121313, 17),
+(24, 'monica', 12312, 17),
+(25, 'Pedro', 312312, 17),
+(26, 'Catalino', 123123, 17),
+(27, 'Fernando', 123123, 17),
+(28, 'Fernando', 123123, 17),
+(29, 'Fernando', 123123, 17),
+(30, 'Fernando', 123123, 17),
+(31, 'Fernando', 123123, 17),
+(32, 'Fernando', 123123, 17),
+(33, 'Fernando', 123123, 17),
+(34, 'Fernando', 123123, 17),
+(35, 'Ariel', 123213, 18),
+(36, 'celeste', 121313, 18),
+(37, 'monica', 12312, 18),
+(38, 'Pedro', 312312, 18),
+(39, 'Catalino', 123123, 18),
+(40, 'Fernando', 123123, 18),
+(41, 'Fernando', 123123, 18),
+(42, 'Fernando', 123123, 18),
+(43, 'Fernando', 123123, 18),
+(44, 'Fernando', 123123, 18),
+(45, 'Fernando', 123123, 18),
+(46, 'Fernando', 123123, 18),
+(47, 'Fernando', 123123, 18),
+(48, 'Ariel', 123213, 19),
+(49, 'celeste', 121313, 19),
+(50, 'monica', 12312, 19),
+(51, 'Pedro', 312312, 19),
+(52, 'Catalino', 123123, 19),
+(53, 'Fernando', 123123, 19),
+(54, 'Fernando', 123123, 19),
+(55, 'Fernando', 123123, 19),
+(56, 'Fernando', 123123, 19),
+(57, 'Fernando', 123123, 19),
+(58, 'Fernando', 123123, 19),
+(59, 'Fernando', 123123, 19),
+(60, 'Fernando', 123123, 19);
 
 -- --------------------------------------------------------
 
@@ -74,7 +113,10 @@ CREATE TABLE `listas` (
 
 INSERT INTO `listas` (`id`, `id_modulo`, `nombre`, `semestre`, `fecha`) VALUES
 (15, 1, 'Lista 21', 'I (Primer)', '07/11/22'),
-(16, 3, 'Lista 21', 'I (Primer)', '07/11/22');
+(16, 3, 'Lista 21', 'I (Primer)', '07/11/22'),
+(17, 6, 'isaias', 'X (Decimo)', '15/11/22'),
+(18, 1, 'semestre grupo 2', 'IV (Cuarto)', '15/11/22'),
+(19, 6, 'Lista 21', 'IV (Cuarto)', '16/11/22');
 
 -- --------------------------------------------------------
 
@@ -111,7 +153,7 @@ INSERT INTO `modulos` (`id`, `nombre`) VALUES
 CREATE TABLE `modulo_nota` (
   `id` int(10) NOT NULL,
   `id_estudiante` int(10) NOT NULL,
-  `id_modulo` int(10) NOT NULL,
+  `id_pregubta` int(10) NOT NULL,
   `nota` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -125,6 +167,18 @@ CREATE TABLE `permisos` (
   `id` int(10) NOT NULL,
   `id_modulo` int(10) NOT NULL,
   `id_docente` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `preguntas`
+--
+
+CREATE TABLE `preguntas` (
+  `id` int(10) DEFAULT NULL,
+  `pregunta` varchar(255) NOT NULL,
+  `id_modulo` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -205,13 +259,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `estudiantes`
 --
 ALTER TABLE `estudiantes`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `listas`
 --
 ALTER TABLE `listas`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `modulos`
