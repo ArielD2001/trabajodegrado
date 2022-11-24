@@ -202,8 +202,8 @@ else{
                                             $datos = $sentencialistas->fetchAll();
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                                <table class="table table-sm table-centered mb-5">
-                                                    <thead class="text-center bg-dark text-white">
+                                                <table class="table table-sm table-centered py-4" id="tabla-listas">
+                                                    <thead class="text-center bg-dark text-white ">
                                                         <tr>
                                                             <th class="text-start ps-3">Nombre</th>
                                                             <th class="text-start"> Modulo</th>
@@ -264,6 +264,7 @@ else{
                                                         <?php
                                                         } ?>
                                                     </tbody>
+                                                    
                                                 </table>
                                             </div>
                                         <?php
@@ -294,6 +295,10 @@ else{
     <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
-
+<script>
+     $(document).ready( function () {
+    $('#tabla-listas').DataTable();
+} );
+</script>
 
 </body>
