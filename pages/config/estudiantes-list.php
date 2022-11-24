@@ -73,7 +73,7 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
             <?Php if ($cantidad != 0) { ?>
 
 
-                <table class="table table-sm table-centered mb-5">
+                <table class="table table-sm table-centered mb-5 py-3" id="tablas">
                     <thead class="text-center bg-secondary text-white">
                         <tr>
                             <th>Nombre</th>

@@ -14,4 +14,5 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Validaciones -->
+    <script type="text/javascript" src="../assets/js/datatables.min.js"></script>
     <script src="../assets/js/main.js"> </script>

@@ -42,9 +42,8 @@ function eventos() {
               '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
             );
             setTimeout(() => {
-
               //Se actualiza la tabla de listas y de callbac se llama la misma funcion
-              $("#app").load("listas.php #app", eventos);
+              location.reload()
             }, 500);
           },
         });
@@ -169,7 +168,8 @@ function eventos() {
             setTimeout(() => {
 
               //Actualizacion de lista y de callback se llama la misma funcion
-              $("#app").load("listas.php #app", eventos);
+              location.reload();
+
             }, 1000);
           } else {
 

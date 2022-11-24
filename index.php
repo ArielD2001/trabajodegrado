@@ -7,8 +7,8 @@ require_once 'vendor/autoload.php';
 
 
 // init configuration
-$clientID = '';
-$clientSecret = '';
+$clientID = '181763698264-8k0s1odm3jglvo4urbsqtauk9pghdusq.apps.googleusercontent.com';
+$clientSecret = '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';
 $redirectUri = 'http://localhost/codigos/trabajodegrado/index';
 
 // create Client Request to access Google API

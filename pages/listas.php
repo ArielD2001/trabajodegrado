@@ -21,7 +21,7 @@ include('config/sqllistas.php');
 
 
 if (isset($_GET['lista'])) {
-    $consultal = "SELECT * from listas WHERE id = ? AND ";
+    $consultal = "SELECT * from listas WHERE id = ? ";
     $sentencial = $mbd->prepare($consultal);
     $idlistae = base64_decode(base64_decode($_GET['lista']));
     $sentencial->bindParam(1, $idlistae);
@@ -33,8 +33,7 @@ if (isset($_GET['lista'])) {
     $sentenciaList->bindParam(1, $idm);
     $sentenciaList->execute();
     $modulo = $sentenciaList->fetch();
-}
-else{
+} else {
     $listactive = true;
 }
 ?>
@@ -90,7 +89,7 @@ else{
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary" aria-current="page" ><a onclick="history.back()" class="text-primary"> <?php echo $modulo['nombre'] ?></a></li> 
+                                        <li class="breadcrumb-item text-primary" aria-current="page"><a onclick="history.back()" class="text-primary"> <?php echo $modulo['nombre'] ?></a></li>
                                         <li class="breadcrumb-item active">Listas</li>
                                         <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
@@ -139,6 +138,7 @@ else{
                                                                                 <div class="col-12">
                                                                                     <label class="form-label" for="nombre">Nombre:</label>
                                                                                     <input type="text" class="form-control" id="nombre-list" placeholder="Nombre de lista" name="nombre-list" />
+                                                                                    <input type="hidden"  name="idglobal" value="<?php echo $idglobal ?>" />
                                                                                 </div>
                                                                                 <div class="col-12 mt-2">
                                                                                     <label class="form-label" for="modulo-list">Modulo:</label>
@@ -202,7 +202,7 @@ else{
                                             $datos = $sentencialistas->fetchAll();
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                                <table class="table table-sm table-centered mb-5">
+                                                <table class="table table-sm table-centered mb-5 py-3" id="tablas">
                                                     <thead class="text-center bg-dark text-white">
                                                         <tr>
                                                             <th class="text-start ps-3">Nombre</th>
@@ -223,7 +223,7 @@ else{
                                                                     <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                                 </td>
 
-                                                                <td class="text-start"> 
+                                                                <td class="text-start">
                                                                     <?php
                                                                     $modulo = 'SELECT * from modulos WHERE id = ? ';
                                                                     $nmodulo = $mbd->prepare($modulo);
@@ -294,6 +294,10 @@ else{
     <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
-
+    <script>
+        $(document).ready(function() {
+            $('#tablas').DataTable();
+        });
+    </script>
 
 </body>
