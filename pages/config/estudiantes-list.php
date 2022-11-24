@@ -17,10 +17,10 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
 ?>
 
 <!-- interfaz de la tabla de estudiante -->
-<div class="row pt-3 px-3" id="estudiantes-table">
+<div class="row pt-3 px-0 px-md-3" id="estudiantes-table">
     <div class="col-12 d-flex justify-content-between align-items-center">
         <!--Nombre de la lista -->
-        <b class="header-title fs-3 col-4 text-dark"><?php echo $datal['nombre'] ?></b>
+        <b class="header-title fs-3 col-4 text-secondary fw-bold"><?php echo $datal['nombre'] ?></b>
 
 
 
@@ -73,38 +73,38 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
             <?Php if ($cantidad != 0) { ?>
 
 
-                <table class="table table-sm table-centered mb-5 py-3" id="tablas">
-                    <thead class="text-center bg-secondary text-white">
+                <table class="table table-sm table-centered py-3" id="tablas">
+                    <thead class="text-center bg-dark text-white" >
                         <tr>
-                            <th>Nombre</th>
-                            <th>Documento</th>
-                            <th>Calificaion</th>
-                            <th>Fecha de añadido</th>
-                            <th>opciones</th>
+                            <th><span class=" text-xs me-1">Nombre</span></th>
+                            <th><span class=" text-xs me-1">Documento</span></th>
+                            <th><span class=" text-xs me-1">calificacion</span></th>
+                            <th class=" text-xs d-md-table-cell d-none "><span class=" text-xs me-1">Fecha</span></th>
+                            <th><span class="me-1">Opciones</span></th>
                         </tr>
                     </thead>
                     <tbody class=" border">
                         <?php foreach ($datae as $dato) : ?>
                             <tr>
-                                <td class="fw-bold fs-5 ps-3 text-left">
+                                <td class=" border-start py-1 fw-bold fs-5 ps-0 ps-md-3 text-left">
                                     <?php echo $dato['Nombre'] . ' ' . $dato['Nombre'] ?>
                                 </td>
 
-                                <td class="text-center">
+                                <td class=" border-start py-1 text-center">
                                     <?php echo $dato['documento'] ?>
 
                                 </td>
-                                <td class="text-center tex-danger">
-                                    <span class="badge badge-danger-lighten">Sin calificacion</span>
+                                <td class=" border-start py-1 text-center tex-danger">
+                                    <span class=" border-start py-1 badge badge-danger-lighten">Sin calificacion</span>
 
                                 </td>
 
-                                <td class="text-center">
+                                <td class=" border-start py-1 text-center d-md-table-cell d-none ">
                                     <?php echo $datal['fecha'] ?>
 
                                 </td>
 
-                                <td class="text-center">
+                                <td class=" border-start py-1 border-end text-center">
                                     <a href="student=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-student"><i class="mdi mdi-delete"></i></a>
                                 </td>
 
