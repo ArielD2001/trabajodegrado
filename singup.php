@@ -109,7 +109,6 @@ if ($_SESSION) {
                             </script>
                     </div>
                 </div>
-                <?php include('pages/config/validate.php') ?>
                 <hr class="mt-10 mb-3">
                 <div class="flex flex-wrap justify-between items-center  mb-2">
                     <button class="bg-yellow-600 focus:outline-none hover:bg-orange-500 transition duration-100 p-2 outline-none rounded  block w-1/2 text-white" type="submit" name="registrar">Registrar</button>

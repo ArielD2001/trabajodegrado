@@ -35,16 +35,11 @@ function eventos() {
               confirmButtonColor: "#3085d6",
               icon: "success",
               width: 300,
+            }).then(res=>{
+              if(res.isConfirmed){
+                location.reload()
+              }
             });
-
-            //Loader
-            $("#tabla-list").html(
-              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
-            );
-            setTimeout(() => {
-              //Se actualiza la tabla de listas y de callbac se llama la misma funcion
-              location.reload()
-            }, 500);
           },
         });
       }
@@ -84,17 +79,11 @@ function eventos() {
               confirmButtonColor: "#3085d6",
               icon: "success",
               width: 300,
+            }).then(res=>{
+              if(res.isConfirmed){
+                location.reload()
+              }
             });
-
-            //Loader
-            $("#card-body").html(
-              '<div style="width:100%;text-align:left; "><div class="load-item" style="width:50px !important;height:50px !important ; border:5px solid grey;border-top:5px solid transparent"></div></div>'
-            );
-            setTimeout(() => {
-
-              location.reload();
-              
-            }, 500);
           },
         });
       }
@@ -228,10 +217,11 @@ function eventos() {
               confirmButtonColor: "#3085d6",
               icon: "success",
               width: 300,
+            }).then(res=>{
+              if(res.isConfirmed){
+                location.reload()
+              }
             });
-            setTimeout(() => {
-              location.reload();
-            }, 1000);
           } else {
 
             //Verificaion de error no validado
