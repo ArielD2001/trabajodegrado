@@ -31,7 +31,7 @@ if ($_SESSION) {
     <?php include('assets/loader.html') ?>
     <div class=" flex items-center justify-center h-screen bg-gray-200">
         <div class="" style="z-index: 100; " class="bg-white">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate" method="post">
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-10 mb-4  truncate" method="post" id="registrar-form">
                 <div class="logo flex items-center mb-2 pl-6">
                     <img draggable="false" src="assets/images/logo_sm.png" alt="" width="60px">
                     <h3 class="font-bold text-xl text-gray-700 ml-3">Registro</h3>
@@ -75,43 +75,14 @@ if ($_SESSION) {
                         <input class=" campo appearance-none block w-full bg-gray-300 text-gray-700 border border-gray-300 rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white " id="grid-password" type="password" placeholder="**************" name="contraseña" minlength="6" maxlength="32">
 
                         <i class="fas fa-eye text-gray-600  flex items-center" id="boton-eye" style="height:50%;position: absolute; right:25px;top:calc(50% - 5px); cursor:pointer"></i>
-                        <script>
-                            document.getElementById('boton-eye').addEventListener('click', () => {
-                                if (document.getElementById('grid-password').type == 'password') {
-                                    document.getElementById('boton-eye').classList.remove('fas');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye');
-                                    document.getElementById('boton-eye').classList.add('fa-solid');
-                                    document.getElementById('boton-eye').classList.add('fa-eye-slash');
-                                    
-
-                                    document.getElementById('grid-password').type = 'text';
-                                } else {
-                                    document.getElementById('boton-eye').classList.add('fas');
-                                    document.getElementById('boton-eye').classList.add('fa-eye');
-                                    document.getElementById('boton-eye').classList.remove('fa-solid');
-                                    document.getElementById('boton-eye').classList.remove('fa-eye-slash');
-                                    document.getElementById('grid-password').type = 'password';
-                                }
-
-                            })
-                            document.querySelectorAll('.campo').forEach(element=>{
-                                cambio(element);
-                            })
-                            function cambio(key){
-                            key.addEventListener('keyup',()=>{
-                                if(key.value.length <4){
-                                    key.classList.replace('border-gray-300', 'border-red-500');
-                                }else{
-                                    key.classList.replace('border-red-500', 'border-gray-300');
-                                }
-                            })
-                            }  
-                            </script>
+                          
+                        
                     </div>
                 </div>
+                <div class="text-small text-danger" id="registrar-res"></div>
                 <hr class="mt-10 mb-3">
                 <div class="flex flex-wrap justify-between items-center  mb-2">
-                    <button class="bg-yellow-600 focus:outline-none hover:bg-orange-500 transition duration-100 p-2 outline-none rounded  block w-1/2 text-white" type="submit" name="registrar">Registrar</button>
+                    <button class="bg-yellow-600 focus:outline-none hover:bg-orange-500 transition duration-100 p-2 outline-none rounded  block w-1/2 text-white" type="button" name="registrar" id="registrar-btn">Registrar</button>
                     <a href="index " class="text-xs border-b py-1 border-blue-600  text-blue-600  hover:border-blue-700  hover:text-blue-700">ya tengo una cuenta !</a>
                 </div>
             </form>
@@ -125,6 +96,8 @@ if ($_SESSION) {
         </div>
     </div>
     <img src="assets/images/svg.png" draggable="false" alt="" style="position: absolute !important; bottom:0; width:100% ">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>

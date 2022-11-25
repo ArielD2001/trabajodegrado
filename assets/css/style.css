@@ -110,3 +110,15 @@ input:hover, input:active, select:hover{
 #tablas_wrapper{
     width: 100%;
 }
+.hidden-button{
+    display: none;
+}
+
+@media (max-width: 770px) { 
+    .hidden-button{
+        display: block;
+    }
+    .show-button{
+        display: none;
+    }
+ }

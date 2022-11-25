@@ -58,7 +58,10 @@
         </li>
 
     </ul>
-    <button class="boton-open mt-2  btn">
+    <button class="button-menu-mobile open-left hidden-button">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+    <button class="boton-open mt-2  btn show-button">
         <i class="mdi mdi-menu h2"></i>
     </button>
     <script>

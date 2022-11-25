@@ -37,6 +37,49 @@ $("#boton-login").click(function () {
   });
 });
 
+//======Evento click para boton de registro=========
+$("#registrar-btn").click(function () {
+  //Se toman los datos del formulario
+  console.log('click')
+  const formulario = $("#registrar-form").serialize()
+
+  $.ajax({
+    url: "pages/config/registrar.php",
+    type: "post",
+    data: formulario,
+    success: function (res) {
+      document.querySelectorAll(".campo").forEach((element) => {
+        cambio(element);
+      });
+      //Loader
+      $("#registrar-res").html('<div class="load-item"></div>');
+      setTimeout(() => {
+        //Se validan los resultados
+        if (res == "campos vacios") {
+          $("#registrar-res").html(
+            //Mensaje de error
+            '<p class="text-red-500 text-xs italic mt-2"  >Por favor complete todos los campos.</p>'
+          );
+        } else if (res == "ok") {
+          //Redireccion de satisfaccion a pagina home
+          window.location = "pages/home";
+        } else if (res == "error existente") {
+          $("#registrar-res").html(
+            //Mensaje de error
+            '<p class="text-red-500 text-xs italic mt-2"  >Este correo ya tiene una cuenta</p>'
+          );
+        } else {
+          $("#registrar-res").html(
+            //Mnesaje de error
+            res
+          );
+        }
+      }, 500);
+    },
+  });
+});
+
+
 //Evento Ver el campo de contraseña
 document.getElementById("boton-eye").addEventListener("click", () => {
   if (document.getElementById("password").type == "password") {
