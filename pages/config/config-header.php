@@ -5,7 +5,6 @@
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.1/datatables.min.css"/>
-
-
+    <script src="../assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/css/datatables.min.css"/>
     <link rel="stylesheet" href="../assets/css/style.css">

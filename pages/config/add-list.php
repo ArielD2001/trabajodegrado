@@ -41,14 +41,16 @@ if (isset($_FILES['adjunto'])) {
             $nombre = $data['nombre-list'];
             $modulo = $data['modulo-list'];
             $semestre = $data['semestre'];
+            $idglobal = $data['idglobal'];
             $fecha = date('d/m/y');
 
             //Se verifica que la lista a insertar ya no este registrada
-            $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?  AND id_modulo = ?";
+            $consulta = "SELECT * from listas WHERE nombre = ?  AND semestre = ?  AND id_modulo = ? AND id_usuario = ?" ;
             $sentencia = $mbd->prepare($consulta);
             $sentencia->bindParam(1, $nombre);
             $sentencia->bindParam(2, $semestre);
             $sentencia->bindParam(3, $modulo);
+            $sentencia->bindParam(4, $idglobal);
             $sentencia->execute();
             $fila = $sentencia->rowCount();
 
@@ -56,9 +58,9 @@ if (isset($_FILES['adjunto'])) {
             if ($fila < 1) {
 
                 //Al validar que la lista no se encuentra registrada se registra
-                $consultainsert = "INSERT INTO listas(id_modulo, nombre, semestre, fecha) VALUES(?,?,?,?)";
+                $consultainsert = "INSERT INTO listas(id_modulo, nombre, semestre, fecha, id_usuario) VALUES(?,?,?,?,?)";
                 $sentenciainsert = $mbd->prepare($consultainsert);
-                $sentenciainsert->execute(array($modulo, $nombre, $semestre, $fecha));
+                $sentenciainsert->execute(array($modulo, $nombre, $semestre, $fecha, $idglobal));
                 $filas = $sentenciainsert->rowCount();
 
                 //Se verifica que la fila se inserto

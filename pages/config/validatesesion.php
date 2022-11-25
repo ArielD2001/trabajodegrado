@@ -12,10 +12,10 @@ if (!$_SESSION) {
 } else {
 
     //Si existe la sesion se toman los datos del usuario
-    $id = $_SESSION['id'];
+    $idglobal = $_SESSION['id'];
     $consulta = "SELECT * from usuarios WHERE id = ?";
     $sentencia = $mbd->prepare($consulta);
-    $sentencia->bindParam(1, $id);
+    $sentencia->bindParam(1, $idglobal);
     $sentencia->execute();
     $filas = $sentencia->rowCount();
 
@@ -23,6 +23,6 @@ if (!$_SESSION) {
     $resultado = $sentencia->fetch();
     $nombre  = $resultado['nombre'];
     $apellido  = $resultado['apellido'];
-    $avatar    = $resultado['avatar'];
+    // $avatar    = $resultado['avatar'];
 }
 ?>
