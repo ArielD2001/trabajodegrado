@@ -38,13 +38,7 @@
                 </a>
 
             </li>
-            <li class="side-nav-item">
-                <a href="permisos" aria-expanded="false" class="side-nav-link"  <?php if(isset($permisosactive)){echo 'style="background:#fd7e14 !important"';} ?> >
-                    <i class="uil-key-skeleton"></i>
-                    <span> Permisos </span>
-                </a>
-
-            </li>
+            
 
             <li class="side-nav-title side-nav-item">Modulos</li>
 

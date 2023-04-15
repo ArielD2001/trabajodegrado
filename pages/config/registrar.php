@@ -47,7 +47,7 @@ strlen($_POST['contraseña']) == 0 ) {
     } else {
 
         // Mensaje de error
-        echo 'error - existente';
+        echo 'existente';
     }
 }
 

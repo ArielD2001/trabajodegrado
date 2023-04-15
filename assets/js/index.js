@@ -63,7 +63,7 @@ $("#registrar-btn").click(function () {
         } else if (res == "ok") {
           //Redireccion de satisfaccion a pagina home
           window.location = "pages/home";
-        } else if (res == "error existente") {
+        } else if (res == "existente") {
           $("#registrar-res").html(
             //Mensaje de error
             '<p class="text-red-500 text-xs italic mt-2"  >Este correo ya tiene una cuenta</p>'
