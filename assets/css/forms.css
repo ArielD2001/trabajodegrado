@@ -1,4 +1,4 @@
-    
+
     * {
         padding: 0;
         margin: 0;
@@ -271,3 +271,31 @@
         width: 30%;
         height: 100%;
     }
+.botones{
+    display: flex;
+    justify-content: end;
+    margin-top: 15px;
+}
+.botones  button{
+    padding: 10px;
+    border: none;
+    transition: .1s;
+    font-size: 18px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.botones button:hover{
+    background: rgb(238, 72, 72);
+}
+
+.botones  .button2{
+ 
+    background-color: blue;
+}
+.botones .button2:hover{
+    background-color: rgb(122, 122, 243);
+    
+}
