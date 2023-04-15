@@ -1,278 +1,19 @@
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-        outline: none;
-    }
+<?php 
+include('datos.php');
 
-    .border {
-        border: 1px solid black;
-    }
+?>
 
-    textarea {
-        resize: none;
-        transition: .1s;
-    }
-
-    .contenedor {
-        padding: 100px 0;
-        width: 900px;
-        margin: 0 auto;
-    }
-
-    .item:hover,
-    textarea:hover {
-        background: rgb(0, 0, 0, 0.2);
-    }
-
-    input {
-        text-align: center;
-        border: none;
-        border-radius: 0;
-        font-size: 15px;
-        background: transparent;
-    }
-
-    input:focus {
-        background-color: rgb(0, 0, 0, 0.2);
-    }
-
-    input::placeholder {
-        color: black;
-    }
-
-    .flex {
-        display: flex;
-    }
-
-    .center {
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .left {
-        column-gap: 40px;
-    }
-
-    .left,
-    .center {
-        width: 40%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .right {
-        width: 20%;
-    }
-
-    .border-left {
-        border-left: 1px solid grey;
-    }
-
-    .border-bottom {
-        border-bottom: 1px solid grey;
-    }
-
-    .no-top {
-        border-top: 1px solid transparent;
-    }
-
-    .no-bottom {
-        border-bottom: 1px solid transparent;
-    }
-
-    .no-left {
-        border-left: 1px solid transparent;
-    }
-
-    .item {
-        transition: .1s;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .item p {
-        width: 50%;
-        padding: 5px;
-        text-align: center;
-        border-left: 1px solid grey;
-        font-weight: bold;
-    }
-
-    .padding-5 {
-        padding: 5px;
-    }
-
-    .padding-10 {
-        padding: 10px;
-    }
-
-    .info {
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    .f-14 {
-        font-size: 14px;
-    }
-
-    .cuerpo-group {
-        justify-content: space-between;
-    }
-
-    .cuerpo-group p {
-        width: 50%;
-    }
-
-    .blue,
-    .red {
-        width: 50%;
-    }
-
-    .bold {
-        font-weight: bold;
-    }
-
-    .instructivo-title {
-        font-weight: bold;
-    }
-
-    .blue,
-    .red {
-        background-color: lightblue;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .red {
-        background-color: rgb(253, 233, 217);
-    }
-
-    .end {
-        width: 25%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .blue span,
-    .red span {
-        padding: 5px;
-    }
-
-    .cell-blue {
-        background-color: lightblue;
-    }
-
-    .blue .large,
-    .red .large {
-        width: 75%;
-    }
-
-    .blue .top {
-        background-color: lightskyblue;
-    }
-
-    .red .top,
-    .cell-yellow {
-        background-color: rgb(251, 212, 180);
-    }
-
-    .titulo-1-p {
-        background-color: skyblue;
-    }
-
-    .titulo-1-p.cognitivas,
-    .cell-header {
-        background: rgb(251, 212, 180) !important;
-    }
-
-    .competencias {
-        flex-wrap: wrap;
-    }
-
-    .competencias .col-1 {
-        width: 70%;
-    }
-
-    .col-2 {
-        width: 30%;
-    }
-
-    .header .titulo-1 {
-        width: 85%;
-    }
-
-
-
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .header .titulo-2 {
-        width: 15%;
-    }
-
-    .titulo-3 p {
-        text-align: center;
-    }
-
-    .fs-14 {
-        font-size: 15px;
-    }
-
-    .numero {
-        width: 30px !important;
-    }
-
-    .padding-15 {
-        padding: 13.5px;
-    }
-
-    .items {
-        width: 70% !important;
-    }
-
-    .items .item {
-        width: 100%;
-    }
-
-    .items .item .pregunta {
-        width: 85%;
-    }
-
-    .items .item .input {
-        width: 15%;
-    }
-
-    .pregs {
-        width: 100%;
-        position: relative;
-        display: flex;
-        height: auto;
-    }
-
-    .pregunta .numer {
-        height: 100%;
-        width: 50px;
-
-
-    }
-
-    .rec {
-        width: 30%;
-        height: 100%;
-    }
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/forms.css">
+    <title>Promoción y prevención</title>
+</head>
+<body>
+    
 
 <div class="contenedor">
     <div class="cabecera flex border">
@@ -305,14 +46,14 @@
         </div>
     </div>
     <div class="info border no-top">
-        <p class="border-bottom padding-5">Nombre de alumno:</p>
+        <p class="border-bottom padding-5">Nombre de alumno: <?php echo $estudiante['Nombre'] ?></p>
         <div class="cuerpo-group border-bottom flex">
-            <p class="padding-5">Docente a cargo:</p>
-            <p class="border-left padding-5">Institucion:</p>
+            <p class="padding-5">Docente a cargo: <?php  echo ucwords($nombre) . ucwords($apellido) ?></p>
+            <p class="border-left padding-5">Institucion: Corporacion Universitaria Rafael Nuñez</p>
         </div>
         <div class="cuerpo-group flex border-bottom">
-            <p class="padding-5">Fecha:</p>
-            <p class="border-left padding-5">Semestre:</p>
+            <p class="padding-5">Fecha: <?php echo date('y/m/d') ; ?></p>
+            <p class="border-left padding-5">Semestre: <?php echo $lista['semestre'] ?></p>
         </div>
         <p class="padding-10"></p>
 
@@ -897,6 +638,7 @@
     </div>
 </div>
 <script>
+    
     //PREGUNTAS A1
     var preguntasA1 = document.querySelectorAll('.campoA1')
     var pregunta1 = document.getElementById('A-1-1')
@@ -1058,3 +800,5 @@
 
     }
 </script>
+</body>
+</html>

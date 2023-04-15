@@ -62,7 +62,7 @@ $pypactive = true;
 
                                     <?php if ($filas2 != 0) { ?>
                                         <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                            <h4  class="text-start w-100 ps-4 border-bottom pb-2  text-info">Listas</h4>
+                                            <h4  class="text-start w-100 h3 ps-4 border-bottom pb-2  text-dark">Listas</h4>
                                             <table class="table table-sm mt-3 table-centered mb-5">
                                                 <thead class="text-center bg-dark text-white">
                                                     <tr>
@@ -79,8 +79,8 @@ $pypactive = true;
                                                     foreach ($listas as $dato) {
                                                     ?>
                                                         <tr>
-                                                            <td class="fw-bold fs-5 text-start ps-3">
-                                                                <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-dark"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
+                                                            <td class="fw-bold fs-5 text-start ps-3 ">
+                                                                <a href="listas?lista=<?php echo base64_encode(base64_encode($dato['id'])); ?>" class="text-info"><?php echo ucwords(strtolower($dato['nombre'])); ?></a>
                                                             </td>
 
                                                             <td>

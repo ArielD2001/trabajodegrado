@@ -85,11 +85,12 @@ if (isset($_FILES['adjunto'])) {
 
 
                             //se realiza la consulta
-                            $consulta_estudiante = 'INSERT INTO estudiantes(nombre, documento, id_lista) VALUES(?,?,?)';
+                            $consulta_estudiante = 'INSERT INTO estudiantes(nombre, documento, id_lista, fecha) VALUES(?,?,?,?)';
                             $sentencia_estudiante = $mbd->prepare($consulta_estudiante);
                             $sentencia_estudiante->bindParam(1, $nombre_estudiante);
                             $sentencia_estudiante->bindParam(2, $documento);
                             $sentencia_estudiante->bindParam(3, $idlist);
+                            $sentencia_estudiante->bindParam(4, $ifecha);
                             $sentencia_estudiante->execute();
                         } else {
 

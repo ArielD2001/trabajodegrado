@@ -13,6 +13,7 @@ if (strlen($_POST['nombre-estudiante']) == 0  || strlen($_POST['documento-estudi
     $idl = $_POST['id_lista'];
     $nombre = $_POST['nombre-estudiante'];
     $documento = $_POST['documento-estudiante'];
+    $fecha = date('y/m/d');
 
     //Se verifica que el estudiante a insertar ya no este registrada
     $consulta = "SELECT * from estudiantes WHERE Nombre = ?  AND documento = ?";
@@ -26,9 +27,9 @@ if (strlen($_POST['nombre-estudiante']) == 0  || strlen($_POST['documento-estudi
     if ($fila < 1) {
 
         //Al validar que la lista no se encuentra registrada se registra
-        $consultainsert = "INSERT INTO estudiantes( Nombre, documento, id_lista) VALUES(?,?,?)";
+        $consultainsert = "INSERT INTO estudiantes( Nombre, documento, id_lista, fecha) VALUES(?, ?,?,?)";
         $sentenciainsert = $mbd->prepare($consultainsert);
-        $sentenciainsert->execute(array($nombre, $documento, $idl));
+        $sentenciainsert->execute(array($nombre, $documento, $idl, $fecha ));
         $filas = $sentenciainsert->rowCount();
 
         //Se verifica que la fila se inserto

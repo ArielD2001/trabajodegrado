@@ -46,9 +46,7 @@ if (isset($_GET['lista'])) {
     <title>Listas</title>
 </head>
 <style>
-    body>div.wrapper>div.content-page>div.navbar-custom>ul>li:nth-child(1)>a>i::before {
-        margin-top: -45px !important;
-    }
+   
 </style>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -89,9 +87,9 @@ if (isset($_GET['lista'])) {
                             ?>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item text-primary" aria-current="page"><a onclick="history.back()" class="text-primary"> <?php echo $modulo['nombre'] ?></a></li>
                                         <li class="breadcrumb-item active">Listas</li>
-                                        <li class="breadcrumb-item active" aria-current="page"> <?php echo $datal['nombre'] ?></li>
+                                        <li class="breadcrumb-item active" aria-current="page"> <?php echo $modulo['nombre'] ?></li>
+                                        <li class="breadcrumb-item text-primary" aria-current="page"> <?php echo $datal['nombre'] ?></li>
                                     </ol>
                                 </nav>
                             <?php

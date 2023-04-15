@@ -94,18 +94,50 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
                                     <?php echo $dato['documento'] ?>
 
                                 </td>
-                                <td class=" border-start py-1 text-center tex-danger">
-                                    <span class=" border-start py-1 badge badge-danger-lighten">Sin calificacion</span>
+                                <td class=" border-start py-1 text-center tex-danger h5">
+                                    
+                                <?php
+                                    $notac = "SELECT *  FROM   modulo_nota WHERE id_estudiante = ?";
+                                    $nota = $mbd->prepare($notac);
+                                    $nota->bindParam(1, $dato['id']);
+                                    $nota->execute();
+                                    $fnota = $nota->rowCount();
+                                    $resnota = $nota->fetch();
+
+                              
+                                    if($fnota == 0){
+                                        ?>
+                                        <span class=" border-start py-1 badge badge-danger-lighten">Sin calificacion</span>
+
+                                        <?php
+                                        
+                                    }else{
+                                        if($resnota['nota'] >= 3){
+                                            ?>
+                                            <span class=" border-start py-1 badge badge-success-lighten"><?php echo $resnota['nota'] ?></span>
+                                             <?php 
+                                            
+                                        }else{
+                                            ?>
+                                            <span class=" border-start py-1 badge badge-warning-lighten"><?php echo $resnota['nota'] ?></span>
+
+                                            <?php
+                                        }
+                                        
+                                    }
+                                    ?>  
+                                    
 
                                 </td>
 
                                 <td class=" border-start py-1 text-center d-md-table-cell d-none ">
-                                    <?php echo $datal['fecha'] ?>
+                                    <?php echo $dato['fecha'] ?>
 
                                 </td>
 
                                 <td class=" border-start py-1 border-end text-center">
-                                    <a href="student=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-student"><i class="mdi mdi-delete"></i></a>
+                                <a href="student=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-student"><i class="mdi mdi-delete"></i></a>
+                                <a title="calificar" href="./forms/promform?list=<?php echo base64_encode($ide) ?>&student=<?php echo base64_encode($dato['id']) ?>"  class="text-info btn border "><i class="mdi mdi-file"></i></a>
                                 </td>
 
                             </tr>
