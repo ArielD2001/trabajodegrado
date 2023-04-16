@@ -162,6 +162,9 @@
     const btnsave = document.getElementById('btnsave');
     const btncancel = document.getElementById('btncancel');
 
+    btncancel.addEventListener('click',()=>{
+        window.history.back();
+    })
 
     btnsave.addEventListener('click', ()=>{
         Swal.fire({
@@ -183,8 +186,12 @@
                     //resultado postivo de la confirmacion
                     success: function (res) {
                       //Verificaion de campos vacios
-                     console.log(res)
-                      setTimeout(() => {})
+                     if(res == 'ok'){
+                        window.history.back();
+                     }
+                     else if( res == 'error'){
+                        console.log(res)
+                     }
                     }
                 })
                

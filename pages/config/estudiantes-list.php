@@ -86,8 +86,8 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
                     <tbody class=" border">
                         <?php foreach ($datae as $dato) : ?>
                             <tr>
-                                <td class=" border-start py-1 fw-bold fs-5 ps-0 ps-md-3 text-left">
-                                    <?php echo $dato['Nombre'] . ' ' . $dato['Nombre'] ?>
+                                <td class=" border-start py-1 fs-5 ps-0 ps-md-3 text-left">
+                                    <?php echo $dato['Nombre']  ?>
                                 </td>
 
                                 <td class=" border-start py-1 text-center">
@@ -114,12 +114,12 @@ if ($modulo['nombre'] == 'Promoción y prevención') {
                                     }else{
                                         if($resnota['nota'] >= 3){
                                             ?>
-                                            <span class=" border-start py-1 badge badge-success-lighten"><?php echo $resnota['nota'] ?></span>
+                                            <span class=" border-start py-1 badge badge-success-lighten"><?php echo number_format($resnota['nota'],2) ?></span>
                                              <?php 
                                             
                                         }else{
                                             ?>
-                                            <span class=" border-start py-1 badge badge-warning-lighten"><?php echo $resnota['nota'] ?></span>
+                                            <span class=" border-start py-1 badge badge-warning-lighten"><?php echo number_format($resnota['nota'],2) ?></span>
 
                                             <?php
                                         }

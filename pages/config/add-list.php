@@ -90,7 +90,7 @@ if (isset($_FILES['adjunto'])) {
                             $sentencia_estudiante->bindParam(1, $nombre_estudiante);
                             $sentencia_estudiante->bindParam(2, $documento);
                             $sentencia_estudiante->bindParam(3, $idlist);
-                            $sentencia_estudiante->bindParam(4, $ifecha);
+                            $sentencia_estudiante->bindParam(4, $fecha);
                             $sentencia_estudiante->execute();
                         } else {
 

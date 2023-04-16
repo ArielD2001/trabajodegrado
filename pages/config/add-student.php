@@ -16,10 +16,11 @@ if (strlen($_POST['nombre-estudiante']) == 0  || strlen($_POST['documento-estudi
     $fecha = date('y/m/d');
 
     //Se verifica que el estudiante a insertar ya no este registrada
-    $consulta = "SELECT * from estudiantes WHERE Nombre = ?  AND documento = ?";
+    $consulta = "SELECT * from estudiantes WHERE Nombre = ?  AND documento = ? AND id_lista = ?";
     $sentencia = $mbd->prepare($consulta);
     $sentencia->bindParam(1, $nombre);
     $sentencia->bindParam(2, $documento);
+    $sentencia->bindParam(3, $id_lista);
     $sentencia->execute();
     $fila = $sentencia->rowCount();
 
