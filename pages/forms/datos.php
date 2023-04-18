@@ -20,5 +20,22 @@ if(isset($_GET)){
     $sentencialista->bindParam(1,$idl);
     $sentencialista->execute();
     $lista = $sentencialista->fetch();
-}
+
+
+    $consultanota = "SELECT * FROM preguntasm1 WHERE id_estudiante = ?";
+    $sentencianota = $mbd->prepare($consultanota);
+    $sentencianota->bindParam(1,$ide);
+    $sentencianota->execute();
+    $notas = $sentencianota->fetch();
+    $cnotas = $sentencianota->rowCount();
+
+
+    $consultanotat = "SELECT * FROM modulo_nota  WHERE id_estudiante = ?";
+    $sentencianotat = $mbd->prepare($consultanotat);
+    $sentencianotat->bindParam(1,$ide);
+    $sentencianotat->execute();
+    $notat = $sentencianotat->fetch();
+}   
+
+
 ?>

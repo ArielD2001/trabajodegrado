@@ -1,3 +1,12 @@
+    //inputs
+    var inputs = document.querySelectorAll('input');
+
+    inputs.forEach(input=>{
+        input.addEventListener('click',()=>{
+            input.select()
+        })
+    })
+
     //PREGUNTAS A1
     var preguntasA1 = document.querySelectorAll('.campoA1')
     var pregunta1 = document.getElementById('A-1-1')
@@ -191,6 +200,15 @@
                      }
                      else if( res == 'error'){
                         console.log(res)
+                     }
+                     else if( res == 'NaN'){
+                        Swal.fire({
+                            title: 'Incorrecto',
+                            text: "Por favor verifique los campos que desea guardar, solo se permiten valores numericos",
+                            icon: 'warning',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Ok',
+                          })
                      }
                     }
                 })

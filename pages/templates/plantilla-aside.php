@@ -20,12 +20,12 @@
 
             <div class="form-check form-switch mb-1">
                 <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">
-                <label class="form-check-label" for="light-mode-check">Light Mode</label>
+                <label class="form-check-label" for="light-mode-check"> Modo claro</label>
             </div>
 
             <div class="form-check form-switch mb-1">
                 <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
-                <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                <label class="form-check-label" for="dark-mode-check">Modo oscuro</label>
             </div>
 
 

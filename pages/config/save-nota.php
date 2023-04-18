@@ -21,15 +21,17 @@ $p37m1 = $_POST['p37m1'];   $p38m1 = $_POST['p38m1'];   $p39m1 = $_POST['p39m1']
 $p40m1 = $_POST['p40m1'];   $p41m1 = $_POST['p41m1'];   $p42m1 = $_POST['p42m1'];   
 $p43m1 = $_POST['p43m1'];   $p44m1 = $_POST['p44m1'];   $p45m1 = $_POST['p45m1'];   
 $total4 = $_POST['total4']; $p19m1 = $_POST['p19m1'];   $total2 = $_POST['total2'];     
-$p9m1 = $_POST['p9m1'];     $subtotal1 = $_POST['subtotal1'];   
+$p9m1 = $_POST['p9m1'];     $subtotal1 = $_POST['subtotal1'];   $subtotal2 = $_POST['subtotal2'];
 
-$subtotal2 = $_POST['subtotal2'];
 $recomendaciones1 = $_POST['recomendaciones1']; $recomendaciones2 = $_POST['recomendaciones2'];
 $recomendaciones3 = $_POST['recomendaciones3']; $recomendaciones4 = $_POST['recomendaciones4'];
 
-$total = $subtotal1 + $subtotal2;
+$total = $_POST['totalgeneral'];
 
-$consulta= "SELECT * FROM preguntasm1 WHERE id_estudiante = ?";
+if($total == 'NaN'){
+    echo'NaN';
+}else{
+    $consulta= "SELECT * FROM preguntasm1 WHERE id_estudiante = ?";
 $sentencia = $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id_estudiante);
 $sentencia->execute();
@@ -38,12 +40,12 @@ $filas =  $sentencia->rowCount();
 if($filas < 1){
     $consultai = "INSERT INTO preguntasm1(id_estudiante, suma1, p1m1, p2m1, p3m1, p4m1, p5m1, p6m1, p7m1, p8m1, total1,  
     recomendaciones1, p9m1, p10m1, p11m1, p12m1, p13m1, p14m1, p15m1, p16m1, p17m1, p18m1, total2, recomendaciones2, 
-    subtotal1, p19m1, p20m1, p21m1, p22m1, p23m1, p24m1, p25m1, p26m1, p27m1, p28m1, p29m1, total3, recomendaciones3, 
-    p30m1, p31m1, p32m1, p33m1, p34m1, p35m1, p36m1, p37m1, p38m1, p39m1, p40m1, p41m1, p42m1, p43m1, p44m1, p45m1, 
-    total4, recomendaciones4, subtotal2 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    subtotal1, p19m1, p20m1, p21m1, p22m1, suma2, p23m1, p24m1, p25m1, p26m1, p27m1, p28m1, p29m1, total3, recomendaciones3, 
+    p30m1, p31m1, suma3, p32m1, p33m1, p34m1, p35m1, p36m1, p37m1, p38m1, p39m1, p40m1, p41m1, p42m1, p43m1, p44m1, p45m1, 
+    total4, recomendaciones4, subtotal2 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 
     $sentenciai = $mbd->prepare($consultai);
-    $sentenciai->execute(array($id_estudiante, $suma1, $p1m1, $p2m1, $p3m1, $p4m1, $p5m1, $p6m1, $p7m1, $p8m1, $total1, $recomendaciones1, $p9m1, $p10m1, $p11m1, $p12m1, $p13m1, $p14m1, $p15m1, $p16m1, $p17m1, $p18m1, $total2, $recomendaciones2, $subtotal1, $p19m1, $p20m1, $p21m1, $p22m1, $p23m1, $p24m1, $p25m1, $p26m1, $p27m1, $p28m1, $p29m1, $total3, $recomendaciones3, $p30m1, $p31m1, $p32m1, $p33m1, $p34m1, $p35m1, $p36m1, $p37m1, $p38m1, $p39m1, $p40m1, $p41m1, $p42m1, $p43m1, $p44m1, $p45m1, $total4, $recomendaciones4, $subtotal2));
+    $sentenciai->execute(array($id_estudiante, $suma1, $p1m1, $p2m1, $p3m1, $p4m1, $p5m1, $p6m1, $p7m1, $p8m1, $total1, $recomendaciones1, $p9m1, $p10m1, $p11m1, $p12m1, $p13m1, $p14m1, $p15m1, $p16m1, $p17m1, $p18m1, $total2, $recomendaciones2, $subtotal1, $p19m1, $p20m1, $p21m1, $p22m1, $suma2, $p23m1, $p24m1, $p25m1, $p26m1, $p27m1, $p28m1, $p29m1, $total3, $recomendaciones3, $p30m1, $p31m1, $suma3, $p32m1, $p33m1, $p34m1, $p35m1, $p36m1, $p37m1, $p38m1, $p39m1, $p40m1, $p41m1, $p42m1, $p43m1, $p44m1, $p45m1, $total4, $recomendaciones4, $subtotal2));
 
     if( $sentenciai->rowCount() > 0){
         $nota = "INSERT INTO modulo_nota(id_estudiante, nota) VALUES (?,?) ";
@@ -66,12 +68,12 @@ if($filas < 1){
 
     $consultai = "INSERT INTO preguntasm1(id_estudiante, suma1, p1m1, p2m1, p3m1, p4m1, p5m1, p6m1, p7m1, p8m1, total1,  
     recomendaciones1, p9m1, p10m1, p11m1, p12m1, p13m1, p14m1, p15m1, p16m1, p17m1, p18m1, total2, recomendaciones2, 
-    subtotal1, p19m1, p20m1, p21m1, p22m1, p23m1, p24m1, p25m1, p26m1, p27m1, p28m1, p29m1, total3, recomendaciones3, 
-    p30m1, p31m1, p32m1, p33m1, p34m1, p35m1, p36m1, p37m1, p38m1, p39m1, p40m1, p41m1, p42m1, p43m1, p44m1, p45m1, 
-    total4, recomendaciones4, subtotal2 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    subtotal1, p19m1, p20m1, p21m1, p22m1,suma2, p23m1, p24m1, p25m1, p26m1, p27m1, p28m1, p29m1, total3, recomendaciones3, 
+    p30m1, p31m1, suma3, p32m1, p33m1, p34m1, p35m1, p36m1, p37m1, p38m1, p39m1, p40m1, p41m1, p42m1, p43m1, p44m1, p45m1, 
+    total4, recomendaciones4, subtotal2 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 
     $sentenciai = $mbd->prepare($consultai);
-    $sentenciai->execute(array($id_estudiante, $suma1, $p1m1, $p2m1, $p3m1, $p4m1, $p5m1, $p6m1, $p7m1, $p8m1, $total1, $recomendaciones1, $p9m1, $p10m1, $p11m1, $p12m1, $p13m1, $p14m1, $p15m1, $p16m1, $p17m1, $p18m1, $total2, $recomendaciones2, $subtotal1, $p19m1, $p20m1, $p21m1, $p22m1, $p23m1, $p24m1, $p25m1, $p26m1, $p27m1, $p28m1, $p29m1, $total3, $recomendaciones3, $p30m1, $p31m1, $p32m1, $p33m1, $p34m1, $p35m1, $p36m1, $p37m1, $p38m1, $p39m1, $p40m1, $p41m1, $p42m1, $p43m1, $p44m1, $p45m1, $total4, $recomendaciones4, $subtotal2));
+    $sentenciai->execute(array($id_estudiante, $suma1, $p1m1, $p2m1, $p3m1, $p4m1, $p5m1, $p6m1, $p7m1, $p8m1, $total1, $recomendaciones1, $p9m1, $p10m1, $p11m1, $p12m1, $p13m1, $p14m1, $p15m1, $p16m1, $p17m1, $p18m1, $total2, $recomendaciones2, $subtotal1, $p19m1, $p20m1, $p21m1, $p22m1,$suma2, $p23m1, $p24m1, $p25m1, $p26m1, $p27m1, $p28m1, $p29m1, $total3, $recomendaciones3, $p30m1, $p31m1, $suma3, $p32m1, $p33m1, $p34m1, $p35m1, $p36m1, $p37m1, $p38m1, $p39m1, $p40m1, $p41m1, $p42m1, $p43m1, $p44m1, $p45m1, $total4, $recomendaciones4, $subtotal2));
 
     if( $sentenciai->rowCount() > 0){
         $nota = "UPDATE  modulo_nota  SET nota = ? WHERE id_estudiante = ? ";
@@ -86,4 +88,6 @@ if($filas < 1){
         echo "error";
     }
 }
+}
+
 ?>

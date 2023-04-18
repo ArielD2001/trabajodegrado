@@ -74,7 +74,7 @@ $pypactive = true;
                                                     </tr>
                                                 </thead>
 
-                                                <tbody class="text-center border">
+                                                <tbody class="text-center border-bottom">
                                                     <?php
                                                     foreach ($listas as $dato) {
                                                     ?>
