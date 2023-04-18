@@ -1,4 +1,5 @@
 <?php 
+$preguntas = 'preguntasm1';
 include('datos.php');
 
 ?>

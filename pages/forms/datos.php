@@ -22,7 +22,7 @@ if(isset($_GET)){
     $lista = $sentencialista->fetch();
 
 
-    $consultanota = "SELECT * FROM preguntasm1 WHERE id_estudiante = ?";
+    $consultanota = "SELECT * FROM $preguntas WHERE id_estudiante = ?";
     $sentencianota = $mbd->prepare($consultanota);
     $sentencianota->bindParam(1,$ide);
     $sentencianota->execute();

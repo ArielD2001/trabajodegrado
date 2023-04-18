@@ -134,15 +134,15 @@ $cont = 1;
                                 </td>
 
                                 <td class="text-center options-buttons">
-                                <a href="student=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-student"><i class="mdi mdi-delete"></i></a>
-                                <a title="calificar" href="./forms/<?php echo ( $datal['id_modulo'] == '1' ? 'promform' :
-                                                                                ($datal['id_modulo'] == '2' ? 'actform'  : 
+                                <a  href="student=<?php echo base64_encode($dato['id']) ?>" id="button-delete-list" class="text-danger btn border eliminar-student"><i class="mdi mdi-delete"></i></a>
+                                <a title="calificar" href="./forms/<?php echo   ($datal['id_modulo'] == '1' ? 'promform'   :
+                                                                                ($datal['id_modulo'] == '2' ? 'actform'    : 
                                                                                 ($datal['id_modulo'] == '3' ? 'cuimedform' :
                                                                                 ($datal['id_modulo'] == '4' ? 'cuimatform' : 
                                                                                 ($datal['id_modulo'] == '5' ? 'pradmform'  :
                                                                                 ($datal['id_modulo'] == '6' ? 'adultmform' :
                                                                                 ($datal['id_modulo'] == '7' ? 'praintform' :
-                                                                                ($datal['id_modulo'] == '8' ? 'fivform' : 'fvform')))))))); ?>?list=<?php echo base64_encode($ide) ?>&student=<?php echo base64_encode($dato['id']) ?>"  class="text-info btn border "><i class="mdi mdi-file"></i></a>
+                                                                                ($datal['id_modulo'] == '8' ? 'fivform'    : 'fvform')))))))); ?>?list=<?php echo base64_encode($ide) ?>&student=<?php echo base64_encode($dato['id']) ?>"  class="text-info btn border "><i class="mdi mdi-file"></i></a>
                                 </td>
 
                             </tr>

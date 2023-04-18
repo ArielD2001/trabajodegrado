@@ -63,7 +63,8 @@ $actactive = true;
 
                                     <?php if ($filas2 != 0) { ?>
                                         <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                            <table class="table table-sm table-centered mb-5">
+                                        <h4  class="text-start w-100 h3 ps-4 border-bottom pb-2  text-dark">Listas</h4>    
+                                        <table class="table table-sm  mt-3 table-centered mb-5">
                                                 <thead class="text-center bg-dark text-white">
                                                     <tr>
                                                         <th>Lista</th>
@@ -74,7 +75,7 @@ $actactive = true;
                                                     </tr>
                                                 </thead>
 
-                                                <tbody class="text-center border">
+                                                <tbody class="text-center border-bottom">
                                                     <?php
                                                     foreach ($listas as $dato) {
                                                     ?>

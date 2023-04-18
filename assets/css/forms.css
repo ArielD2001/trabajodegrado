@@ -273,8 +273,8 @@
     }
 .botones{
     display: flex;
-    justify-content: end;
-    margin-top: 15px;
+    justify-content: end !important;
+    margin-top: 15px;width: 100%;
 }
 .botones  button{
     padding: 10px;
