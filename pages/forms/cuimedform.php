@@ -133,7 +133,7 @@ include('datos.php');
                         <span class="numero "><b>a.</b></span>
                         <span class="nombre-item ">Docentes</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p1m3">
+                    <input value="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p1m3">
                 </div>
 
                 <div class="item   flex">
@@ -141,7 +141,7 @@ include('datos.php');
                         <span class="numero "><b>b.</b></span>
                         <span class="nombre-item ">Compañeros</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p2m3">
+                    <input value="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p2m3">
                 </div>
 
                 <div class="item   flex">
@@ -149,14 +149,14 @@ include('datos.php');
                         <span class="numero "><b>c.</b></span>
                         <span class="nombre-item ">Equipo de trabajo</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="p3m3">
+                    <input value="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="p3m3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>d.</b></span>
                         <span class="nombre-item ">Personas</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="p4m3">
+                    <input value="0.00" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="p4m3">
                 </div>
 
                 <div class="item   flex">
@@ -164,28 +164,28 @@ include('datos.php');
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Expresa sus inquietudes con seguridad y confianza</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="p5m3">
+                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="p5m3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Sigue las lineas de autoridad establecidas</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="p6m3">
+                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="p6m3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Reconoce errores y acepta sugerencias</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="p7m3">
+                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="p7m3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Maneja situaciones de estres adecuadamente</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="p8m3">
+                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="p8m3">
                 </div>
 
                 <div class="item   flex">
@@ -211,7 +211,7 @@ include('datos.php');
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Se presenta a sus actividades 15 a 10 min antes y a la hora de recibir el turno esta listo. Permanece en el servicio el tiempo con su equipo de trabajo.</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5" >
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -219,7 +219,7 @@ include('datos.php');
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Utiliza el <b>uniforme completo</b> en buen estado y mantiene una buena presentacion personal (cabello recogido, sin prendas, ni accesorios)</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -227,7 +227,7 @@ include('datos.php');
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Demuestra respeto por las normas de la institucion de la practica</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -235,14 +235,14 @@ include('datos.php');
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Cumple con la etica profesional</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Asume con responsabilidad y madurez sus actividades</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -250,7 +250,7 @@ include('datos.php');
                         <span class="numero "><b>6.</b></span>
                         <span class="nombre-item ">Desarrolla iniciativa aplicando conocimientos adquiridos</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -258,7 +258,7 @@ include('datos.php');
                         <span class="nombre-item ">Genera, transmite y asume valores formativos en su comportamiento y actitud.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -266,7 +266,7 @@ include('datos.php');
                         <span class="nombre-item ">Ejerce liderazgo en la toma de decisiones dentro del grupo
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -274,7 +274,7 @@ include('datos.php');
                         <span class="nombre-item ">Asiste a eventos, encuentros y reuniones programados por la facultad.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -283,7 +283,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -339,7 +339,7 @@ include('datos.php');
                         <span class="nombre-item ">Maneja claramente los conceptos de anatomía y fisiología de los sistemas.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5" >
+                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -348,7 +348,7 @@ include('datos.php');
                         <span class="nombre-item ">Reconoce signos y síntomas de las patologías.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -358,7 +358,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -368,7 +368,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -376,7 +376,7 @@ include('datos.php');
                         <span class="nombre-item ">Reconoce las posibles complicaciones derivadas de patologías y procedimientos realizados.								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB1 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -385,7 +385,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5">
                 </div>
 
 
@@ -414,7 +414,7 @@ include('datos.php');
                         <span class="nombre-item ">Demuestra seguridad y confianza en la realización de sus actividades.			
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5" >
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5" >
                 </div>
 
                 <div class="item   flex">
@@ -425,7 +425,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
 
                 <div class="item   flex">
@@ -435,7 +435,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5" >
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" >
                 </div>
                 
                 <div class="item   flex">
@@ -444,7 +444,7 @@ include('datos.php');
                         <span class="nombre-item ">Ejecuta los planes de cuidados según lo planeado								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -452,7 +452,7 @@ include('datos.php');
                         <span class="nombre-item ">Evalúa los planes de Cuidados aplicados a su paciente								
                         </span>
                     </div>
-                    <input  placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input  value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 
                 <div class="item   flex">
@@ -461,7 +461,7 @@ include('datos.php');
                         <span class="nombre-item ">Realiza procedimientos con seguridad y según protocolos establecidos 								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -469,7 +469,7 @@ include('datos.php');
                         <span class="nombre-item ">Maneja adecuadamente los registros de Historia Clínica y Formatos del servicio.								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -477,7 +477,7 @@ include('datos.php');
                         <span class="nombre-item ">Informa oportunamente cambios en los signos y síntomas del paciente.								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -485,7 +485,7 @@ include('datos.php');
                         <span class="nombre-item ">Prioriza e interpreta y da importancia a la realización de exámenes de laboratorio Clínico 							
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -493,7 +493,7 @@ include('datos.php');
                         <span class="nombre-item ">Informa de los eventos adversos en el servicio y participa en la gestión y garantía de la calidad de la institución.							
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5">
                 </div>
                
                 <div class="item   flex">
@@ -503,7 +503,7 @@ include('datos.php');
 				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -511,7 +511,7 @@ include('datos.php');
                         <span class="nombre-item ">Realiza educación al paciente y/o familia sobre los cuidados de enfermería cuando requiere un procedimiento médico o quirúrgico.													
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -520,7 +520,7 @@ include('datos.php');
 				
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -529,7 +529,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -538,7 +538,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -547,7 +547,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
+                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5" style="background-color: rgb(253,233,217);">
@@ -599,7 +599,7 @@ include('datos.php');
                         <span class="numero "><b>C-</b></span>
                         <span class="nombre-item ">Evaluación Escrita de la rotación 10%</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input value="0.00" type="text" class="input campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
 
                 <div class="item   flex">
@@ -650,7 +650,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">CLUB DE REVISTA  :                                          4%		                        </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input value="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
 
                 <div class="item   flex">
@@ -658,7 +658,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">NARRATIVAS y PAE:                                          6%		</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="A-1-3">
+                    <input value="0.00" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="A-1-3">
                 </div>
 
                 <div class="item   flex">
