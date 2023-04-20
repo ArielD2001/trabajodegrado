@@ -1,7 +1,7 @@
 
 
 <?php
-$preguntas = 'preguntasm1';
+$preguntas = 'preguntasm2';
 include('datos.php');
 
 ?>
@@ -126,7 +126,7 @@ include('datos.php');
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Mantiene relaciones cordiales y respetuosas con</span>
                     </div>
-                    <input value="0.00" readonly type="text" class="input campoA1 border no-top no-left padding-5" style="background-color: #FCABC4;" id="A-1-1" name="suma1">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['suma1'] : '0.00'); ?>" readonly type="text" class="input campoA1 border no-top no-left padding-5" style="background-color: #FCABC4;" id="A-1-1" name="suma1">
                 </div>
 
                 <div class="item   flex">
@@ -134,7 +134,7 @@ include('datos.php');
                         <span class="numero "><b>a.</b></span>
                         <span class="nombre-item ">Docentes</span>
                     </div>
-                    <input value="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p1m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p1m2'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p1m2">
                 </div>
 
                 <div class="item   flex">
@@ -142,7 +142,7 @@ include('datos.php');
                         <span class="numero "><b>b.</b></span>
                         <span class="nombre-item ">Compañeros</span>
                     </div>
-                    <input value="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p2m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p2m2'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p2m2">
                 </div>
 
                 <div class="item   flex">
@@ -150,14 +150,14 @@ include('datos.php');
                         <span class="numero "><b>c.</b></span>
                         <span class="nombre-item ">Equipo interdisciplinario de trabajo</span>
                     </div>
-                    <input value="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="p3m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p3m2'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="p3m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>d.</b></span>
                         <span class="nombre-item ">Pacientes y familiares</span>
                     </div>
-                    <input value="0.00" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="p4m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p4m2'] : '0.00'); ?>" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="p4m2">
                 </div>
 
                 <div class="item   flex">
@@ -165,28 +165,28 @@ include('datos.php');
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Expresa sus inquietudes con seguridad y confianza</span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="p5m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p5m2'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="p5m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Sigue las lineas de autoridad establecidas</span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="p6m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p6m2'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="p6m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Reconoce errores y acepta sugerencias</span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="p7m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p7m2'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="p7m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Maneja situaciones de estres adecuadamente</span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="p8m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p8m2'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="p8m2">
                 </div>
 
                 <div class="item   flex">
@@ -194,10 +194,10 @@ include('datos.php');
 
                         <span class="nombre-item bold ">TOTAL A1</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalA1" class="input border no-top no-left padding-5" style="background-color: yellow" name="total1">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total1'] : '0.00'); ?>" type="text" id="totalA1" class="input border no-top no-left padding-5" style="background-color: yellow" name="total1">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones1"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones1"><?php echo ($cnotas > 0 ? $notas['recomendaciones1'] : 'Sin recomendaciones'); ?></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
         <p class="padding-10 border no-top fs-14 bold" style="width: 100%">A2 Responsabilidad y compromiso (10%)</p>
@@ -212,7 +212,7 @@ include('datos.php');
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Se presenta a sus actividades 15 a 10 min antes y a la hora de recibir el turno esta listo. Permanece en el servicio el tiempo con su equipo de trabajo.</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p9m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p9m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p9m2">
                 </div>
 
                 <div class="item   flex">
@@ -220,7 +220,7 @@ include('datos.php');
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Utiliza el <b>uniforme completo</b> en buen estado y mantiene una buena presentacion personal (cabello recogido, sin prendas, ni accesorios)</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p10m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p10m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p10m2">
                 </div>
 
                 <div class="item   flex">
@@ -228,7 +228,7 @@ include('datos.php');
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Demuestra respeto por las normas de la institucion de la practica</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p11m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p11m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p11m2">
                 </div>
 
                 <div class="item   flex">
@@ -236,14 +236,14 @@ include('datos.php');
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Cumple con la etica profesional</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p12m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p12m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p12m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Asume con responsabilidad y madurez sus actividades</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p13m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p13m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p13m2">
                 </div>
 
                 <div class="item   flex">
@@ -251,7 +251,7 @@ include('datos.php');
                         <span class="numero "><b>6.</b></span>
                         <span class="nombre-item ">Desarrolla iniciativa aplicando conocimientos adquiridos</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p14m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p14m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p14m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -259,7 +259,7 @@ include('datos.php');
                         <span class="nombre-item ">Genera, transmite y asume valores formativos en su comportamiento y actitud.
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p15m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p15m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p15m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -267,7 +267,7 @@ include('datos.php');
                         <span class="nombre-item ">Ejerce liderazgo en la toma de decisiones dentro del grupo
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p16m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p16m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p16m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -275,7 +275,7 @@ include('datos.php');
                         <span class="nombre-item ">Asiste a eventos, encuentros y reuniones programados por la facultad.
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p17m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p17m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p17m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -284,7 +284,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoA2 border no-top no-left padding-5" name="p18m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p18m2'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p18m2">
                 </div>
 
                 <div class="item   flex">
@@ -292,14 +292,14 @@ include('datos.php');
 
                         <span class="nombre-item bold ">TOTAL A2</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalA2" name="total2" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total2'] : '0.00'); ?>" type="text" id="totalA2" name="total2" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones2"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones2"><?php echo ($cnotas > 0 ? $notas['recomendaciones2'] : 'Sin recomendaciones'); ?></textarea>
         </div>
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-blue fs-14 bold" style="width: 70%">Subtotal A: Relaciones interpersonales(A1) + Responsabilidad y compromiso(A2)</p>
-            <input readonly class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA" name="subtotal1" value="0.00">
+            <input readonly class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA" name="subtotal1" value="<?php echo ($cnotas > 0 ? $notas['subtotal1'] : '0.00'); ?>">
         </div>
     </div>
 
@@ -338,7 +338,7 @@ include('datos.php');
                         <span class="nombre-item ">Reconoce los principios cientifícos en la realización de los procedimientos básicos en el cuidado del paciente.
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p19m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p19m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p19m2">
                 </div>
 
                 <div class="item   flex">
@@ -347,7 +347,7 @@ include('datos.php');
                         <span class="nombre-item ">Enuncia en forma verbal o escrita las bases teóricas.
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p20m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p20m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p20m2">
                 </div>
 
                 <div class="item   flex">
@@ -357,7 +357,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p21m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p21m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p21m2">
                 </div>
 
                 <div class="item   flex">
@@ -367,7 +367,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p22m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p22m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p22m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -375,7 +375,7 @@ include('datos.php');
                         <span class="nombre-item ">Conoce las normas de bioseguridad y  el adecuado manejo de los residuos hospitalarios.					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB1 border no-top no-left padding-5" name="p23m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p23m2'] : '0.00'); ?>" type="text" class="input campoB1 border no-top no-left padding-5" name="p23m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -384,7 +384,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p24m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p24m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p24m2">
                 </div>
 
 
@@ -395,7 +395,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p25m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p25m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p25m2">
                 </div>
 
 
@@ -406,7 +406,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p26m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p26m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p26m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -415,17 +415,17 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB1 no-top no-left padding-5" name="p27m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p27m2'] : '0.00'); ?>" type="text" class="input border campoB1 no-top no-left padding-5" name="p27m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5 cell-yellow">
 
                         <span class="nombre-item bold">TOTAL B1:</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" name="total3" id="totalB1" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total3'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="total3" id="totalB1" style="background-color: yellow">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones3"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones3"><?php echo ($cnotas > 0 ? $notas['recomendaciones3'] : 'Sin recomendaciones'); ?></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
         <p class="padding-10 border no-top fs-14 bold cell-header" style="width: 100%">B2 Desempeño (35%)</p>
@@ -442,7 +442,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5" name="p28m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p28m2'] : '0.00'); ?>" type="text" class="input border campoB2 no-top no-left padding-5" name="p28m2">
                 </div>
 
                 <div class="item   flex">
@@ -452,7 +452,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoB2 no-top no-left padding-5" name="p29m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p29m2'] : '0.00'); ?>" type="text" class="input border campoB2 no-top no-left padding-5" name="p29m2">
                 </div>
 
                 <div class="item   flex">
@@ -462,7 +462,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p30m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p30m2'] : '0.00'); ?>" type="text" class="input campoB2 border no-top no-left padding-5" name="p30m2">
                 </div>
                 
                 <div class="item   flex">
@@ -471,7 +471,7 @@ include('datos.php');
                         <span class="nombre-item ">Detecta problemas e identifica necesidades de los pacientes (diagnóstico de enfermería) planifica PAE					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p31m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p31m2'] : '0.00'); ?>" type="text" class="input campoB2 border no-top no-left padding-5" name="p31m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -482,7 +482,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input readonly value="0.00" id="pregunta5" type="text" class="input campoB2 border no-top no-left padding-5" style="background-color: #FCABC4;" name="suma2">
+                    <input readonly value="suma2" id="pregunta5" type="text" class="input campoB2 border no-top no-left padding-5" style="background-color: #FCABC4;" name="suma2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -491,7 +491,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p32m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p32m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p32m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -500,7 +500,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p33m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p33m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p33m2">
                 </div>
 
                 <div class="item   flex">
@@ -510,7 +510,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p34m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p34m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p34m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -520,7 +520,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p35m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p35m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p35m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -530,7 +530,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p36m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p36m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p36m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -539,7 +539,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2 border no-top no-left padding-5" name="p37m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p37m2'] : '0.00'); ?>" type="text" class="input subB2 border no-top no-left padding-5" name="p37m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -547,7 +547,7 @@ include('datos.php');
                         <span class="nombre-item ">Controla Líquidos  Ingeridos y Eliminados en su paciente asignado					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p38m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p38m2'] : '0.00'); ?>" type="text" class="input campoB2 border no-top no-left padding-5" name="p38m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -557,7 +557,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p39m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p39m2'] : '0.00'); ?>" type="text" class="input campoB2 border no-top no-left padding-5" name="p39m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -566,7 +566,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p40m2">
+                    <input value="p40m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p40m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -575,7 +575,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p41m2">
+                    <input value="p41m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p41m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -584,7 +584,7 @@ include('datos.php');
 
                         </span>
                     </div>
-                    <input readonly value="0.00" id="pregunta10" type="text" class="input campoB2 border no-top no-left padding-5" style="background-color: #FCABC4;"name="suma3">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['suma3'] : '0.00'); ?>" id="pregunta10" type="text" class="input campoB2 border no-top no-left padding-5" style="background-color: #FCABC4;"name="suma3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -592,7 +592,7 @@ include('datos.php');
                         <span class="nombre-item ">Notas de Enfermería claridas y precisas sobre sus observaciones y la atención que proporciona al paciente 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2a border no-top no-left padding-5" name="p42m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p42m2'] : '0.00'); ?>" type="text" class="input subB2a border no-top no-left padding-5" name="p42m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -600,7 +600,7 @@ include('datos.php');
                         <span class="nombre-item ">Control de Líquidos  Ingeridos y Eliminados										
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2a border no-top no-left padding-5"name="p43m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p43m2'] : '0.00'); ?>" type="text" class="input subB2a border no-top no-left padding-5"name="p43m2">
                 </div>
 
                 <div class="item   flex">
@@ -609,7 +609,7 @@ include('datos.php');
                         <span class="nombre-item ">Kardex							
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2a border no-top no-left padding-5"name= "p44m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p44m2'] : '0.00'); ?>" type="text" class="input subB2a border no-top no-left padding-5"name= "p44m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -617,7 +617,7 @@ include('datos.php');
                         <span class="nombre-item ">Tarjeta de Medicamentos									
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2a border no-top no-left padding-5" name="p45m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p45m2'] : '0.00'); ?>" type="text" class="input subB2a border no-top no-left padding-5" name="p45m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -625,7 +625,7 @@ include('datos.php');
                         <span class="nombre-item ">Registro de Medicamentos								
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input subB2a border no-top no-left padding-5" name="p46m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p46m2'] : '0.00'); ?>" type="text" class="input subB2a border no-top no-left padding-5" name="p46m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -634,7 +634,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p47m2">
+                    <input value="p47m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p47m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -642,7 +642,7 @@ include('datos.php');
                         <span class="nombre-item ">Realiza calculo de dosis										
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p48m2">
+                    <input value="p48m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p48m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -651,7 +651,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p49m2">
+                    <input value="p49m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p49m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -660,7 +660,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p50m2">
+                    <input value="p50m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p50m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -669,7 +669,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p51m2">
+                    <input value="p51m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p51m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -678,7 +678,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p52m2">
+                    <input value="p52m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p52m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -687,7 +687,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p53m2">
+                    <input value="p53m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p53m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -696,7 +696,7 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p54m2">
+                    <input value="p54m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p54m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -705,22 +705,22 @@ include('datos.php');
 					
                         </span>
                     </div>
-                    <input value="0.00" type="text" class="input campoB2 border no-top no-left padding-5" name="p55m2">
+                    <input value="p55m2" type="text" class="input campoB2 border no-top no-left padding-5" name="p55m2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5" style="background-color: rgb(253,233,217);">
 
                         <span class="nombre-item bold ">TOTAL B2</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalB2" class="input border no-top no-left padding-5" style="background-color: yellow" name="total4">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total4'] : '0.00'); ?>" type="text" id="totalB2" class="input border no-top no-left padding-5" style="background-color: yellow" name="total4">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones4" style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones4" style="font-size:15px ; text-transform:capitalize"><?php echo ($cnotas > 0 ? $notas['recomendaciones4'] : 'Sin recomendaciones'); ?></textarea>
         </div>
         
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
-            <input name="subtotal2" id="subtotalB" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" value="0.00">
+            <input name="subtotal2" id="subtotalB" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" value="<?php echo ($cnotas > 0 ? $notas['subtotal2'] : '0.00'); ?>">
         </div>
     </div>
 
@@ -757,7 +757,7 @@ include('datos.php');
                         <span class="numero "><b>C-</b></span>
                         <span class="nombre-item ">Evaluación Escrita de la rotación 10%</span>
                     </div>
-                    <input value="0.00" type="text" class="input campoC border no-top no-left padding-5" id="A-1-2" name="p56m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p56m2'] : '0.00'); ?>" type="text" class="input campoC border no-top no-left padding-5" id="A-1-2" name="p56m2">
                 </div>
 
                 <div class="item   flex">
@@ -765,15 +765,15 @@ include('datos.php');
 
                         <span class="nombre-item bold ">TOTAL C</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow" name="total5">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total5'] : '0.00'); ?>" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow" name="total5">
                 </div>
                
             </div>
-            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones5" style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones5" style="font-size:15px ; text-transform:capitalize"><?php echo ($cnotas > 0 ? $notas['recomendaciones5'] : 'Sin recomendaciones'); ?></textarea>
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold"  style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (10%) </p>
-        <input name="subtotal3" value="0.00" class="total1 border bold no-top no-left padding-5" id="subtotalC" style="text-align: center; width:30% ;background:teal;color:white">
+        <input name="subtotal3" value="<?php echo ($cnotas > 0 ? $notas['subtotal3'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" id="subtotalC" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -808,7 +808,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">CLUB DE REVISTA  :                                          4%		                        </span>
                     </div>
-                    <input value="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="p57m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p57m2'] : '0.00'); ?>" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="p57m2">
                 </div>
 
                 <div class="item   flex">
@@ -816,7 +816,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">NARRATIVAS y PAE:                                          6%		</span>
                     </div>
-                    <input value="0.00" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="p58m2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p58m2'] : '0.00'); ?>" type="text" class="input border campoD  no-top no-left padding-5" id="A-1-3" name="p58m2">
                 </div>
 
                 <div class="item   flex">
@@ -824,14 +824,14 @@ include('datos.php');
 
                         <span class="nombre-item bold ">TOTAL D</span>
                     </div>
-                    <input readonly value="0.00"name="total6" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total6'] : '0.00'); ?>"name="total6" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>  
-            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones6" style="font-size:15px ; text-transform:capitalize"></textarea>  
+            <textarea class="rec border no-top no-left padding-5 " name="recomendaciones6" style="font-size:15px ; text-transform:capitalize"><?php echo ($cnotas > 0 ? $notas['recomendaciones6'] : 'Sin recomendaciones   '); ?></textarea>  
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal D:  CLUB DE REVISTA : (4%) + NARRATIVAS y PAE: (6)%</p>
-        <input name="subtotal4" value="0.00" class="total1 border bold no-top no-left padding-5" id="subtotalD" style="text-align: center; width:30% ;background:teal;color:white">
+        <input name="subtotal4" value="<?php echo ($cnotas > 0 ? $notas['subtotal4'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" id="subtotalD" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -853,6 +853,7 @@ include('datos.php');
     </form>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/forms.js"></script>
     <script src="../../assets/js/act.js"></script>
 </body>
 </html>

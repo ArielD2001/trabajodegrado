@@ -648,6 +648,7 @@ include('datos.php');
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/forms.js"></script>
 <script src="../../assets/js/prom.js"></script>
 </body>
 </html>

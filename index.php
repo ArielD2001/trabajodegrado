@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 // init configuration
 $clientID = '181763698264-8k0s1odm3jglvo4urbsqtauk9pghdusq.apps.googleusercontent.com';
 $clientSecret = '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';
-$redirectUri = 'http://localhost/codigos/trabajodegrado/index';
+$redirectUri = 'http://localhost/proyectos/trabajodegrado/index';
 
 // create Client Request to access Google API
 $client = new Google_Client();
@@ -31,8 +31,8 @@ if (isset($_GET['code'])) {
     $google_oauth = new Google_Service_Oauth2($client);
     $google_account_info = $google_oauth->userinfo->get();
     $email =  $google_account_info->email;
-    $name =  $google_account_info->givenName;
-    $apellido =  $google_account_info->familyName;
+    $name =  strtolower($google_account_info->givenName);
+    $apellido =  strtolower($google_account_info->familyName);
     $avatar =  $google_account_info->picture;
     $tipo = 'GOOGLE';
     $fecha = date('d/m/y');

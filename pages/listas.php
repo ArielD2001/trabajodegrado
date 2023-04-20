@@ -200,7 +200,7 @@ if (isset($_GET['lista'])) {
                                             $datos = $sentencialistas->fetchAll();
                                         ?>
                                             <div id="tabla-list" class=" flex-wrap d-flex justify-content-center align-items-center mt-3">
-                                                <table class="table table-sm table-centered mb-5 py-3 w-100" id="tablas">
+                                                <table class="table table-sm table-centered mb-5 py-3 w-100" <?php $sentencialistas->rowCount() > 10 ? 'id="tablas"' : '' ?> >
                                                     <thead class="text-center bg-dark text-white">
                                                         <tr>
                                                             <th class="text-start ps-3">Nombre</th>

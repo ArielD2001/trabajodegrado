@@ -1,11 +1,4 @@
-    //inputs
-    var inputs = document.querySelectorAll('input');
-
-    inputs.forEach(input=>{
-        input.addEventListener('click',()=>{
-            input.select()
-        })
-    })
+  
 
     //PREGUNTAS A1
     var preguntasA1 = document.querySelectorAll('.campoA1')
