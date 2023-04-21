@@ -82,21 +82,21 @@ $("#registrar-btn").click(function () {
 
 //Evento Ver el campo de contraseña
 document.getElementById("boton-eye").addEventListener("click", () => {
-  if (document.getElementById("password").type == "password") {
+  if (document.getElementById("grid-password").type == "password") {
     document.getElementById("boton-eye").classList.remove("fas");
     document.getElementById("boton-eye").classList.remove("fa-eye");
     document.getElementById("boton-eye").classList.add("fa-solid");
     document.getElementById("boton-eye").classList.add("fa-eye-slash");
 
-    document.getElementById("password").type = "text";
-    document.getElementById("password").focus();
+    document.getElementById("grid-password").type = "text";
+    document.getElementById("grid-password").focus();
   } else {
     document.getElementById("boton-eye").classList.add("fas");
     document.getElementById("boton-eye").classList.add("fa-eye");
     document.getElementById("boton-eye").classList.remove("fa-solid");
     document.getElementById("boton-eye").classList.remove("fa-eye-slash");
-    document.getElementById("password").type = "password";
-    document.getElementById("password").focus();
+    document.getElementById("grid-password").type = "password";
+    document.getElementById("grid-password").focus();
   }
 });
 
