@@ -114,7 +114,7 @@ function eventos() {
 
         //Verificaion de campos vacios
         verificarCampos();
-        setTimeout(() => {
+       
 
           //Validaciones por tipo de error
           if (resultado == "error - tipo") {
@@ -164,7 +164,7 @@ function eventos() {
             //Verificaion de error no validado
             $("#resultado-list").html(resultado);
           }
-        }, 500);
+       
       },
     });
   });

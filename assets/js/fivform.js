@@ -125,7 +125,7 @@ preguntasB2.forEach(pregunta => {
       total += parseFloat(pregunta.value);
   }
 })
-totalB2.value = (total / 7) * 0.4
+totalB2.value = (total / 7) * 0.3
 let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value)+parseFloat(totalC.value)+parseFloat(totalD.value);
 
 subtotalB.value = inner;
@@ -141,7 +141,7 @@ preguntasC.forEach(pregunta => {
       total += parseFloat(pregunta.value);
   }
 })
-totalC.value = (total / 1) * 0.06
+totalC.value = total / 1 * 0.06
 let inner = parseFloat(totalC.value)
 
 subtotalC.value = inner;

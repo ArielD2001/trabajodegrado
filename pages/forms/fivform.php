@@ -372,7 +372,7 @@ include('datos.php');
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
-        <p class="padding-10 border no-top fs-14 bold cell-header" style="width: 100%">B2 Desempeño (40%)</p>
+        <p class="padding-10 border no-top fs-14 bold cell-header" style="width: 100%">B2 Desempeño (30%)</p>
 
 
 
@@ -494,20 +494,14 @@ include('datos.php');
                     <input value="0.00" type="text" class="input  campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                     
                 </div>
-                <div class="item   flex">
-                    <div class="pregunta border no-top padding-5 cell-blue">
-
-                        <span class="nombre-item bold ">TOTAL C</span>
-                    </div>
-                    <input readonly value="0.00" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow">
-                </div>
+                
                
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones5"></textarea>
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (10%) </p>
-        <p class="total1 border bold no-top no-left padding-5" id="subtotalC" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input class="total1 border bold no-top no-left padding-5" id="totalC" value="0.00" style="text-align: center; width:30% ;background:teal;color:white" name="subtotal3">
     </div>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -544,13 +538,7 @@ include('datos.php');
                     </div>
                     <input value="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
-                <div class="item   flex">
-                    <div class="pregunta border no-top padding-5 cell-blue">
-
-                        <span class="nombre-item bold ">TOTAL D</span>
-                    </div>
-                    <input readonly value="0.00" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
-                </div>
+                
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
     </div>
@@ -558,7 +546,7 @@ include('datos.php');
 
         <div class="total flex" style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B - Conocimiento Cientifíco y Desempeño - PRODUCTO FINAL DE ROTACION  6% -TEMA ASIGNADO 4%</p>
-            <p class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+            <input value="0.00" readonly name="subtotal4" id="totalD" class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">
         </div>
     </div>
 
@@ -569,7 +557,7 @@ include('datos.php');
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B</p>
-        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input value="0.00" name="totalgeneral" class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white" readonly>
     </div>
 
   
