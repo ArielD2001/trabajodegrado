@@ -112,12 +112,12 @@ $cont = 1;
                                     }else{
                                         if($resnota['nota'] >= 3){
                                             ?>
-                                            <span class="  py-1 badge badge-success-lighten"><?php echo number_format($resnota['nota'],2) ?></span>
+                                            <span class="  py-1 badge badge-success-lighten"><?php echo number_format($resnota['nota'],3) ?></span>
                                              <?php 
                                             
                                         }else{
                                             ?>
-                                            <span class=" py-1 badge badge-warning-lighten"><?php echo number_format($resnota['nota'],2) ?></span>
+                                            <span class=" py-1 badge badge-warning-lighten"><?php echo number_format($resnota['nota'],3) ?></span>
 
                                             <?php
                                         }

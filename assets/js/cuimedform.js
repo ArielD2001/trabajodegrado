@@ -82,8 +82,8 @@
            totalA1.value = (total / 5) * 0.1
            let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
    
-           subtotalA.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+           subtotalA.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)
    
        }
    
@@ -97,8 +97,8 @@
            })
            totalA2.value = (total / 10) * 0.1
            let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
-           subtotalA.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
+           subtotalA.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)
    
    
        }
@@ -113,8 +113,8 @@
            totalB1.value = (total / 6) * 0.25
            let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
    
-           subtotalB.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+           subtotalB.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
            
    
        }
@@ -129,8 +129,8 @@
            totalB2.value = (total / 16) * 0.35
            let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
    
-           subtotalB.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)  + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+           subtotalB.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)  + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
    
        }
    
@@ -145,8 +145,8 @@
            totalC.value = (total / 1) * 0.1
            let inner = parseFloat(totalC.value)
    
-           subtotalC.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+           subtotalC.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
    
        }
        function updateTotalD() {
@@ -160,8 +160,8 @@
            totalD.value = (total / 2) * 0.1
            let inner = parseFloat(totalD.value)
    
-           subtotalD.innerHTML = inner;
-           totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML) + parseFloat(subtotalC.innerHTML) + parseFloat(subtotalD.innerHTML);
+           subtotalD.value = inner;
+           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
    
        }
 
@@ -177,33 +177,35 @@
             cancelButtonColor: '#d33'
           }).then((result) => {
               if (result.isConfirmed) {
-                console.log($('#cuimedform').serialize())
-
-                // $.ajax({
-                //     url: "../config/save-nota3.php",
-                //     type: "post",
-                //     data: $('#cuimedform').serialize(),
+                // console.log($('#cuimedform').serialize())
+            
+                $.ajax({
+                    url: "../config/save-nota3.php",
+                    type: "post",
+                    data: $('#cuimedform').serialize(),
               
-                //     //resultado postivo de la confirmacion
-                //     success: function (res) {
-                //       //Verificaion de campos vacios
-                //      if(res == 'ok'){
-                //         window.history.back();
-                //      }
-                //      else if( res == 'error'){
-                //         console.log(res)
-                //      }
-                //      else if( res == 'NaN'){
-                //         Swal.fire({
-                //             title: 'Incorrecto',
-                //             text: "Por favor verifique los campos que desea guardar, solo se permiten valores numericos",
-                //             icon: 'warning',
-                //             confirmButtonColor: '#3085d6',
-                //             confirmButtonText: 'Ok',
-                //           })
-                //      }
-                //     }
-                // })
+                    //resultado postivo de la confirmacion
+                    success: function (res) {
+                      //Verificaion de campos vacios
+                     if(res == 'ok'){
+                        window.history.back();
+                     }
+                     else if( res == 'error'){
+                        console.log(res)    
+                     }
+                     else if( res == 'NaN'){
+                        Swal.fire({
+                            title: 'Incorrecto',
+                            text: "Por favor verifique los campos que desea guardar, solo se permiten valores numericos",
+                            icon: 'warning',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'Ok',
+                          })
+                     }else{
+                        console.log(res)
+                     }
+                    }
+                })
                
             }
           })
