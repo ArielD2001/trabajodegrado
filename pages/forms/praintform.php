@@ -811,6 +811,8 @@ include('datos.php');
 
     <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
     <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
+    <input type="hidden" value="#praintform" id="nformulario">
+
     <div class="botones">
        <button type="button" id="btncancel">Cancelar</button>  
         <button type="button" class="button2" id="btnsave">Guardar</button>

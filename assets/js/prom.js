@@ -1,4 +1,3 @@
-  
 
     //PREGUNTAS A1
     var preguntasA1 = document.querySelectorAll('.campoA1')
@@ -160,52 +159,3 @@
         totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)
 
     }
-
-    const btnsave = document.getElementById('btnsave');
-    const btncancel = document.getElementById('btncancel');
-
-    btncancel.addEventListener('click',()=>{
-        window.history.back();
-    })
-
-    btnsave.addEventListener('click', ()=>{
-        Swal.fire({
-            title: 'Guardar',
-            text: "¿Seguro desea guardar los cambios?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Si, guardar',
-            cancelButtonText: 'cancelar',
-            cancelButtonColor: '#d33'
-          }).then((result) => {
-              if (result.isConfirmed) {
-                $.ajax({
-                    url: "../config/save-nota.php",
-                    type: "post",
-                    data: $('#form-prom').serialize(),
-              
-                    //resultado postivo de la confirmacion
-                    success: function (res) {
-                      //Verificaion de campos vacios
-                     if(res == 'ok'){
-                        window.history.back();
-                     }
-                     else if( res == 'error'){
-                        console.log(res)
-                     }
-                     else if( res == 'NaN'){
-                        Swal.fire({
-                            title: 'Incorrecto',
-                            text: "Por favor verifique los campos que desea guardar, solo se permiten valores numericos",
-                            icon: 'warning',
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'Ok',
-                          })
-                     }
-                    }
-                })
-               
-            }
-          })
-    })

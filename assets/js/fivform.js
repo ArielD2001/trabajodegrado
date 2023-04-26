@@ -22,13 +22,11 @@ var subtotalB = document.getElementById('subtotalB');
 
 //Pregunta C
 var preguntasC = document.querySelectorAll('.campoC');
-var totalC = document.getElementById('totalC');
-var subtotalC = document.getElementById('subtotalC');
+var subtotalC = document.getElementById('totalC');
 
 //Preguntas D
 var preguntasD = document.querySelectorAll('.campoD');
-var totalD = document.getElementById('totalD');
-var subtotalD = document.getElementById('subtotalD');
+var subtotalD = document.getElementById('totalD');
 //total final
 var totalF = document.getElementById('totalF');
 
@@ -83,7 +81,7 @@ totalA1.value = (total / 5) * 0.1
 let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
 
 subtotalA.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
 
 }
 
@@ -98,7 +96,7 @@ preguntasA2.forEach(pregunta => {
 totalA2.value = (total / 10) * 0.1
 let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
 subtotalA.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
 
 
 }
@@ -111,10 +109,11 @@ preguntasB1.forEach(pregunta => {
   }
 })
 totalB1.value = (total / 4) * 0.4
-let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value)+parseFloat(totalC.value)+parseFloat(totalD.value);
+let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
 
 subtotalB.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) ;
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
+
 
 }
 function updateTotalB2() {
@@ -126,10 +125,11 @@ preguntasB2.forEach(pregunta => {
   }
 })
 totalB2.value = (total / 7) * 0.3
-let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value)+parseFloat(totalC.value)+parseFloat(totalD.value);
+let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
 
 subtotalB.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) ;
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
+
 
 }
 
@@ -145,7 +145,7 @@ totalC.value = total / 1 * 0.06
 let inner = parseFloat(totalC.value)
 
 subtotalC.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value);
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
 
 }
 function updateTotalD() {
@@ -160,6 +160,7 @@ totalD.value = (total / 1) * 0.04
 let inner = parseFloat(totalD.value)
 
 subtotalD.value = inner;
-totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value);
+totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
+
 
 }

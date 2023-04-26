@@ -290,7 +290,7 @@ include('datos.php');
         </div>
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-blue fs-14 bold" style="width: 70%">Subtotal A: Relaciones interpersonales(A1) + Responsabilidad y compromiso(A2)</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA">0.00</p>
+            <input name="subtotal1" readonly value="0.00" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA">
         </div>
     </div>
 
@@ -306,7 +306,7 @@ include('datos.php');
         <div class="col-1">
             <div class="header flex">
                 <div class="titulo-1 ">
-                    <p class="padding-5 border no-top titulo-1-p cognitivas bold">B. COMPETENCIAS COGNITIVAS, COGNOSCITIVAS Y PROCEDIMENTALES (80%)</p>
+                    <p class="padding-5 border no-top titulo-1-p cognitivas bold">B. COMPETENCIAS COGNITIVAS, COGNOSCITIVAS Y PROCEDIMENTALES </p>
                     <p class="padding-5 border no-top bold fs-14" style="background-color: rgb(253,233,217);">B.1 Conocimiento cientifico: 40%</p>
                 </div>
                 <div class="titulo-2 border center no-top bold no-left padding-5">
@@ -444,6 +444,15 @@ include('datos.php');
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
         </div>
+        <div class="total flex  " style="width: 100%">
+            <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
+            <input name="subtotal2" value="0.00" readonly class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">
+        </div>
+
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
+
         <div class="competencias flex">
          <div class="col-1">
             <div class="header flex">
@@ -474,17 +483,21 @@ include('datos.php');
                         Reconocer las tendencias pedagógicas actuales.</span>
                     </div>
                     <input value="0.00" type="text" class="input  campoC border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                
                 </div>
-                <div class="item   flex">
-                    <div class="pregunta border no-top padding-5 cell-blue">
-
-                        <span class="nombre-item bold ">TOTAL C</span>
-                    </div>
-                    <input readonly value="0.00" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow">
-                </div>
+                
             </div>
+            
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+        </div>
+        <div class="total flex  " style="width: 100%">
+        <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (6%) </p>
+        <input class="total1 border bold no-top no-left padding-5" id="totalC" value="0.00" style="text-align: center; width:30% ;background:teal;color:white" name="subtotal3">
     </div>
+    
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
+    <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <div class="competencias flex">
          <div class="col-1">
             <div class="header flex">
@@ -515,21 +528,15 @@ include('datos.php');
                     </div>
                     <input value="0.00" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
-                <div class="item   flex">
-                    <div class="pregunta border no-top padding-5 cell-blue">
-
-                        <span class="nombre-item bold ">TOTAL D</span>
-                    </div>
-                    <input readonly value="0.00" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
-                </div>
+               
             </div>
             <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
     </div>
    
 
-        <div class="total flex  " style="width: 100%">
-            <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B - Conocimiento Cientifíco y Desempeño - PRODUCTO FINAL DE ROTACION  6% -TEMA ASIGNADO 4%</p>
-            <p class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+    <div class="total flex" style="width: 100%">
+            <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal D - TEMA ASIGNADO (4%)</p>
+            <input value="0.00" readonly name="subtotal4" id="totalD" class="total1 border bold no-top no-left padding-5" id="subtotalB" style="text-align: center; width:30% ;background:teal;color:white">
         </div>
     </div>
 
@@ -539,13 +546,15 @@ include('datos.php');
     <br>
 
     <div class="total flex border no-left  " style="width: 100%">
-        <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B</p>
-        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D </p>
+        <input name="totalgeneral" value="0.00" readonly class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     
         <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
     <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
+    <input type="hidden" value="#fvform" id="nformulario">
+
     <div class="botones">
        <button type="button" id="btncancel">Cancelar</button>  
         <button type="button" class="button2" id="btnsave">Guardar</button>

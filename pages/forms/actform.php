@@ -848,6 +848,8 @@ include('datos.php');
     <div class="botones">
        <button type="button" id="btncancel">Cancelar</button>  
         <button type="button" class="button2" id="btnsave">Guardar</button>
+        <input type="hidden" value="#actform" id="nformulario">
+
     </div>
 
     </form>

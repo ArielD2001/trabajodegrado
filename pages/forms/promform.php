@@ -644,6 +644,8 @@ include('datos.php');
     </div>
     <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
     <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
+    <input type="hidden" value="#form-prom" id="nformulario">
+
     </form>
 </div>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
