@@ -1,279 +1,22 @@
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-        outline: none;
-    }
+<?php 
+$preguntas = 'preguntasm4';
+include('datos.php');
 
-    .border {
-        border: 1px solid black;
-    }
+?>
 
-    textarea {
-        resize: none;
-        transition: .1s;
-    }
-
-    .contenedor {
-        width: 900px;
-        margin: 0 auto;
-        transform: scale(0.9);
-    }
-
-    .item:hover,
-    textarea:hover {
-        background: rgb(0, 0, 0, 0.2);
-    }
-
-    input {
-        text-align: center;
-        border: none;
-        border-radius: 0;
-        font-size: 15px;
-        background: transparent;
-    }
-
-    input:focus {
-        background-color: rgb(0, 0, 0, 0.2);
-    }
-
-    input::placeholder {
-        color: black;
-    }
-
-    .flex {
-        display: flex;
-    }
-
-    .center {
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        font-weight: bold;
-        text-align: center;
-    }
-.left{
-    column-gap: 40px;
-}
-    .left,
-    .center {
-        width: 40%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .right {
-        width: 20%;
-    }
-
-    .border-left {
-        border-left: 1px solid grey;
-    }
-
-    .border-bottom {
-        border-bottom: 1px solid grey;
-    }
-
-    .no-top {
-        border-top: 1px solid transparent;
-    }
-
-    .no-bottom {
-        border-bottom: 1px solid transparent;
-    }
-
-    .no-left {
-        border-left: 1px solid transparent;
-    }
-
-    .item {
-        transition: .1s;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .item p {
-        width: 50%;
-        padding: 5px;
-        text-align: center;
-        border-left: 1px solid grey;
-        font-weight: bold;
-    }
-
-    .padding-5 {
-        padding: 5px;
-    }
-
-    .padding-10 {
-        padding: 10px;
-    }
-
-    .info {
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    .f-14 {
-        font-size: 14px;
-    }
-
-    .cuerpo-group {
-        justify-content: space-between;
-    }
-
-    .cuerpo-group p {
-        width: 50%;
-    }
-
-    .blue,
-    .red {
-        width: 50%;
-    }
-
-    .bold {
-        font-weight: bold;
-    }
-
-    .instructivo-title {
-        font-weight: bold;
-    }
-
-    .blue,
-    .red,
-    .grenn {
-        background-color: lightblue;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    .red {
-        background-color: rgb(253, 233, 217);
-    }
-    .green{
-        background-color: rgb(69,193,59);
-    }
-
-    .end {
-        width: 25%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .blue span,
-    .red span {
-        padding: 5px;
-    }
-
-    .cell-blue {
-        background-color: lightblue;
-    }
-
-    .blue .large,
-    .red .large {
-        width: 75%;
-    }
-
-    .blue .top {
-        background-color: lightskyblue;
-    }
-
-    .red .top,
-    .cell-yellow {
-        background-color: rgb(251, 212, 180);
-    }
-
-    .titulo-1-p {
-        background-color: skyblue;
-    }
-
-    .titulo-1-p.cognitivas,
-    .cell-header {
-        background: rgb(251, 212, 180) !important;
-    }
-
-    .competencias {
-        flex-wrap: wrap;
-    }
-
-    .competencias .col-1 {
-        width: 70%;
-    }
-
-    .col-2 {
-        width: 30%;
-    }
-
-    .header .titulo-1 {
-        width: 85%;
-    }
-
-
-
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .header .titulo-2 {
-        width: 15%;
-    }
-
-    .titulo-3 p {
-        text-align: center;
-    }
-
-    .fs-14 {
-        font-size: 15px;
-    }
-
-    .numero {
-        width: 30px !important;
-    }
-
-    .padding-15 {
-        padding: 13.5px;
-    }
-
-    .items {
-        width: 70% !important;
-    }
-
-    .items .item {
-        width: 100%;
-    }
-
-    .items .item .pregunta {
-        width: 85%;
-    }
-
-    .items .item .input {
-        width: 15%;
-    }
-
-    .pregs {
-        width: 100%;
-        position: relative;
-        display: flex;
-        height: auto;
-    }
-
-    .pregunta .numer {
-        height: 100%;
-        width: 50px;
-
-
-    }
-
-    .rec {
-        width: 30%;
-        height: 100%;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/forms.css">
+    <script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+    <title>Cuidado materno infantil - <?php echo $estudiante['Nombre'] ?> </title>
+</head>
+<body>
+    
 
 
 <div class="contenedor">
@@ -355,7 +98,7 @@
     </div>
     <p class="padding-10 border no-top"></p>
 
-
+    <form method="POST" id="cuimatform">
     <div class="competencias flex">
         <div class="col-1">
             <div class="header flex">
@@ -384,7 +127,7 @@
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Mantiene relaciones cordiales y respetuosas con</span>
                     </div>
-                    <input value="0.00" readonly type="text" class="input campoA1 border no-top no-left padding-5" style="background-color: #FCABC4;" id="A-1-1" name="A-1-1">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['suma1'] : '0.00'); ?>" readonly type="text" class="input campoA1 border no-top no-left padding-5" style="background-color: #FCABC4;" id="A-1-1" name="A-1-1">
                 </div>
 
                 <div class="item   flex">
@@ -392,7 +135,7 @@
                         <span class="numero "><b>a.</b></span>
                         <span class="nombre-item ">Docentes</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p1m4'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
                 </div>
 
                 <div class="item   flex">
@@ -400,7 +143,7 @@
                         <span class="numero "><b>b.</b></span>
                         <span class="nombre-item ">Compañeros</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="A-1-3">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p2m4'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="A-1-3">
                 </div>
 
                 <div class="item   flex">
@@ -408,14 +151,14 @@
                         <span class="numero "><b>c.</b></span>
                         <span class="nombre-item ">Equipo de trabajo</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="A-1-4">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p3m4'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-4" name="A-1-4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>d.</b></span>
                         <span class="nombre-item ">Pacientes</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="A-1-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p4m4'] : '0.00'); ?>" type="text" class="input border  subA1 no-top no-left padding-5" id="A-1-5" name="A-1-5">
                 </div>
 
                 <div class="item   flex">
@@ -423,28 +166,28 @@
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Expresa sus inquietudes con seguridad y confianza</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="A-1-6">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p5m4'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-6" name="A-1-6">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Sigue las lineas de autoridad establecidas</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="A-1-7">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p6m4'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-7" name="A-1-7">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Reconoce errores y acepta sugerencias</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="A-1-8">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p7m4'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-8" name="A-1-8">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Maneja situaciones de estres adecuadamente</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="A-1-9">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p8m4'] : '0.00'); ?>" type="text" class="input border campoA1 no-top no-left padding-5" id="A-1-9" name="A-1-9">
                 </div>
 
                 <div class="item   flex">
@@ -452,10 +195,10 @@
 
                         <span class="nombre-item bold ">TOTAL A1</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalA1" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['total1'] : '0.00'); ?>" type="text" id="totalA1" class="input border no-top no-left padding-5" style="background-color: yellow" name="total1" id="totalA1">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones1"><?php echo ($cnotas > 0 ? $notas['recomendaciones1'] : ''); ?></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
         <p class="padding-10 border no-top fs-14 bold" style="width: 100%">A2 Responsabilidad y compromiso (10%)</p>
@@ -470,7 +213,7 @@
                         <span class="numero "><b>1.</b></span>
                         <span class="nombre-item ">Se presenta a sus actividades 15 a 10 min antes y a la hora de recibir el turno esta listo. Permanece en el servicio el tiempo con su equipo de trabajo.</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5" >
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p9m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p9m4">
                 </div>
 
                 <div class="item   flex">
@@ -478,7 +221,7 @@
                         <span class="numero "><b>2.</b></span>
                         <span class="nombre-item ">Utiliza el <b>uniforme completo</b> en buen estado y mantiene una buena presentacion personal (cabello recogido, sin prendas, ni accesorios)</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p10m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p10m4">
                 </div>
 
                 <div class="item   flex">
@@ -486,7 +229,7 @@
                         <span class="numero "><b>3.</b></span>
                         <span class="nombre-item ">Demuestra respeto por las normas de la Institucion de Practica</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p11m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p11m4">
                 </div>
 
                 <div class="item   flex">
@@ -494,14 +237,14 @@
                         <span class="numero "><b>4.</b></span>
                         <span class="nombre-item ">Cumple con la etica profesional</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p12m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p12m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
                         <span class="numero "><b>5.</b></span>
                         <span class="nombre-item ">Asume con responsabilidad y madurez sus actividades</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p13m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p13m4">
                 </div>
 
                 <div class="item   flex">
@@ -509,7 +252,7 @@
                         <span class="numero "><b>6.</b></span>
                         <span class="nombre-item ">Desarrolla iniciativa aplicando conocimientos adquiridos</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p14m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p14m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -517,7 +260,7 @@
                         <span class="nombre-item ">Genera, transmite y asume valores formativos en su comportamiento y actitud.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p15m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p15m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -525,7 +268,7 @@
                         <span class="nombre-item ">Ejerce liderazgo en la toma de decisiones dentro del grupo
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p16m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p16m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -533,7 +276,7 @@
                         <span class="nombre-item ">Asiste a eventos, encuentros y reuniones programados por la facultad.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p17m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p17m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -542,7 +285,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input campoA2 border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p18m4'] : '0.00'); ?>" type="text" class="input campoA2 border no-top no-left padding-5" name="p18m4">
                 </div>
 
                 <div class="item   flex">
@@ -550,14 +293,14 @@
 
                         <span class="nombre-item bold ">TOTAL A2</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalA2" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total2'] : '0.00'); ?>" type="text" id="totalA2" class="input border no-top no-left padding-5" style="background-color: yellow" name="total2"> 
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones2"><?php echo ($cnotas > 0 ? $notas['recomendaciones2'] : ''); ?></textarea>
         </div>
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-blue fs-14 bold" style="width: 70%">Subtotal A: Relaciones interpersonales(A1) + Responsabilidad y compromiso(A2)</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA">0.00</p>
+            <input readonly name="subtotal1" value="<?php echo ($cnotas > 0 ? $notas['subtotal1'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white" id="subtotalA">
         </div>
     </div>
 
@@ -598,7 +341,7 @@
                         <span class="nombre-item ">Reconoce los principios cientifícos en la realización de los procedimientos básicos en el cuidado del paciente.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p19m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p19m4">
                 </div>
 
                 <div class="item   flex">
@@ -607,7 +350,7 @@
                         <span class="nombre-item ">Enuncia en forma verbal o escrita las bases teóricas.
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p20m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p20m4">
                 </div>
 
                 <div class="item   flex">
@@ -617,7 +360,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p21m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p21m4">
                 </div>
 
                 <div class="item   flex">
@@ -627,7 +370,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p22m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p22m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -635,7 +378,7 @@
                         <span class="nombre-item ">Conoce las normas de bioseguridad y  el adecuado manejo de los residuos hospitalarios.					
                         </span>
                     </div>
-                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p23m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p23m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -644,7 +387,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p24m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p24m4">
                 </div>
 
 
@@ -655,7 +398,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p25m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p25m4">
                 </div>
 
 
@@ -666,7 +409,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p26m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p26m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -675,17 +418,17 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p27m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p27m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5 cell-yellow">
 
                         <span class="nombre-item bold ">TOTAL B1:</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total3'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" style="background-color: yellow" name="total3">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones3"><?php echo ($cnotas > 0 ? $notas['recomendaciones3'] : ''); ?></textarea>
         </div>
         <p class="padding-10 border no-top" style="width: 100%"></p>
         <p class="padding-10 border no-top fs-14 bold cell-header" style="width: 100%">B2 Desempeño (35%)</p>
@@ -702,7 +445,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p28m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p28m4">
                 </div>
 
                 <div class="item   flex">
@@ -712,7 +455,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p29m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p29m4">
                 </div>
 
                 <div class="item   flex">
@@ -722,7 +465,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5" >
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p30m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p30m4">
                 </div>
                 
                 <div class="item   flex">
@@ -731,7 +474,7 @@
                         <span class="nombre-item ">Detecta problemas e identifica necesidades de los pacientes (diagnóstico de enfermería) planifica PAE					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p31m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p31m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -742,7 +485,7 @@
 
                         </span>
                     </div>
-                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['suma2'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;" name="suma2">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -751,7 +494,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p32m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p32m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -760,7 +503,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p33m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p33m4">
                 </div>
 
                 <div class="item   flex">
@@ -770,7 +513,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p34m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p34m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -780,7 +523,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p35m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p35m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -790,7 +533,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p36m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p36m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -799,7 +542,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p37m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p37m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -807,7 +550,7 @@
                         <span class="nombre-item ">Controla Líquidos  Ingeridos y Eliminados en su paciente asignado					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p38m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p38m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -817,7 +560,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p39m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p39m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -826,7 +569,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p40m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p40m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -835,7 +578,7 @@
 
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p41m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p41m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -844,7 +587,7 @@
 
                         </span>
                     </div>
-                    <input readonly placeholder="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['suma3'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" style="background-color: #FCABC4;" name="suma3">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -852,7 +595,7 @@
                         <span class="nombre-item ">Notas de Enfermería claridas y precisas sobre sus observaciones y la atención que proporciona al paciente 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p42m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p42m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -860,7 +603,7 @@
                         <span class="nombre-item ">Control de Líquidos  Ingeridos y Eliminados										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p43m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p43m4">
                 </div>
 
                 <div class="item   flex">
@@ -869,7 +612,7 @@
                         <span class="nombre-item ">Kardex							
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p44m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p44m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -877,7 +620,7 @@
                         <span class="nombre-item ">Tarjeta de Medicamentos									
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p45m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p45m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -885,7 +628,7 @@
                         <span class="nombre-item ">Registro de Medicamentos								
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p46m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p46m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -894,7 +637,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p47m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p47m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -902,7 +645,7 @@
                         <span class="nombre-item ">Realiza calculo de dosis										
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p48m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p48m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -911,7 +654,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p49m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p49m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -920,7 +663,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p50m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p50m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -929,7 +672,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p51m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p51m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -938,7 +681,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p52m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p52m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -947,7 +690,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p53m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p53m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -956,7 +699,7 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p54m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p54m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5">
@@ -965,22 +708,22 @@
 					
                         </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border no-top no-left padding-5">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p55m4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" name="p55m4">
                 </div>
                 <div class="item   flex">
                     <div class="pregunta border no-top padding-5" style="background-color: rgb(253,233,217);">
 
                         <span class="nombre-item bold ">TOTAL B2</span>
                     </div>
-                    <input readonly value="0.00" type="text" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly value="<?php echo ($cnotas > 0 ? $notas['total4'] : '0.00'); ?>" type="text" class="input border no-top no-left padding-5" style="background-color: yellow" name="total4">
                 </div>
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones4"><?php echo ($cnotas > 0 ? $notas['recomendaciones4'] : ''); ?></textarea>
         </div>
         
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
-            <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+            <input  readonly name="subtotal2" value="<?php echo ($cnotas > 0 ? $notas['subtotal2'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
         </div>
     </div>
 
@@ -1017,7 +760,7 @@
                         <span class="numero "><b>C-</b></span>
                         <span class="nombre-item ">Evaluación Escrita de la rotación 10%</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p56m4'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p56m4">
                 </div>
 
                 <div class="item   flex">
@@ -1025,15 +768,15 @@
 
                         <span class="nombre-item bold ">TOTAL C</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly name="total5" value="<?php echo ($cnotas > 0 ? $notas['total5'] : '0.00'); ?>" type="text" id="totalC" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
                
             </div>
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones5"><?php echo ($cnotas > 0 ? $notas['recomendaciones5'] : ''); ?></textarea>
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (10%) </p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input  readonly name="subtotal3" value="<?php echo ($cnotas > 0 ? $notas['subtotal3'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -1068,7 +811,7 @@
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">CLUB DE REVISTA  :                                          4%		                        </span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="A-1-2">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p57m4'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p57m4">
                 </div>
 
                 <div class="item   flex">
@@ -1076,7 +819,7 @@
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">NARRATIVAS y PAE:                                          6%		</span>
                     </div>
-                    <input placeholder="0.00" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="A-1-3">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p58m4'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p58m4">
                 </div>
 
                 <div class="item   flex">
@@ -1084,14 +827,14 @@
 
                         <span class="nombre-item bold ">TOTAL D</span>
                     </div>
-                    <input readonly value="0.00" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
+                    <input readonly name="total6" value="<?php echo ($cnotas > 0 ? $notas['total6'] : '0.00'); ?>" type="text" id="totalD" class="input border no-top no-left padding-5" style="background-color: yellow">
                 </div>
             </div>  
-            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize"></textarea>  
+            <textarea class="rec border no-top no-left padding-5 " style="font-size:15px ; text-transform:capitalize" name="recomendaciones6"><?php echo ($cnotas > 0 ? $notas['recomendaciones6'] : ''); ?></textarea>  
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal D:  CLUB DE REVISTA : (4%) + NARRATIVAS y PAE: (6)%</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input  readonly name="subtotal4" value="<?php echo ($cnotas > 0 ? $notas['subtotal4'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -1101,91 +844,23 @@
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D</p>
-        <p class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input name="totalgeneral" value="<?php echo ($cnotas > 0 ? $notat['nota'] : '0.00'); ?>" readonly class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
-    <script>
-         //PREGUNTAS A1
-    var preguntasA1 = document.querySelectorAll('.campoA1')
-    var pregunta1 = document.getElementById('A-1-1')
-    var subA1 = document.querySelectorAll('.subA1')
-    var totalA1 = document.getElementById('totalA1');
+    <div class="botones">
+       <button type="button" id="btncancel">Cancelar</button>  
+        <button type="button" class="button2" id="btnsave">Guardar</button>
+    </div>
+    <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
+    <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
+    <input type="hidden" value="#cuimatform" id="nformulario">
 
-    //PREGUNTAS A2
-    var preguntasA2 = document.querySelectorAll('.campoA2')
-    var totalA2 = document.getElementById('totalA2');
+    </form>
 
-    //SUBTOTAL A
-    var subtotalA = document.getElementById('subtotalA');
-
-    
-    //Preguntas B1
-    var preguntasB1 = document.querySelectorAll('.campoB1');
-    var pregubtab5 = document.getElementById('preguntab5');
-    var subB1 = document.querySelectorAll('.subB1');
-    var totalB1 = document.getElementById('totalB1');
-    
-    //preguntasB2
-    var preguntasB2 = document.querySelectorAll('.campoB2');
-    var preguntab3 = document.getElementById('preguntab3');
-    var subB2 = document.querySelectorAll('.subB2');
-    var totalB2 = document.getElementById('totalB2');
-    
-    //total final
-    var totalF = document.getElementById('totalF');
-
-    //preguntas pertenecientes a la pregunta 1
-    subA1.forEach(i => {
-        i.addEventListener('keyup', function() {
-            let sub = 0;
-            subA1.forEach(j => {
-                if (j.value != '') {
-                    sub += parseFloat(j.value)
-                }
-            })
-            pregunta1.value = sub / 4;
-            updateTotalA1();
-        })
-    })
-
-    //Eventos de preguntas 1
-    preguntasA1.forEach(item => {
-        item.addEventListener('keyup', updateTotalA1)
-    })
-
-    preguntasA2.forEach(item => {
-        item.addEventListener('keyup', updateTotalA2)
-    })
-
-    function updateTotalA1() {
-        let total = 0;
-        preguntasA1.forEach(pregunta => {
-
-            if (pregunta.value != '') {
-                total += parseFloat(pregunta.value);
-            }
-        })
-        totalA1.value = (total / 5) * 0.1
-        let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
-
-        subtotalA.innerHTML = inner;
-        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
-
-    }
-
-    function updateTotalA2() {
-        let total = 0;
-        preguntasA2.forEach(pregunta => {
-
-            if (pregunta.value != '') {
-                total += parseFloat(pregunta.value);
-            }
-        })
-        totalA2.value = (total / 10) * 0.1
-        let inner = parseFloat(totalA1.value) + parseFloat(totalA2.value);
-        subtotalA.innerHTML = inner;
-        totalF.innerHTML = parseFloat(subtotalA.innerHTML) + parseFloat(subtotalB.innerHTML)
-
-
-    }
-    </script>
+    </div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/forms.js"></script>
+<script src="../../assets/js/cuimat.js"></script>
+</body>
+</html>
