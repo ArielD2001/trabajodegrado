@@ -22,12 +22,10 @@
 
  //Pregunta C
  var preguntasC = document.querySelectorAll('.campoC');
- var totalC = document.getElementById('totalC');
  var subtotalC = document.getElementById('subtotalC');
 
  //Preguntas D
  var preguntasD = document.querySelectorAll('.campoD');
- var totalD = document.getElementById('totalD');
  var subtotalD = document.getElementById('subtotalD');
  
  //total final
@@ -141,10 +139,9 @@
              total += parseFloat(pregunta.value);
          }
      })
-     totalC.value = (total / 1) * 0.1
-     let inner = parseFloat(totalC.value)
+     
 
-     subtotalC.value = inner;
+     subtotalC.value = (total / 1) * 0.1;
      totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
 
  }
@@ -156,62 +153,11 @@
              total += parseFloat(pregunta.value);
          }
      })
-     totalD.value = (total / 3) * 0.2
-     let inner = parseFloat(totalD.value)
+   
 
-     subtotalD.value = inner;
+     subtotalD.value = (total / 3) * 0.2;
      totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
 
  }
 
-    const btnsave = document.getElementById('btnsave');
-      const btncancel = document.getElementById('btncancel');
-      
-      btnsave.addEventListener('click', ()=>{
-        Swal.fire({
-            title: 'Guardar',
-            text: "¿Seguro desea guardar los cambios?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            confirmButtonText: 'Si, guardar',
-            cancelButtonText: 'cancelar',
-            cancelButtonColor: '#d33'
-          }).then((result) => {
-              if (result.isConfirmed) {
-
-                // console.log($('#praintform').serialize())
-                $.ajax({
-                    url: "../config/save-nota7.php",
-                    type: "post",
-                    data: $('#praintform').serialize(),
-              
-                    //resultado postivo de la confirmacion
-                    success: function (res) {
-                      //Verificaion de campos vacios
-                     if(res == 'ok'){
-                        window.history.back();
-                     }
-                     else if( res == 'error'){
-                        console.log(res)
-                     }
-                     else if( res == 'NaN'){
-                        Swal.fire({
-                            title: 'Incorrecto',
-                            text: "Por favor verifique los campos que desea guardar, solo se permiten valores numericos",
-                            icon: 'warning',
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'Ok',
-                          })
-                     }else{
-                        console.log(res)
-                     }
-                    }
-                })
-               
-            }
-          })
-    })
-    btncancel.addEventListener('click',()=>{
-        window.history.back();
-    })
+ 

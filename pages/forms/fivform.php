@@ -51,14 +51,14 @@ include('datos.php');
         </div>
     </div>
     <div class="info border no-top">
-        <p class="border-bottom padding-5">Nombre de alumno:</p>
+        <p class="border-bottom padding-5">Nombre de alumno: <?php echo $estudiante['Nombre'] ?></p>
         <div class="cuerpo-group border-bottom flex">
-            <p class="padding-5">Docente a cargo:</p>
-            <p class="border-left padding-5">Institucion:</p>
+            <p class="padding-5">Docente a cargo: <?php  echo ucwords($nombre) . ucwords($apellido) ?></p>
+            <p class="border-left padding-5">Institucion: Corporacion Universitaria Rafael Nuñez</p>
         </div>
         <div class="cuerpo-group flex border-bottom">
-            <p class="padding-5">Fecha:</p>
-            <p class="border-left padding-5">Semestre:</p>
+            <p class="padding-5">Fecha: <?php echo date('y/m/d') ; ?></p>
+            <p class="border-left padding-5">Semestre: <?php echo $lista['semestre']; ?></p>
         </div>
         <p class="padding-10"></p>
 
