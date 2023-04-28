@@ -865,7 +865,7 @@ include('datos.php');
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D</p>
-        <p class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">0.00</p>
+        <input value="<?php echo ($cnotas > 0 ? $notat['nota'] : '0.00'); ?>" name="totalgeneral" class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     <div class="botones">

@@ -23,7 +23,7 @@ btnsave.addEventListener('click', () => {
     nformulario == '#cuimedform'  ? '../config/save-nota3.php' :
     nformulario == '#cuimatform'  ? '../config/save-nota4.php' :
     nformulario == '#pradmform'   ? '../config/save-nota5.php' :
-    nformulario == '#adultmform'  ? '../config/save-nota3.php' :
+    nformulario == '#adultmform'  ? '../config/save-nota6.php' :
     nformulario == '#praintform'  ? '../config/save-nota7.php' :
     nformulario == '#fivform'     ? '../config/save-nota8.php' : '../config/save-nota9.php';
 

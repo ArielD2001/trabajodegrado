@@ -25,9 +25,11 @@ $p49m6 = $_POST['p49m6'];   $p50m6 = $_POST['p50m6'];   $p51m6 = $_POST['p51m6']
 $p52m6 = $_POST['p52m6'];   $p53m6 = $_POST['p53m6'];   $p54m6 = $_POST['p54m6'];
 $p55m6 = $_POST['p55m6'];   $p56m6 = $_POST['p56m6'];   $p57m6 = $_POST['p57m6'];
 $p58m6 = $_POST['p58m6'];   $p59m6 = $_POST['p59m6'];   $p60m6 = $_POST['p60m6'];
-$p61m6 = $_POST['p61m6'];   $p62m6 = $_POST['p62m6'];   $p60m6 = $_POST['p63m6'];
+$p61m6 = $_POST['p61m6'];   $p62m6 = $_POST['p62m6'];   $p63m6 = $_POST['p63m6'];
 $p64m6 = $_POST['p64m6'];   $total4 = $_POST['total4']; $p19m6 = $_POST['p19m6'];
 $total2 = $_POST['total2']; $p9m6 = $_POST['p9m6'];     $subtotal1 = $_POST['subtotal1'];
+$total5 = $_POST['total5'];
+$total6 = $_POST['total6'];
 $subtotal2 = $_POST['subtotal2']; $subtotal3 = $_POST['subtotal3']; $subtotal4 = $_POST['subtotal4'];
 
 $recomendaciones1 = $_POST['recomendaciones1']; $recomendaciones2 = $_POST['recomendaciones2'];
@@ -39,14 +41,14 @@ $total = $_POST['totalgeneral'];
 if($total == 'NaN'){
     echo'NaN';
 }else{
-    $consulta= "SELECT * FROM preguntasm1 WHERE id_estudiante = ?";
+    $consulta= "SELECT * FROM preguntasm6 WHERE id_estudiante = ?";
 $sentencia = $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id_estudiante);
 $sentencia->execute();
 $filas =  $sentencia->rowCount();
 
 if($filas < 1){
-    $consultai = "INSERT INTO preguntasm1(id_estudiante, suma1, p1m6, p2m6, p3m6, p4m6, p5m6, p6m6, p7m6, p8m6, total1,  
+    $consultai = "INSERT INTO preguntasm6(id_estudiante, suma1, p1m6, p2m6, p3m6, p4m6, p5m6, p6m6, p7m6, p8m6, total1,  
     recomendaciones1, p9m6, p10m6, p11m6, p12m6, p13m6, p14m6, p15m6, p16m6, p17m6, p18m6, total2, recomendaciones2, 
     subtotal1, p19m6, p20m6, p21m6, p22m6, p23m6, p24m6, p25m6, p26m6, p27m6, p28m6, p29m6, total3, recomendaciones3, 
     p30m6, p31m6, p32m6, p33m6, p34m6, p35m6, p36m6, p37m6, p38m6, p39m6, p40m6, p41m6, p42m6, p43m6, p44m6, p45m6, 
@@ -69,12 +71,12 @@ if($filas < 1){
     }
     
 }else{
-    $delete = "DELETE  FROM preguntasm1 WHERE id_estudiante = ? ";
+    $delete = "DELETE  FROM preguntasm6 WHERE id_estudiante = ? ";
     $senetenciad = $mbd->prepare($delete);
     $senetenciad->bindParam(1, $id_estudiante);
     $senetenciad->execute();
 
-    $consultai = "INSERT INTO preguntasm1(id_estudiante, suma1, p1m6, p2m6, p3m6, p4m6, p5m6, p6m6, p7m6, p8m6, total1,  
+    $consultai = "INSERT INTO preguntasm6(id_estudiante, suma1, p1m6, p2m6, p3m6, p4m6, p5m6, p6m6, p7m6, p8m6, total1,  
     recomendaciones1, p9m6, p10m6, p11m6, p12m6, p13m6, p14m6, p15m6, p16m6, p17m6, p18m6, total2, recomendaciones2, 
     subtotal1, p19m6, p20m6, p21m6, p22m6, p23m6, p24m6, p25m6, p26m6, p27m6, p28m6, p29m6, total3, recomendaciones3, 
     p30m6, p31m6, p32m6, p33m6, p34m6, p35m6, p36m6, p37m6, p38m6, p39m6, p40m6, p41m6, p42m6, p43m6, p44m6, p45m6, 
