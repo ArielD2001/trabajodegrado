@@ -49,14 +49,14 @@ include('datos.php');
         </div>
     </div>
     <div class="info border no-top">
-        <p class="border-bottom padding-5">Nombre de alumno:</p>
+        <p class="border-bottom padding-5">Nombre de alumno: <?php echo $estudiante['Nombre'] ?></p>
         <div class="cuerpo-group border-bottom flex">
-            <p class="padding-5">Docente a cargo:</p>
-            <p class="border-left padding-5">Institucion:</p>
+            <p class="padding-5">Docente a cargo: <?php  echo ucwords($nombre) . ucwords($apellido) ?></p>
+            <p class="border-left padding-5">Institucion: Corporacion Universitaria Rafael Nuñez</p>
         </div>
         <div class="cuerpo-group flex border-bottom">
-            <p class="padding-5">Fecha:</p>
-            <p class="border-left padding-5">Semestre:</p>
+            <p class="padding-5">Fecha: <?php echo date('y/m/d') ; ?></p>
+            <p class="border-left padding-5">Semestre: <?php echo $lista['semestre']; ?></p>
         </div>
         <p class="padding-10"></p>
 
@@ -723,7 +723,7 @@ include('datos.php');
         
         <div class="total flex  " style="width: 100%">
             <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal B: Conocimientos cientificos(B1) + Desempeño(B2)</p>
-            <input  readonly name="subtotal2" value="<?php echo ($cnotas > 0 ? $notas['subtotal2'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
+            <input id="subtotalB" readonly name="subtotal2" value="<?php echo ($cnotas > 0 ? $notas['subtotal2'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
         </div>
     </div>
 
@@ -760,7 +760,7 @@ include('datos.php');
                         <span class="numero "><b>C-</b></span>
                         <span class="nombre-item ">Evaluación Escrita de la rotación 10%</span>
                     </div>
-                    <input value="<?php echo ($cnotas > 0 ? $notas['p56m4'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p56m4">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p56m4'] : '0.00'); ?>" type="text" class="input  CampoC border no-top no-left padding-5" id="A-1-2" name="p56m4">
                 </div>
 
                 <div class="item   flex">
@@ -776,7 +776,7 @@ include('datos.php');
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal C: Evaluación Escrita de la rotación (10%) </p>
-        <input  readonly name="subtotal3" value="<?php echo ($cnotas > 0 ? $notas['subtotal3'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
+        <input  readonly name="subtotal3" id="subtotalC" value="<?php echo ($cnotas > 0 ? $notas['subtotal3'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -811,7 +811,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">CLUB DE REVISTA  :                                          4%		                        </span>
                     </div>
-                    <input value="<?php echo ($cnotas > 0 ? $notas['p57m4'] : '0.00'); ?>" type="text" class="input  subA1 border no-top no-left padding-5" id="A-1-2" name="p57m4">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p57m4'] : '0.00'); ?>" type="text" class="input  campoD border no-top no-left padding-5" id="A-1-2" name="p57m4">
                 </div>
 
                 <div class="item   flex">
@@ -819,7 +819,7 @@ include('datos.php');
                         <span class="numero "><b></b></span>
                         <span class="nombre-item ">NARRATIVAS y PAE:                                          6%		</span>
                     </div>
-                    <input value="<?php echo ($cnotas > 0 ? $notas['p58m4'] : '0.00'); ?>" type="text" class="input border subA1  no-top no-left padding-5" id="A-1-3" name="p58m4">
+                    <input value="<?php echo ($cnotas > 0 ? $notas['p58m4'] : '0.00'); ?>" type="text" class="input border  campoD no-top no-left padding-5" id="A-1-3" name="p58m4">
                 </div>
 
                 <div class="item   flex">
@@ -834,7 +834,7 @@ include('datos.php');
     </div>
     <div class="total flex  " style="width: 100%">
         <p class="border no-top padding-5 cell-yellow fs-14 bold" style="width: 70%">Subtotal D:  CLUB DE REVISTA : (4%) + NARRATIVAS y PAE: (6)%</p>
-        <input  readonly name="subtotal4" value="<?php echo ($cnotas > 0 ? $notas['subtotal4'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
+        <input  readonly id="subtotalD" name="subtotal4" value="<?php echo ($cnotas > 0 ? $notas['subtotal4'] : '0.00'); ?>" class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     <p class="padding-10 border-bottom no-top" style="width: 100%"></p>
@@ -844,7 +844,7 @@ include('datos.php');
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D</p>
-        <input name="totalgeneral" value="<?php echo ($cnotas > 0 ? $notat['nota'] : '0.00'); ?>" readonly class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
+        <input name="totalgeneral" id="totalF" value="<?php echo ($cnotas > 0 ? $notat['nota'] : '0.00'); ?>" readonly class="total1 border bold no-top no-left padding-5" style="text-align: center; width:30% ;background:teal;color:white">
     </div>
 
     <div class="botones">
