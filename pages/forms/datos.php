@@ -46,6 +46,8 @@ if(isset($_GET)){
     $sentencialista->execute();
     $lista = $sentencialista->fetch();
 
+    $idm = $lista['id_modulo'];
+
 
     $consultanota = "SELECT * FROM $preguntas WHERE id_estudiante = ?";
     $sentencianota = $mbd->prepare($consultanota);
@@ -60,7 +62,17 @@ if(isset($_GET)){
     $sentencianotat->bindParam(1,$ide);
     $sentencianotat->execute();
     $notat = $sentencianotat->fetch();
+
+
+    $sqlList = 'SELECT * FROM modulos WHERE id = ?';
+    $sentenciaM = $mbd->prepare($sqlList);
+    $sentenciaM->bindParam(1, $idm);
+    $sentenciaM->execute();
+    $datam = $sentenciaM->fetch();
+    $modulo   = $datam['nombre'];
 }   
+
+include('info.php'); 
 
 
 ?>

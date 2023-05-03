@@ -28,6 +28,8 @@ if (isset($_GET['lista'])) {
     $sentencial->execute();
     $datal = $sentencial->fetch();
     $idm = $datal['id_modulo'];
+
+    
     $sqlList = 'SELECT * FROM modulos WHERE id = ?';
     $sentenciaList = $mbd->prepare($sqlList);
     $sentenciaList->bindParam(1, $idm);
@@ -293,18 +295,21 @@ if (isset($_GET['lista'])) {
     <!-- ========= end footer ========= -->
     </div>
     <?php include "config/config-footer.php" ?>
-<<<<<<< HEAD
-<script>
-     $(document).ready( function () {
-    $('#tabla-listas').DataTable();
-} );
-</script>
-=======
     <script>
         $(document).ready(function() {
-            $('#tablas').DataTable();
+            $('#tablas').DataTable({
+            scrollCollapse: true,
+            ordering: false,
+            paging: true,
+            columnDefs:[{
+                targets: "_all",
+                searchable: true
+            }],
+            fixedColumns:   {
+                leftColumns: 3
+            }
+            });
         });
     </script>
->>>>>>> 24746f3d0ff5af33386cbf31eff245b36975146d
 
 </body>
