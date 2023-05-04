@@ -21,6 +21,12 @@ $("#boton-login").click(function () {
         } else if (res == "ok") {
           //Redireccion de satisfaccion a pagina home
           window.location = "pages/home";
+        }else if(res == 'admin'){
+          window.location = "pages/ADMIN.php";
+
+        }else if(res == 'no activo'){
+          window.location = "./errorNoActivUser";
+
         } else if (res == "error datos") {
           $("#result-login").html(
             //Mensaje de error
@@ -29,7 +35,7 @@ $("#boton-login").click(function () {
         } else {
           $("#result-login").html(
             //Mnesaje de error
-            '<p class="text-red-500 text-xs italic mt-2"  >Error no identificado</p>'
+            '<p class="text-red-500 text-xs italic mt-2"  >'+res+'</p>'
           );
         }
       }, 500);

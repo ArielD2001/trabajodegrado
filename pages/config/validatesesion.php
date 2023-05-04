@@ -4,14 +4,10 @@
 session_start();
 
 //Se valida que exista la palabra sesion
-if (!$_SESSION) {
+if (isset($_SESSION['id'])) {
 
-    //Se redirecciona a l login
-    header('Location:../index');
-    die();
-} else {
 
-    //Si existe la sesion se toman los datos del usuario
+  //Si existe la sesion se toman los datos del usuario
     $idglobal = $_SESSION['id'];
     $consulta = "SELECT * from usuarios WHERE id = ?";
     $sentencia = $mbd->prepare($consulta);
@@ -23,6 +19,17 @@ if (!$_SESSION) {
     $resultado = $sentencia->fetch();
     $nombre  = $resultado['nombre'];
     $apellido  = $resultado['apellido'];
-    // $avatar    = $resultado['avatar'];
+
+    if($resultado['estado'] != 'activo'){
+    header('Location:./config/singout.php');
+
+    }
+    
+} else if(isset($_SESSION['admin'])){
+    header('Location:./ADMIN.php');
+
+}else{
+    header('Location:../index');
+
 }
 ?>
