@@ -118,9 +118,9 @@
               }
           })
           totalB1.value = (total / 9) * 0.25
-          let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+          subtotalB = parseFloat(totalB1.value) + parseFloat(totalB2.value);
   
-          subtotalB.value = inner;
+          
           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value) + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
           
   
@@ -163,9 +163,9 @@
               }
           })
           totalB2.value = (total / 19) * 0.35
-          let inner = parseFloat(totalB1.value) + parseFloat(totalB2.value);
+          subtotalB = parseFloat(totalB1.value) + parseFloat(totalB2.value);
   
-          subtotalB.value = inner;
+         
           totalF.value = parseFloat(subtotalA.value) + parseFloat(subtotalB.value)  + parseFloat(subtotalC.value) + parseFloat(subtotalD.value);
   
       }

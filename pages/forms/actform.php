@@ -841,7 +841,7 @@ include('datos.php');
 
     <div class="total flex border no-left  " style="width: 100%">
         <p class="border no-top padding-5 fs-14 bold" style="width: 70%">TOTAL:Sumar subtotal A + Subtotal B + Subtotal C + Subtotal D</p>
-        <input name="totalgeneral" class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white" value="0.00">
+        <input name="totalgeneral" class="total1 border bold no-top no-left padding-5" id="totalF" style="text-align: center; width:30% ;background:teal;color:white" value="<?php echo ($cnotas > 0 ? $notat['nota'] : '0.00'); ?>">
     </div>
     <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
     <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
@@ -849,6 +849,7 @@ include('datos.php');
        <button type="button" id="btncancel">Cancelar</button>  
         <button type="button" class="button2" id="btnsave">Guardar</button>
         <input type="hidden" value="#actform" id="nformulario">
+        <input type="hidden" value="<?php  echo $_GET['r'];   ?>" name="rotacion">
 
     </div>
 

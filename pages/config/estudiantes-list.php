@@ -109,7 +109,7 @@ $cont = 1;
                                 <?php if ($modulo['rotaciones'] > 1){ ?>
 
 
-                                    <td>
+                                    <td class="text-center h5">
                                    <?php
 
                                    //Calificacion de la rotacion 1
@@ -145,14 +145,14 @@ $cont = 1;
                                     ?>  
                                    </td>
 
-                                   <td>
+                                   <td  class="text-center h5">
                                    <?php
 
                                    //Calificacion de la rotacion 2
                                     $notar2 = "SELECT *  FROM rotacion WHERE id_estudiante = ? AND rotacion = ?";
                                     $r2 = $mbd->prepare($notar2);
                                    
-                                    $r2->execute(array($dato['id'], 3));
+                                    $r2->execute(array($dato['id'], 2));
                                     $nota = $r2->rowCount();
                                     $resr2 = $r2->fetch();
 
@@ -186,7 +186,7 @@ $cont = 1;
 
                                     <?php if($modulo['rotaciones'] > 2){ ?>
 
-                                        <td>
+                                        <td  class="text-center h5">
                                    <?php
 
                                    //Calificacion de la rotacion 3

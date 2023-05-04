@@ -31,6 +31,8 @@ $sqlList = 'SELECT * FROM modulos WHERE id = ?';
     $modulo   = utf8_decode($datam['nombre']);
 
 $fecha   = date('y/m/d');
+$celda = ($datam['rotaciones'] == 1 ? 180*0.4 : ($datam['rotaciones'] == 2 ? 180*0.25 : 180*0.20));
+$celda2 = ($datam['rotaciones'] < 3 ? 180*0.20 : 180*0.15);
 
 
 class PDF extends FPDF
@@ -113,17 +115,102 @@ $pdf->Ln(15);
 $pdf->SetX(15);
 
 $pdf->SetFont('Arial','B',10);
-$pdf->Cell(180*0.4 , 8, 'Nombre', 1,  0, 'C' );
-$pdf->Cell(180*0.4 , 8, 'Documento', 1,  0, 'C' );
-$pdf->Cell(180*0.2 , 8, 'Nota', 1,  0, 'C' );
+$pdf->Cell($celda , 8, 'Nombre', 1,  0, 'C' );
+$pdf->Cell($celda , 8, 'Documento', 1,  0, 'C' );
+if($datam['rotaciones'] > 1 ){
+$pdf->Cell(180*0.15 , 8, 'Rotacion 1', 1,  0, 'C' );
+$pdf->Cell(180*0.15 , 8, 'Rotacion 2', 1,  0, 'C' );
+    if($datam['rotaciones'] == 3){
+    $pdf->Cell(180*0.15 , 8, 'Rotacion 3', 1,  0, 'C' );
+
+    }
+}
+$pdf->Cell($celda2 , 8, 'Nota', 1,  0, 'C' );
 $pdf->Ln();
 
 foreach($datae as $estudiante){
+
 $pdf->SetX(15);
-    
     $pdf->SetFont('Arial','',10);
-    $pdf->Cell(180*0.4 , 7, utf8_decode($estudiante['Nombre']), 1,  0 );
-    $pdf->Cell(180*0.4 , 7, $estudiante['documento'], 1,  0, 'C' );
+    $pdf->Cell($celda , 7, utf8_decode($estudiante['Nombre']), 1,  0 );
+    $pdf->Cell($celda , 7, $estudiante['documento'], 1,  0, 'C' );
+
+
+    
+    if($datam['rotaciones'] > 1 ){
+        // Nota rotacion 1
+        $notac = "SELECT *  FROM  rotacion WHERE id_estudiante = ? AND rotacion = ?";
+        $nota = $mbd->prepare($notac);
+        $nota->execute(array($estudiante['id'], 1));
+        $fnota = $nota->rowCount();
+        $resnota = $nota->fetch();
+        
+        if($fnota == 0){
+        $pdf->SetFillColor(238,255,145);    
+        $pdf->Cell(180*0.15 , 7, 'Sin calificacion', 1,  0, 'C', TRUE );
+        }
+        else {
+            if($resnota['nota'] < 3){
+                $pdf->SetFillColor(242,138,138);
+                $pdf->Cell(180*0.15 , 7, bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+            else{
+            $pdf->SetFillColor(138,242,149);
+            $pdf->Cell(180*0.15 , 7,bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+        }
+
+
+        // Nota rotacion 2
+        $notac = "SELECT *  FROM  rotacion WHERE id_estudiante = ? AND rotacion = ?";
+        $nota = $mbd->prepare($notac);
+        $nota->execute(array($estudiante['id'], 2));
+        $fnota = $nota->rowCount();
+        $resnota = $nota->fetch();
+        
+        if($fnota == 0){
+        $pdf->SetFillColor(238,255,145);    
+        $pdf->Cell(180*0.15 , 7, 'Sin calificacion', 1,  0, 'C', TRUE );
+        }
+        else {
+            if($resnota['nota'] < 3){
+                $pdf->SetFillColor(242,138,138);
+                $pdf->Cell(180*0.15 , 7, bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+            else{
+            $pdf->SetFillColor(138,242,149);
+            $pdf->Cell(180*0.15 , 7,bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+        }
+
+        if($datam['rotaciones'] > 2){
+
+            //Nota rotacion 3
+            $notac = "SELECT *  FROM  rotacion WHERE id_estudiante = ? AND rotacion = ?";
+        $nota = $mbd->prepare($notac);
+        $nota->execute(array($estudiante['id'], 3));
+        $fnota = $nota->rowCount();
+        $resnota = $nota->fetch();
+        
+        if($fnota == 0){
+        $pdf->SetFillColor(238,255,145);    
+        $pdf->Cell(180*0.15 , 7, 'Sin calificacion', 1,  0, 'C', TRUE );
+        }
+        else {
+            if($resnota['nota'] < 3){
+                $pdf->SetFillColor(242,138,138);
+                $pdf->Cell(180*0.15 , 7, bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+            else{
+            $pdf->SetFillColor(138,242,149);
+            $pdf->Cell(180*0.15 , 7,bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
+            }
+        }
+        }
+    }
+
+
+    //definitiva
     $notac = "SELECT *  FROM   modulo_nota WHERE id_estudiante = ?";
             $nota = $mbd->prepare($notac);
             $nota->bindParam(1, $estudiante['id']);
@@ -133,16 +220,16 @@ $pdf->SetX(15);
             
     if($fnota == 0){
     $pdf->SetFillColor(238,255,145);    
-    $pdf->Cell(180*0.2 , 7, 'Sin calificacion', 1,  0, 'C', TRUE );
+    $pdf->Cell($celda2 , 7, 'Sin calificacion', 1,  0, 'C', TRUE );
     }
     else {
         if($resnota['nota'] < 3){
             $pdf->SetFillColor(242,138,138);
-            $pdf->Cell(180*0.2 , 7, number_format((float)$resnota['nota'], 2, '.', ''), 1,  0, 'C', TRUE );
+            $pdf->Cell($celda2 , 7, bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
         }
         else{
         $pdf->SetFillColor(138,242,149);
-        $pdf->Cell(180*0.2 , 7,number_format((float)$resnota['nota'], 2, '.', ''), 1,  0, 'C', TRUE );
+        $pdf->Cell($celda2 , 7,bcdiv($resnota['nota'], '1', 3), 1,  0, 'C', TRUE );
         }
     }
 

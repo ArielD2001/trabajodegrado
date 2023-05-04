@@ -854,6 +854,8 @@ include('datos.php');
     <input type="hidden" name="id_estudiante" value="<?php echo $estudiante['id'] ?>">
     <input type="hidden" name="id_lista" value="<?php echo $lista['id']?>">
     <input type="hidden" value="#cuimatform" id="nformulario">
+    <input type="hidden" value="<?php  echo $_GET['r'];   ?>" name="rotacion">
+
 
     </form>
 

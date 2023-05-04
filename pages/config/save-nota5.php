@@ -3,6 +3,8 @@ include('../databases/connectToBD.php');
 
 $id_estudiante = $_POST['id_estudiante'];
 $id_lista = $_POST['id_lista'];
+$rotacion = $_POST['rotacion'];
+
 
 $suma1 = $_POST['A-1-1'];   $p1m5 = $_POST['A-1-2'];    $p2m5 = $_POST['A-1-3']; 
 $p3m5 = $_POST['A-1-4'];    $p4m5 = $_POST['A-1-5'];    $p5m5 = $_POST['A-1-6'];    
@@ -40,9 +42,10 @@ $total = $_POST['totalgeneral'];
 if($total == 'NaN'){
     echo'NaN';
 }else{
-    $consulta= "SELECT * FROM preguntasm5 WHERE id_estudiante = ?";
+    $consulta= "SELECT * FROM preguntasm5 WHERE id_estudiante = ? AND rotacion = ?";
 $sentencia = $mbd->prepare($consulta);
 $sentencia->bindParam(1, $id_estudiante);
+$sentencia->bindParam(2, $rotacion);
 $sentencia->execute();
 $filas =  $sentencia->rowCount();
 
@@ -51,47 +54,97 @@ if($filas < 1){
     recomendaciones1, p9m5, p10m5, p11m5, p12m5, p13m5, p14m5, p15m5, p16m5, p17m5, p18m5, total2, recomendaciones2, 
     subtotal1, p19m5, p20m5, p21m5, p22m5, p23m5, p24m5, p25m5, p26m5, p27m5, p28m5, p29m5, total3, recomendaciones3, 
     p30m5, p31m5, p32m5, p33m5, p34m5, p35m5, p36m5, p37m5, p38m5, p39m5, p40m5, p41m5, p42m5, p43m5, p44m5, p45m5, 
-    total4, recomendaciones4, subtotal2, p46m5, p47m5, p48m5, p49m5, p50m5, p51m5, p52m5, p53m5, p54m5, p55m5, p56m5, p57m5, p58m5, p59m5, p60m5, p61m5, p62m5, p63m5, total5, total6, subtotal3, subtotal4, recomendaciones5, recomendaciones6 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    total4, recomendaciones4, subtotal2, p46m5, p47m5, p48m5, p49m5, p50m5, p51m5, p52m5, p53m5, p54m5, p55m5, p56m5, p57m5, p58m5, p59m5, p60m5, p61m5, p62m5, p63m5, total5, total6, subtotal3, subtotal4, recomendaciones5, recomendaciones6, rotacion)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)";
 
     $sentenciai = $mbd->prepare($consultai);
-    $sentenciai->execute(array($id_estudiante, $suma1, $p1m5, $p2m5, $p3m5, $p4m5, $p5m5, $p6m5, $p7m5, $p8m5, $total1, $recomendaciones1, $p9m5, $p10m5, $p11m5, $p12m5, $p13m5, $p14m5, $p15m5, $p16m5, $p17m5, $p18m5, $total2, $recomendaciones2, $subtotal1, $p19m5, $p20m5, $p21m5, $p22m5, $p23m5, $p24m5, $p25m5, $p26m5, $p27m5, $p28m5, $p29m5, $total3, $recomendaciones3, $p30m5, $p31m5, $p32m5, $p33m5, $p34m5, $p35m5, $p36m5, $p37m5, $p38m5, $p39m5, $p40m5, $p41m5, $p42m5, $p43m5, $p44m5, $p45m5, $total4, $recomendaciones4, $subtotal2, $p46m5, $p47m5, $p48m5, $p49m5, $p50m5, $p51m5, $p52m5, $p53m5, $p54m5, $p55m5, $p56m5, $p57m5, $p58m5, $p59m5, $p60m5, $p61m5, $p62m5, $p63m5, $total5, $total6, $subtotal3, $subtotal4, $recomendaciones5, $recomendaciones6));
+    $sentenciai->execute(array($id_estudiante, $suma1, $p1m5, $p2m5, $p3m5, $p4m5, $p5m5, $p6m5, $p7m5, $p8m5, $total1, $recomendaciones1, $p9m5, $p10m5, $p11m5, $p12m5, $p13m5, $p14m5, $p15m5, $p16m5, $p17m5, $p18m5, $total2, $recomendaciones2, $subtotal1, $p19m5, $p20m5, $p21m5, $p22m5, $p23m5, $p24m5, $p25m5, $p26m5, $p27m5, $p28m5, $p29m5, $total3, $recomendaciones3, $p30m5, $p31m5, $p32m5, $p33m5, $p34m5, $p35m5, $p36m5, $p37m5, $p38m5, $p39m5, $p40m5, $p41m5, $p42m5, $p43m5, $p44m5, $p45m5, $total4, $recomendaciones4, $subtotal2, $p46m5, $p47m5, $p48m5, $p49m5, $p50m5, $p51m5, $p52m5, $p53m5, $p54m5, $p55m5, $p56m5, $p57m5, $p58m5, $p59m5, $p60m5, $p61m5, $p62m5, $p63m5, $total5, $total6, $subtotal3, $subtotal4, $recomendaciones5, $recomendaciones6, $rotacion));
 
     if( $sentenciai->rowCount() > 0){
-        $nota = "INSERT INTO modulo_nota(id_estudiante, nota) VALUES (?,?) ";
+        $nota = "INSERT INTO rotacion(id_estudiante, rotacion, nota) VALUES (?,?,?) ";
         $snota = $mbd->prepare($nota);
         $snota->bindParam(1,$id_estudiante);
-        $snota->bindParam(2,$total);
+        $snota->bindParam(2,$rotacion);
+        $snota->bindParam(3,$total);
         $snota->execute();
 
-        echo "ok";
+        $cr2 = 'SELECT * FROM rotacion WHERE id_estudiante = ?';
+        $notas = $mbd->prepare($cr2);
+        $notas->bindParam(1, $id_estudiante);
+        $notas->execute();
+        $nr = $notas->rowCount() < 2 ? $notas->fetch() : $notas->fetchAll();
+
+
+        
+        if($notas->rowCount() == 1){
+            $definitiva = $total / 2;
+        $nota = "INSERT modulo_nota(nota, id_estudiante) VALUES(?,?)";
+        $snota = $mbd->prepare($nota);
+        $snota->bindParam(1,$definitiva);
+        $snota->bindParam(2,$id_estudiante);
+        $snota->execute();
+        echo 'ok';
+        }else{
+            $definitiva = 0;
+            foreach($nr as $notarotacion){
+                $definitiva += $notarotacion['nota'];
+            }
+            $definitiva = $definitiva /2;
+            $nota = "UPDATE modulo_nota SET nota = ? WHERE id_estudiante = ?";
+            $snota = $mbd->prepare($nota);
+            $snota->bindParam(1,$definitiva);
+            $snota->bindParam(2,$id_estudiante);
+            $snota->execute();
+
+            echo 'ok';
+        }
     }
     else{
         echo "error";
     }
     
 }else{
-    $delete = "DELETE  FROM preguntasm5 WHERE id_estudiante = ? ";
+    $delete = "DELETE  FROM preguntasm5 WHERE id_estudiante = ? AND rotacion = ?";
     $senetenciad = $mbd->prepare($delete);
     $senetenciad->bindParam(1, $id_estudiante);
+    $senetenciad->bindParam(2, $rotacion);
     $senetenciad->execute();
 
     $consultai = "INSERT INTO preguntasm5(id_estudiante, suma1, p1m5, p2m5, p3m5, p4m5, p5m5, p6m5, p7m5, p8m5, total1,  
     recomendaciones1, p9m5, p10m5, p11m5, p12m5, p13m5, p14m5, p15m5, p16m5, p17m5, p18m5, total2, recomendaciones2, 
     subtotal1, p19m5, p20m5, p21m5, p22m5, p23m5, p24m5, p25m5, p26m5, p27m5, p28m5, p29m5, total3, recomendaciones3, 
     p30m5, p31m5, p32m5, p33m5, p34m5, p35m5, p36m5, p37m5, p38m5, p39m5, p40m5, p41m5, p42m5, p43m5, p44m5, p45m5, 
-    total4, recomendaciones4, subtotal2, p46m5, p47m5, p48m5, p49m5, p50m5, p51m5, p52m5, p53m5, p54m5, p55m5, p56m5, p57m5, p58m5, p59m5, p60m5, p61m5, p62m5, p63m5, total5, total6, subtotal3, subtotal4, recomendaciones5, recomendaciones6 )VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    total4, recomendaciones4, subtotal2, p46m5, p47m5, p48m5, p49m5, p50m5, p51m5, p52m5, p53m5, p54m5, p55m5, p56m5, p57m5, p58m5, p59m5, p60m5, p61m5, p62m5, p63m5, total5, total6, subtotal3, subtotal4, recomendaciones5, recomendaciones6, rotacion)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)";
 
     $sentenciai = $mbd->prepare($consultai);
-    $sentenciai->execute(array($id_estudiante, $suma1, $p1m5, $p2m5, $p3m5, $p4m5, $p5m5, $p6m5, $p7m5, $p8m5, $total1, $recomendaciones1, $p9m5, $p10m5, $p11m5, $p12m5, $p13m5, $p14m5, $p15m5, $p16m5, $p17m5, $p18m5, $total2, $recomendaciones2, $subtotal1, $p19m5, $p20m5, $p21m5, $p22m5, $p23m5, $p24m5, $p25m5, $p26m5, $p27m5, $p28m5, $p29m5, $total3, $recomendaciones3, $p30m5, $p31m5, $p32m5, $p33m5, $p34m5, $p35m5, $p36m5, $p37m5, $p38m5, $p39m5, $p40m5, $p41m5, $p42m5, $p43m5, $p44m5, $p45m5, $total4, $recomendaciones4, $subtotal2, $p46m5, $p47m5, $p48m5, $p49m5, $p50m5, $p51m5, $p52m5, $p53m5, $p54m5, $p55m5, $p56m5, $p57m5, $p58m5, $p59m5, $p60m5, $p61m5, $p62m5, $p63m5, $total5, $total6, $subtotal3, $subtotal4, $recomendaciones5, $recomendaciones6));
+    $sentenciai->execute(array($id_estudiante, $suma1, $p1m5, $p2m5, $p3m5, $p4m5, $p5m5, $p6m5, $p7m5, $p8m5, $total1, $recomendaciones1, $p9m5, $p10m5, $p11m5, $p12m5, $p13m5, $p14m5, $p15m5, $p16m5, $p17m5, $p18m5, $total2, $recomendaciones2, $subtotal1, $p19m5, $p20m5, $p21m5, $p22m5, $p23m5, $p24m5, $p25m5, $p26m5, $p27m5, $p28m5, $p29m5, $total3, $recomendaciones3, $p30m5, $p31m5, $p32m5, $p33m5, $p34m5, $p35m5, $p36m5, $p37m5, $p38m5, $p39m5, $p40m5, $p41m5, $p42m5, $p43m5, $p44m5, $p45m5, $total4, $recomendaciones4, $subtotal2, $p46m5, $p47m5, $p48m5, $p49m5, $p50m5, $p51m5, $p52m5, $p53m5, $p54m5, $p55m5, $p56m5, $p57m5, $p58m5, $p59m5, $p60m5, $p61m5, $p62m5, $p63m5, $total5, $total6, $subtotal3, $subtotal4, $recomendaciones5, $recomendaciones6, $rotacion));
 
     if( $sentenciai->rowCount() > 0){
-        $nota = "UPDATE  modulo_nota  SET nota = ? WHERE id_estudiante = ? ";
+        $nota = "UPDATE rotacion SET nota = ?  WHERE id_estudiante = ? AND rotacion = ? ";
         $snota = $mbd->prepare($nota);
         $snota->bindParam(1,$total);
         $snota->bindParam(2,$id_estudiante);
+        $snota->bindParam(3,$rotacion);
         $snota->execute();
 
-        echo "ok";
+
+        $cr2 = 'SELECT * FROM rotacion WHERE id_estudiante = ?';
+        $notas = $mbd->prepare($cr2);
+        $notas->bindParam(1, $id_estudiante);
+        $notas->execute();
+        $nr = $notas->rowCount() < 2 ? $notas->fetch() : $notas->fetchAll();
+        $definitiva = 0;
+        foreach($nr as $notarotacion){
+            $definitiva += $notarotacion['nota'];
+        }
+        $definitiva = $definitiva /2;
+        
+        $nota = "UPDATE modulo_nota SET nota = ? WHERE id_estudiante = ?";
+        $snota = $mbd->prepare($nota);
+        $snota->bindParam(1,$definitiva);
+        $snota->bindParam(2,$id_estudiante);
+        $snota->execute();
+
+        echo 'ok';
     }
     else{
         echo "error";
