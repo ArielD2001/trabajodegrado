@@ -84,7 +84,7 @@ CREATE TABLE `modulo_nota` (
   `nota` float NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_estudiante` (`id_estudiante`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `modulo_nota` (
 
 LOCK TABLES `modulo_nota` WRITE;
 /*!40000 ALTER TABLE `modulo_nota` DISABLE KEYS */;
-INSERT INTO `modulo_nota` VALUES (3,62,2.29),(4,62,2.29),(5,27,0.1),(6,14,0.1),(7,72,0.0145833),(8,82,0.025),(9,92,0.01),(10,102,3.375),(11,102,3.375),(12,96,0.01),(13,112,0.07),(14,122,0.12);
+INSERT INTO `modulo_nota` VALUES (1,102,0.0133333),(2,72,1.74817),(3,18,0.079883),(4,14,3.95),(5,20,1.9175);
 /*!40000 ALTER TABLE `modulo_nota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -107,6 +107,7 @@ DROP TABLE IF EXISTS `modulos`;
 CREATE TABLE `modulos` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
+  `rotaciones` int(5) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -117,7 +118,7 @@ CREATE TABLE `modulos` (
 
 LOCK TABLES `modulos` WRITE;
 /*!40000 ALTER TABLE `modulos` DISABLE KEYS */;
-INSERT INTO `modulos` VALUES (1,'Promoción y prevención'),(2,'Actividades basicas'),(3,'Cuidado medico'),(4,'Cuidado materno infantil'),(5,'Practicas administracion'),(6,'Adulto mayor'),(7,'Practica integral'),(8,'Fundamentos socioeducativo IV'),(9,'Fundamentos socioeducativo V');
+INSERT INTO `modulos` VALUES (1,'Promoción y prevención',1),(2,'Actividades basicas',2),(3,'Cuidado medico',2),(4,'Cuidado materno infantil',3),(5,'Practicas administracion',2),(6,'Adulto mayor',2),(7,'Practica integral',3),(8,'Fundamentos socioeducativo IV',1),(9,'Fundamentos socioeducativo V',1);
 /*!40000 ALTER TABLE `modulos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +191,7 @@ CREATE TABLE `preguntasm1` (
   `recomendaciones4` varchar(255) NOT NULL,
   `subtotal2` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,7 +200,6 @@ CREATE TABLE `preguntasm1` (
 
 LOCK TABLES `preguntasm1` WRITE;
 /*!40000 ALTER TABLE `preguntasm1` DISABLE KEYS */;
-INSERT INTO `preguntasm1` VALUES (2,27,1,1,1,1,1,1,1,1,1,0.1,'',0,0,0,0,0,0,0,0,0,0,0,'',0.1,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0);
 /*!40000 ALTER TABLE `preguntasm1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,8 +290,9 @@ CREATE TABLE `preguntasm2` (
   `total6` float NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
   `subtotal4` float NOT NULL,
+  `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,7 +301,7 @@ CREATE TABLE `preguntasm2` (
 
 LOCK TABLES `preguntasm2` WRITE;
 /*!40000 ALTER TABLE `preguntasm2` DISABLE KEYS */;
-INSERT INTO `preguntasm2` VALUES (2,14,1,1,1,1,1,1,1,1,1,0.1,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0.1,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0);
+INSERT INTO `preguntasm2` VALUES (1,18,0,0,0,0,0,2,0,0,0,0.04,'Sin recomendaciones',0,0,0,2,0,0,0,0,0,0,0.02,'Sin recomendaciones',0.06,0,0,2,0,0,0,0,0,0,0.0555556,'Sin recomendaciones',0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0.4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0442105,'Sin recomendaciones',0.0997661,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,1),(2,14,15,0,0,55,5,5,5,5,5,0.7,'55Sin recomendaciones',55,555,55,55,0,0,0,0,0,0,7.2,'Sin recomendaciones',7.9,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,2),(3,20,191.75,767,0,0,0,0,0,0,0,3.835,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',3.835,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,2);
 /*!40000 ALTER TABLE `preguntasm2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -373,7 +374,8 @@ CREATE TABLE `preguntasm3` (
   `p44m3` float NOT NULL,
   `total6` float NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
-  `subtotal4` float NOT NULL
+  `subtotal4` float NOT NULL,
+  `rotacion` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -383,7 +385,6 @@ CREATE TABLE `preguntasm3` (
 
 LOCK TABLES `preguntasm3` WRITE;
 /*!40000 ALTER TABLE `preguntasm3` DISABLE KEYS */;
-INSERT INTO `preguntasm3` VALUES (0,59,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,'',0,0,0,0,'',0),(0,62,3,4,4,0,4,4,4,3,0,0.28,'',0,1,2,3,4,5,0,1,2,3,0.21,'     ',0.49,4,5,0,1,2,3,0.63,'',4,5,0,1,2,3,4,5,0,1,2,3,4,5,0,1,0.88,'',1.5,2,0.2,'',0.2,1,1,0.1,'',0.1);
 /*!40000 ALTER TABLE `preguntasm3` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -474,8 +475,9 @@ CREATE TABLE `preguntasm4` (
   `subtotal4` float NOT NULL,
   `recomendaciones5` varchar(255) NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
+  `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -484,7 +486,7 @@ CREATE TABLE `preguntasm4` (
 
 LOCK TABLES `preguntasm4` WRITE;
 /*!40000 ALTER TABLE `preguntasm4` DISABLE KEYS */;
-INSERT INTO `preguntasm4` VALUES (10,102,0.75,0,3,0,0,0,0,0,0,0.015,'',0,0,0,0,0,0,0,0,0,0,0,'',0.015,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,333,3,0,3.33,0.03,3.33,0.03,'',''),(11,96,0.5,0,0,2,0,0,0,0,0,0.01,'',0,0,0,0,0,0,0,0,0,0,0,'',0.01,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','');
+INSERT INTO `preguntasm4` VALUES (1,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',1),(2,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',2),(3,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,4,0,0,0,0,0,0,0.04,'',0.04,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',3);
 /*!40000 ALTER TABLE `preguntasm4` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -578,8 +580,9 @@ CREATE TABLE `preguntasm5` (
   `subtotal4` float NOT NULL,
   `recomendaciones5` varchar(255) NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
+  `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -588,7 +591,6 @@ CREATE TABLE `preguntasm5` (
 
 LOCK TABLES `preguntasm5` WRITE;
 /*!40000 ALTER TABLE `preguntasm5` DISABLE KEYS */;
-INSERT INTO `preguntasm5` VALUES (9,122,1,0,0,4,0,0,0,0,0,0.02,'',0,0,0,0,0,0,0,0,0,0,0,'',0.02,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0.1,0,0.1,'','');
 /*!40000 ALTER TABLE `preguntasm5` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -683,8 +685,9 @@ CREATE TABLE `preguntasm6` (
   `subtotal4` float NOT NULL,
   `recomendaciones5` varchar(255) NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
+  `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -693,7 +696,6 @@ CREATE TABLE `preguntasm6` (
 
 LOCK TABLES `preguntasm6` WRITE;
 /*!40000 ALTER TABLE `preguntasm6` DISABLE KEYS */;
-INSERT INTO `preguntasm6` VALUES (9,112,1,4,0,0,0,4,0,0,0,0.07,'',0,0,0,0,0,0,0,0,0,0,0,'',0.07,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','');
 /*!40000 ALTER TABLE `preguntasm6` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -780,7 +782,8 @@ CREATE TABLE `preguntasm7` (
   `p59m7` float NOT NULL,
   `p60m7` float NOT NULL,
   `recomendaciones6` varchar(255) NOT NULL,
-  `subtotal4` float NOT NULL
+  `subtotal4` float NOT NULL,
+  `rotacion` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -790,7 +793,7 @@ CREATE TABLE `preguntasm7` (
 
 LOCK TABLES `preguntasm7` WRITE;
 /*!40000 ALTER TABLE `preguntasm7` DISABLE KEYS */;
-INSERT INTO `preguntasm7` VALUES (0,62,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,'',0,0,0,0,'',0),(0,72,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0145833,'',0.0145833,0,'',0,0,0,0,'',0);
+INSERT INTO `preguntasm7` VALUES (0,72,0.5,2,0,0,0,0,0,0,0,0.007,'',0,0,0,0,0,0,0,0,0,0,0,'',0.007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0.00',0,0,'',0,0,0,0,'0.00',0,2),(0,72,1.25,5,0,0,0,0,0,5,5,0.1575,'',0,0,0,0,0,0,5,0,5,0,0.08,'',0.2375,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0.00',0,0,'',0,0,0,0,'0.00',0,1),(0,72,5,5,5,5,5,5,5,5,5,0.35,'',5,5,5,5,5,5,5,5,5,5,0.4,'',0.75,5,5,5,5,5,5,5,5,5,5,5,5,5,1,'',5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1.75,'0.00',2.75,5,'',0.5,5,5,5,'0.00',1,3);
 /*!40000 ALTER TABLE `preguntasm7` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -859,7 +862,6 @@ CREATE TABLE `preguntasm8` (
 
 LOCK TABLES `preguntasm8` WRITE;
 /*!40000 ALTER TABLE `preguntasm8` DISABLE KEYS */;
-INSERT INTO `preguntasm8` VALUES (0,82,1.25,1,2,2,0,0,0,0,0,0.025,'',0,0,0,0,0,0,0,0,0,0,0,'',0.025,0,0,0,0,0,'',0,0,0,0,0,0,0,0,'',0,0,'',0,0,'',0);
 /*!40000 ALTER TABLE `preguntasm8` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -927,8 +929,33 @@ CREATE TABLE `preguntasm9` (
 
 LOCK TABLES `preguntasm9` WRITE;
 /*!40000 ALTER TABLE `preguntasm9` DISABLE KEYS */;
-INSERT INTO `preguntasm9` VALUES (0,92,0.5,1,1,0,0,0,0,0,0,0.01,'',0,0,0,0,0,0,0,0,0,0,0,'',0.01,0,0,0,0,'',0,0,0,0,0,0,0,0,'',0,0,'',0,0,'',0);
 /*!40000 ALTER TABLE `preguntasm9` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rotacion`
+--
+
+DROP TABLE IF EXISTS `rotacion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rotacion` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `id_estudiante` int(10) NOT NULL,
+  `rotacion` int(5) NOT NULL,
+  `nota` float NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rotacion`
+--
+
+LOCK TABLES `rotacion` WRITE;
+/*!40000 ALTER TABLE `rotacion` DISABLE KEYS */;
+INSERT INTO `rotacion` VALUES (1,102,1,0),(2,102,2,0),(3,102,3,0.04),(4,72,2,0.007),(5,72,1,0.2375),(6,72,3,5),(7,18,1,0.159766),(8,14,2,7.9),(9,20,2,3.835);
+/*!40000 ALTER TABLE `rotacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -972,4 +999,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-27 22:50:34
+-- Dump completed on 2023-05-04  0:06:31
