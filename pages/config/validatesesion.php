@@ -26,7 +26,26 @@ if (isset($_SESSION['id'])) {
     }
     
 } else if(isset($_SESSION['admin'])){
-    header('Location:./ADMIN.php');
+
+     //Si existe la sesion se toman los datos del usuario
+     $idglobal = $_SESSION['admin'];
+     $consulta = "SELECT * from usuarios WHERE id = ?";
+     $sentencia = $mbd->prepare($consulta);
+     $sentencia->bindParam(1, $idglobal);
+     $sentencia->execute();
+     $filas = $sentencia->rowCount();
+ 
+ 
+     $resultado = $sentencia->fetch();
+     $nombre  = $resultado['nombre'];
+     $apellido  = $resultado['apellido'];
+ 
+     if($resultado['estado'] != 'activo'){
+     header('Location:./config/singout.php');
+ 
+     }else{
+         header('Location:./ADMIN.php');
+     }
 
 }else{
     header('Location:../index');

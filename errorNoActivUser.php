@@ -14,7 +14,7 @@ include('pages/databases/connectToBD.php');
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/index.css">
-        <title>error</title>
+        <title>Usuario no activo</title>
     </head>
 
     <body>
@@ -30,7 +30,7 @@ include('pages/databases/connectToBD.php');
                     <div class="text-center" style="width:300px" >
                     Lo sentimos este usuario no se encuentra activo por favor póngase en contacto en el administrador
                     </div>
-                    <a href="./index" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-4"> Regresar</a>
+                    <a href="./index" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full my-4"> Regresar</a>
 
            
 

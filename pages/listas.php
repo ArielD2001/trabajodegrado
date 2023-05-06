@@ -31,17 +31,10 @@ if (isset($_GET['lista'])) {
     $sentenciaList->bindParam(1, $idm);
     $sentenciaList->execute();
     $modulo = $sentenciaList->fetch();
+
 } else {
     $listactive = true;
-    $pypactive  = $idm = 1 ? true : false;
-    $actactive  = $idm = 2 ? true : false;
-    $cuiactive  = $idm = 3 ? true : false;
-    $cuimactive = $idm = 4 ? true : false;
-    $pracactive = $idm = 5 ? true : false;
-    $adulactive = $idm = 6 ? true : false;
-    $praciactive= $idm = 7 ? true : false;
-    $ivactive   = $idm = 8 ? true : false;
-    $vactive    = $idm = 9 ? true : false;
+   
 
 }
 ?>

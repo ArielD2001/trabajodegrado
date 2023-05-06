@@ -46,6 +46,7 @@ if(!$_GET){
 
 <head>
     <?php include "config/config-header.php" ?>
+    <link rel="stylesheet" href="../assets/css/admin.css">
     <title>Administracion</title>
 </head>
 
@@ -110,6 +111,36 @@ if(!$_GET){
 
     </div>
     <?php include "config/config-footer.php" ?>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#tabla1').DataTable({
+            scrollCollapse: true,
+            ordering: false,
+            paging: true,
+            columnDefs: [{
+                targets: "_all",
+                searchable: true
+            }],
+            fixedColumns: {
+                leftColumns: 3
+            }
+        });
+
+        $('#tabla2').DataTable({
+            scrollCollapse: true,
+            ordering: false,
+            paging: true,
+            columnDefs: [{
+                targets: "_all",
+                searchable: true
+            }],
+            fixedColumns: {
+                leftColumns: 3
+            }
+        });
+    });
+    </script>
 </body>
 
 </html>
