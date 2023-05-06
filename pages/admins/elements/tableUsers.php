@@ -37,7 +37,10 @@
                         <?php echo ($usuario['estado'] == 'activo' ? 'checked' : '') ?>>
                 </div>
             </td>
-            <td class="text-center">Ariel</td>
+            <td class="text-center">
+                
+            <button  id="button-delete-user" class="text-danger btn border "><i class="mdi mdi-delete"></i></button>
+            </td>
         </tr>
         <?php 
                     }

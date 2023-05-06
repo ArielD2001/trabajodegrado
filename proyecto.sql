@@ -30,7 +30,7 @@ CREATE TABLE `estudiantes` (
   `fecha` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_lista` (`id_lista`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `estudiantes` (
 
 LOCK TABLES `estudiantes` WRITE;
 /*!40000 ALTER TABLE `estudiantes` DISABLE KEYS */;
-INSERT INTO `estudiantes` VALUES (14,'Ariel',1001903378,2,'18/04/23'),(15,'celeste',1001903378,2,'18/04/23'),(16,'monica',1001903378,2,'18/04/23'),(17,'Pedro',1001903378,2,'18/04/23'),(18,'Catalino',1001903378,2,'18/04/23'),(19,'Fernando',1001903378,2,'18/04/23'),(20,'Fernando',1001903378,2,'18/04/23'),(21,'Fernando',1001903378,2,'18/04/23'),(22,'Fernando',1001903378,2,'18/04/23'),(23,'Fernando',1001903378,2,'18/04/23'),(24,'Fernando',1001903378,2,'18/04/23'),(25,'Fernando',1001903378,2,'18/04/23'),(26,'Fernando',1001903378,2,'18/04/23'),(27,'Ariel',1001903378,3,'20/04/23'),(28,'celeste',1001903378,3,'20/04/23'),(29,'monica',1001903378,3,'20/04/23'),(30,'Pedro',1001903378,3,'20/04/23'),(31,'Catalino',1001903378,3,'20/04/23'),(32,'Fernando',1001903378,3,'20/04/23'),(33,'Fernando',1001903378,3,'20/04/23'),(34,'Fernando',1001903378,3,'20/04/23'),(35,'Fernando',1001903378,3,'20/04/23'),(36,'Fernando',1001903378,3,'20/04/23'),(37,'Fernando',1001903378,3,'20/04/23'),(38,'Fernando',1001903378,3,'20/04/23'),(39,'Fernando',1001903378,3,'20/04/23'),(53,'Nombre',0,5,'25/04/23'),(54,'Ariel caraballo ',1001903388,5,'25/04/23'),(55,'Jesus valencia',1234456780,5,'25/04/23'),(56,'Alvaro rodriguez',2147483647,5,'25/04/23'),(57,'María Beltran',2147483647,5,'25/04/23'),(58,'Luka modric',1234918741,5,'25/04/23'),(59,'Anuel  ortega',1876324519,5,'25/04/23'),(60,'Diomedes gaviria',2147483647,5,'25/04/23'),(61,'Benito Camelo',2147483647,5,'25/04/23'),(62,'alma marcela gosho',1234567890,5,'25/04/23'),(63,'Nombre',0,6,'25/04/23'),(64,'Ariel caraballo ',1001903388,6,'25/04/23'),(65,'Jesus valencia',1234456780,6,'25/04/23'),(66,'Alvaro rodriguez',2147483647,6,'25/04/23'),(67,'María Beltran',2147483647,6,'25/04/23'),(68,'Luka modric',1234918741,6,'25/04/23'),(69,'Anuel  ortega',1876324519,6,'25/04/23'),(70,'Diomedes gaviria',2147483647,6,'25/04/23'),(71,'Benito Camelo',2147483647,6,'25/04/23'),(72,'alma marcela gosho',1234567890,6,'25/04/23'),(73,'Nombre',0,7,'25/04/23'),(74,'Ariel caraballo ',1001903388,7,'25/04/23'),(75,'Jesus valencia',1234456780,7,'25/04/23'),(76,'Alvaro rodriguez',2147483647,7,'25/04/23'),(77,'María Beltran',2147483647,7,'25/04/23'),(78,'Luka modric',1234918741,7,'25/04/23'),(79,'Anuel  ortega',1876324519,7,'25/04/23'),(80,'Diomedes gaviria',2147483647,7,'25/04/23'),(81,'Benito Camelo',2147483647,7,'25/04/23'),(82,'alma marcela gosho',1234567890,7,'25/04/23'),(83,'Nombre',0,8,'26/04/23'),(84,'Ariel caraballo ',1001903388,8,'26/04/23'),(85,'Jesus valencia',1234456780,8,'26/04/23'),(86,'Alvaro rodriguez',2147483647,8,'26/04/23'),(87,'María Beltran',2147483647,8,'26/04/23'),(88,'Luka modric',1234918741,8,'26/04/23'),(89,'Anuel  ortega',1876324519,8,'26/04/23'),(90,'Diomedes gaviria',2147483647,8,'26/04/23'),(91,'Benito Camelo',2147483647,8,'26/04/23'),(92,'alma marcela gosho',1234567890,8,'26/04/23'),(93,'Nombre',0,9,'28/04/23'),(94,'Ariel caraballo ',1001903388,9,'28/04/23'),(95,'Jesus valencia',1234456780,9,'28/04/23'),(96,'Alvaro rodriguez',2147483647,9,'28/04/23'),(97,'María Beltran',2147483647,9,'28/04/23'),(98,'Luka modric',1234918741,9,'28/04/23'),(99,'Anuel  ortega',1876324519,9,'28/04/23'),(100,'Diomedes gaviria',2147483647,9,'28/04/23'),(101,'Benito Camelo',2147483647,9,'28/04/23'),(102,'alma marcela gosho',1234567890,9,'28/04/23'),(103,'Nombre',0,10,'28/04/23'),(104,'Ariel caraballo ',1001903388,10,'28/04/23'),(105,'Jesus valencia',1234456780,10,'28/04/23'),(106,'Alvaro rodriguez',2147483647,10,'28/04/23'),(107,'María Beltran',2147483647,10,'28/04/23'),(108,'Luka modric',1234918741,10,'28/04/23'),(109,'Anuel  ortega',1876324519,10,'28/04/23'),(110,'Diomedes gaviria',2147483647,10,'28/04/23'),(111,'Benito Camelo',2147483647,10,'28/04/23'),(112,'alma marcela gosho',1234567890,10,'28/04/23'),(113,'Nombre',0,11,'28/04/23'),(114,'Ariel caraballo ',1001903388,11,'28/04/23'),(115,'Jesus valencia',1234456780,11,'28/04/23'),(116,'Alvaro rodriguez',2147483647,11,'28/04/23'),(117,'María Beltran',2147483647,11,'28/04/23'),(118,'Luka modric',1234918741,11,'28/04/23'),(119,'Anuel  ortega',1876324519,11,'28/04/23'),(120,'Diomedes gaviria',2147483647,11,'28/04/23'),(121,'Benito Camelo',2147483647,11,'28/04/23'),(122,'alma marcela gosho',1234567890,11,'28/04/23');
+INSERT INTO `estudiantes` VALUES (1,'Ariel caraballo Diaz',1001903388,1,'04/05/23'),(2,'Jesus valencia Torres',1234456780,1,'04/05/23'),(3,'Alvaro rodriguez velez',2147483647,1,'04/05/23'),(4,'María Beltran osorio',2147483647,1,'04/05/23'),(5,'Luka modric cr7',1234918741,1,'04/05/23'),(6,'Anuel  ortega doblea',1876324519,1,'04/05/23'),(7,'Diomedes gaviria Diaz',2147483647,1,'04/05/23'),(8,'Benito Camelo contreras',2147483647,1,'04/05/23'),(9,'alma marcela gosho',1234567890,1,'04/05/23'),(10,'Ariel caraballo Diaz',1001903388,2,'04/05/23'),(12,'Alvaro rodriguez velez',2147483647,2,'04/05/23'),(13,'María Beltran osorio',2147483647,2,'04/05/23'),(14,'Luka modric cr7',1234918741,2,'04/05/23'),(15,'Anuel  ortega doblea',1876324519,2,'04/05/23'),(16,'Diomedes gaviria Diaz',2147483647,2,'04/05/23'),(17,'Benito Camelo contreras',2147483647,2,'04/05/23'),(18,'alma marcela gosho',1234567890,2,'04/05/23'),(19,'julian colo colo',100192278,2,'23/05/04'),(20,'Ariel caraballo Diaz',1001903388,3,'06/05/23'),(21,'Jesus valencia Torres',1234456780,3,'06/05/23'),(22,'Alvaro rodriguez velez',2147483647,3,'06/05/23'),(23,'María Beltran osorio',2147483647,3,'06/05/23'),(24,'Luka modric cr7',1234918741,3,'06/05/23'),(25,'Anuel  ortega doblea',1876324519,3,'06/05/23'),(26,'Diomedes gaviria Diaz',2147483647,3,'06/05/23'),(27,'Benito Camelo contreras',2147483647,3,'06/05/23'),(28,'alma marcela gosho',1234567890,3,'06/05/23');
 /*!40000 ALTER TABLE `estudiantes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `listas` (
   `fecha` varchar(60) NOT NULL,
   `id_usuario` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `listas` (
 
 LOCK TABLES `listas` WRITE;
 /*!40000 ALTER TABLE `listas` DISABLE KEYS */;
-INSERT INTO `listas` VALUES (2,2,'lista ejemplo','VII (Septimo)','18/04/23',1),(3,1,'ejemplo 2','VIII (Octavo)','20/04/23',1),(5,3,'Lista ejemplo','VI (Sexto)','25/04/23',1),(6,7,'lista de ppractica','VI (Sexto)','25/04/23',1),(7,8,'Lista ejemplo','V (Quinto)','25/04/23',1),(8,9,'Lista ejemplo','VI (Sexto)','26/04/23',1),(9,4,'Lista ejemplo','I (Primero)','28/04/23',1),(10,6,'Lista ejemplo','III (Tercero)','28/04/23',1),(11,5,'Lista ejemplo','I (Primero)','28/04/23',1);
+INSERT INTO `listas` VALUES (1,1,'Lista ejemplo','VIII (Octavo)','04/05/23',1),(2,2,'ejemplo con rotaciones','VII (Septimo)','04/05/23',1),(3,1,'Lista ejemplo','II (Segundo)','06/05/23',5);
 /*!40000 ALTER TABLE `listas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `modulo_nota` (
   `nota` float NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_estudiante` (`id_estudiante`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `modulo_nota` (
 
 LOCK TABLES `modulo_nota` WRITE;
 /*!40000 ALTER TABLE `modulo_nota` DISABLE KEYS */;
-INSERT INTO `modulo_nota` VALUES (1,102,0.0133333),(2,72,1.74817),(3,18,0.079883),(4,14,3.95),(5,20,1.9175);
+INSERT INTO `modulo_nota` VALUES (1,9,0.735476),(2,18,0.711871);
 /*!40000 ALTER TABLE `modulo_nota` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -191,7 +191,7 @@ CREATE TABLE `preguntasm1` (
   `recomendaciones4` varchar(255) NOT NULL,
   `subtotal2` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,6 +200,7 @@ CREATE TABLE `preguntasm1` (
 
 LOCK TABLES `preguntasm1` WRITE;
 /*!40000 ALTER TABLE `preguntasm1` DISABLE KEYS */;
+INSERT INTO `preguntasm1` VALUES (1,9,3.25,5,5,3,0,0,0,0,0,0.065,'',0,3,0,3,0,0,3,0,3,0,0.12,'',0.185,3,0,3,0,0,0,0,0,3,0,0,3,0.533333,'',0,0,0.428571,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0.0171429,'',0.550476);
 /*!40000 ALTER TABLE `preguntasm1` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,7 +293,7 @@ CREATE TABLE `preguntasm2` (
   `subtotal4` float NOT NULL,
   `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,7 +302,7 @@ CREATE TABLE `preguntasm2` (
 
 LOCK TABLES `preguntasm2` WRITE;
 /*!40000 ALTER TABLE `preguntasm2` DISABLE KEYS */;
-INSERT INTO `preguntasm2` VALUES (1,18,0,0,0,0,0,2,0,0,0,0.04,'Sin recomendaciones',0,0,0,2,0,0,0,0,0,0,0.02,'Sin recomendaciones',0.06,0,0,2,0,0,0,0,0,0,0.0555556,'Sin recomendaciones',0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0.4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0442105,'Sin recomendaciones',0.0997661,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,1),(2,14,15,0,0,55,5,5,5,5,5,0.7,'55Sin recomendaciones',55,555,55,55,0,0,0,0,0,0,7.2,'Sin recomendaciones',7.9,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,2),(3,20,191.75,767,0,0,0,0,0,0,0,3.835,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',3.835,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'Sin recomendaciones',0,0,0,'Sin recomendaciones',0,0,0,0,'Sin recomendaciones   ',0,2);
+INSERT INTO `preguntasm2` VALUES (1,18,1,0,0,4,0,0,0,4,0,0.1,'Sin recomendaciones',4,4,4,0,0,4,0,0,0,0,0.16,'Sin recomendaciones',0.26,0,4,0,4,0,4,4,0,0,0.444444,'Sin recomendaciones',0,0,0,0,1.33333,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,0,0,0,0,0.319298,'Sin recomendaciones',0.763743,4,0.4,'Sin recomendaciones',0.4,0,0,0,'Sin recomendaciones   ',0,1);
 /*!40000 ALTER TABLE `preguntasm2` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -477,7 +478,7 @@ CREATE TABLE `preguntasm4` (
   `recomendaciones6` varchar(255) NOT NULL,
   `rotacion` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -486,7 +487,6 @@ CREATE TABLE `preguntasm4` (
 
 LOCK TABLES `preguntasm4` WRITE;
 /*!40000 ALTER TABLE `preguntasm4` DISABLE KEYS */;
-INSERT INTO `preguntasm4` VALUES (1,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',1),(2,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',2),(3,102,0,0,0,0,0,0,0,0,0,0,'',0,0,0,4,0,0,0,0,0,0,0.04,'',0.04,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'','',3);
 /*!40000 ALTER TABLE `preguntasm4` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -793,7 +793,6 @@ CREATE TABLE `preguntasm7` (
 
 LOCK TABLES `preguntasm7` WRITE;
 /*!40000 ALTER TABLE `preguntasm7` DISABLE KEYS */;
-INSERT INTO `preguntasm7` VALUES (0,72,0.5,2,0,0,0,0,0,0,0,0.007,'',0,0,0,0,0,0,0,0,0,0,0,'',0.007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0.00',0,0,'',0,0,0,0,'0.00',0,2),(0,72,1.25,5,0,0,0,0,0,5,5,0.1575,'',0,0,0,0,0,0,5,0,5,0,0.08,'',0.2375,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0.00',0,0,'',0,0,0,0,'0.00',0,1),(0,72,5,5,5,5,5,5,5,5,5,0.35,'',5,5,5,5,5,5,5,5,5,5,0.4,'',0.75,5,5,5,5,5,5,5,5,5,5,5,5,5,1,'',5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,1.75,'0.00',2.75,5,'',0.5,5,5,5,'0.00',1,3);
 /*!40000 ALTER TABLE `preguntasm7` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -945,7 +944,7 @@ CREATE TABLE `rotacion` (
   `rotacion` int(5) NOT NULL,
   `nota` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -954,7 +953,7 @@ CREATE TABLE `rotacion` (
 
 LOCK TABLES `rotacion` WRITE;
 /*!40000 ALTER TABLE `rotacion` DISABLE KEYS */;
-INSERT INTO `rotacion` VALUES (1,102,1,0),(2,102,2,0),(3,102,3,0.04),(4,72,2,0.007),(5,72,1,0.2375),(6,72,3,5),(7,18,1,0.159766),(8,14,2,7.9),(9,20,2,3.835);
+INSERT INTO `rotacion` VALUES (1,18,1,1.42374);
 /*!40000 ALTER TABLE `rotacion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -974,10 +973,10 @@ CREATE TABLE `usuarios` (
   `ultima_sesion` varchar(69) NOT NULL,
   `documento` int(15) NOT NULL,
   `fecha` varchar(50) NOT NULL,
-  `tipo` varchar(50) NOT NULL,
-  `avatar` varchar(255) NOT NULL,
+  `estado` varchar(20) NOT NULL,
+  `rol` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -986,7 +985,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'ariel antonio','caraballo diaz','acaraballod21@curnvirtual.edu.co','','26/04/23',0,'26/04/23','GOOGLE','https://lh3.googleusercontent.com/a/AGNmyxYU20aEI9doTmH_LXGPL6rKiPLWsvNKR923p7Gepw=s96-c');
+INSERT INTO `usuarios` VALUES (1,'ariel antonio','caraballo diaz','acaraballod21@curnvirtual.edu.co','ArielD19','04/05/23',0,'04/05/23','activo','PROFESOR'),(2,'Ariel','Caraballo','ariel@admin.com','123456','',1001903378,'','activo','ADMIN'),(3,'RIEL','CARABALLO','ariel@gmail.com','123456','06/05/2023',1001903378,'06/05/2023','activo','ADMIN'),(4,'RIEL','CARABALLO','ariel@gmail.comm','123456','06/05/2023',1213,'06/05/2023','inactivo','ADMIN'),(5,'Ariel','Caraballo Diaz','ariel123@gmail.com','123456','06/05/2023',1234567890,'06/05/2023','inactivo','PROFESOR');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -999,4 +998,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-04  0:06:31
+-- Dump completed on 2023-05-06 17:46:57
